@@ -1,0 +1,422 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Millaz Towing | KZN's Premier Recovery & Authority Hub</title>
+    <meta name="description"
+        content="Millaz Towing is KZN's most trusted recovery service. Offering 24/7 towing, expert safety tips, and a community-driven authority hub.">
+    <link rel="stylesheet" href="style.css?v=visual_upgrade_v1">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- GSAP for advanced animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+</head>
+
+<body>
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-progress-container">
+        <div id="scroll-progress-bar"></div>
+    </div>
+    <nav class="glass-panel">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="assets/millaz_logo_final.png" alt="Millaz Towing Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#hub">Authority Hub</a></li>
+                <li><a href="#community">Community</a></li>
+            </ul>
+            <a href="tel:+123456789" class="btn-primary"><i class="fas fa-phone"></i> Emergency Call</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-bg">
+                <img src="assets/hero-final-4.jpg" alt="Millaz Towing Team Fleet">
+            </div>
+            <div class="hero-content">
+                <div class="hero-text animate-in">
+                    <h1><span class="brand-script">Millaz Towing</span> <span class="hero-subtitle">RECOVERY
+                            REDEFINED.</span></h1>
+                    <p>More than just a tow. We're KZN's authority in road safety, recovery, and community support.</p>
+                </div>
+
+                <div class="glass-panel lead-card animate-in">
+                    <h3>Request Immediate Tow</h3>
+                    <p>Enter your details and our team will be dispatched instantly.</p>
+                    <form id="emergency-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="" disabled selected>Service Needed</option>
+                                <option value="towing">24/7 Towing</option>
+                                <option value="recovery">Accident Recovery</option>
+                                <option value="roadside">Roadside Assistance</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-primary w-full">Dispatch Now</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Bar Section -->
+        <div class="trust-bar animate-in">
+            <div class="trust-container">
+                <h3 class="trust-title">TRUSTED SERVICE PROVIDER FOR</h3>
+                <div class="marquee-track">
+                    <div class="marquee-content">
+                        <span>FNB</span><span>&bull;</span>
+                        <span>OUTSURANCE</span><span>&bull;</span>
+                        <span>MIWAY</span><span>&bull;</span>
+                        <span>AA</span><span>&bull;</span>
+                        <span>SANTAM</span><span>&bull;</span>
+                        <span>DIAL DIRECT</span><span>&bull;</span>
+                        <span>MOMENTUM</span><span>&bull;</span>
+                        <span>IWYZE</span><span>&bull;</span>
+                        <span>AUTO & GENERAL</span><span>&bull;</span>
+                        <span>BUDGET</span><span>&bull;</span>
+                        <span>KING PRICE</span><span>&bull;</span>
+                        <span>HOLLARD</span><span>&bull;</span>
+                        <span>DISCOVERY</span><span>&bull;</span>
+                        <span>ABSA</span><span>&bull;</span>
+                        <span>OLD MUTUAL</span><span>&bull;</span>
+                        <span>1st FOR WOMEN</span><span>&bull;</span>
+                        <!-- Duplicate -->
+                        <span>FNB</span><span>&bull;</span>
+                        <span>OUTSURANCE</span><span>&bull;</span>
+                        <span>MIWAY</span><span>&bull;</span>
+                        <span>AA</span><span>&bull;</span>
+                        <span>SANTAM</span><span>&bull;</span>
+                        <span>DIAL DIRECT</span><span>&bull;</span>
+                        <span>MOMENTUM</span><span>&bull;</span>
+                        <span>IWYZE</span><span>&bull;</span>
+                        <span>AUTO & GENERAL</span><span>&bull;</span>
+                        <span>BUDGET</span><span>&bull;</span>
+                        <span>KING PRICE</span><span>&bull;</span>
+                        <span>HOLLARD</span><span>&bull;</span>
+                        <span>DISCOVERY</span><span>&bull;</span>
+                        <span>ABSA</span><span>&bull;</span>
+                        <span>OLD MUTUAL</span><span>&bull;</span>
+                        <span>1st FOR WOMEN</span><span>&bull;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service Hub -->
+        <section id="services" class="services">
+            <div class="section-header center">
+                <h2>Pro-Service Hub</h2>
+                <div class="teal-line"></div>
+                <p>Industry-leading recovery solutions for individuals and enterprises across KZN.</p>
+            </div>
+            <div class="services-grid">
+                <!-- 1. Emergency Towing -->
+                <div class="glass-panel service-card animate-in">
+                    <div class="card-icon"><i class="fas fa-truck-fast"></i></div>
+                    <h3>Emergency Towing</h3>
+                    <p>Rapid response for urgent vehicle issues. We get you off the road safely.</p>
+                </div>
+
+                <!-- 2. Vehicle Recovery -->
+                <div class="glass-panel service-card animate-in" style="animation-delay: 0.1s;">
+                    <div class="card-icon"><i class="fas fa-truck-pickup"></i></div>
+                    <h3>Vehicle Recovery</h3>
+                    <p>Safe and swift retrieval after collisions or off-road incidents.</p>
+                </div>
+
+                <!-- 3. Roadside Assistance -->
+                <div class="glass-panel service-card animate-in" style="animation-delay: 0.2s;">
+                    <div class="card-icon"><i class="fas fa-screwdriver-wrench"></i></div>
+                    <h3>Roadside Assistance</h3>
+                    <p>On-the-spot help for minor breakdowns to get you moving again.</p>
+                </div>
+
+                <!-- 4. Fuel Assist -->
+                <div class="glass-panel service-card animate-in" style="animation-delay: 0.3s;">
+                    <div class="card-icon"><i class="fas fa-gas-pump"></i></div>
+                    <h3>Fuel Assist</h3>
+                    <p>Run out of fuel? We'll deliver what you need to reach the next station.</p>
+                </div>
+
+                <!-- 5. Flat Battery Assist -->
+                <div class="glass-panel service-card animate-in" style="animation-delay: 0.4s;">
+                    <div class="card-icon"><i class="fas fa-car-battery"></i></div>
+                    <h3>Flat Battery Assist</h3>
+                    <p>Jump-start services to revive your dead battery quickly.</p>
+                </div>
+
+                <!-- 6. Tyre Change -->
+                <div class="glass-panel service-card animate-in" style="animation-delay: 0.5s;">
+                    <div class="card-icon"><i class="fas fa-compact-disc"></i></div>
+                    <h3>Tyre Change</h3>
+                    <p>Professional tire replacement or spare fitting for flat tires.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Authority Hub -->
+        <section id="hub" class="hub">
+            <div class="hub-container">
+                <div class="section-header">
+                    <h2>Authority Hub</h2>
+                    <p>Expert insights and safety resources for the KZN community.</p>
+                </div>
+
+                <div class="hub-grid">
+                    <div class="featured-article glass-panel animate-in">
+                        <img src="assets/hub-safety.jpg" alt="Safety Tips">
+                        <div class="article-overlay">
+                            <span class="tag">Strategic Safety</span>
+                            <h3>Critical Protocols: Post-Accident Management</h3>
+                            <p>Mastering the first 15 minutes of an accident scene to ensure driver safety and vehicle
+                                security.</p>
+                            <a href="#" class="btn-primary" style="margin-top: 1rem;">Full Protocol</a>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-articles animate-in" style="animation-delay: 0.2s;">
+                        <div class="mini-article">
+                            <div class="mini-img">
+                                <img src="assets/hub-tech.jpg" alt="Fleet Tech">
+                            </div>
+                            <div class="mini-info">
+                                <span class="tag" style="font-size: 0.6rem;">Innovation</span>
+                                <h4>Next-Gen Rapid Response Technology</h4>
+                                <a href="#" class="learn-more">Read Insight</a>
+                            </div>
+                        </div>
+
+                        <div class="mini-article">
+                            <div class="mini-img">
+                                <img src="assets/hub-app.jpg" alt="Community">
+                            </div>
+                            <div class="mini-info">
+                                <span class="tag" style="font-size: 0.6rem;">Community</span>
+                                <h4>How the Spotter App is Securing KZN Roads</h4>
+                                <a href="#" class="learn-more">Read Impact</a>
+                            </div>
+                        </div>
+
+                        <div class="mini-article">
+                            <div class="mini-img">
+                                <img src="assets/hub-recovery.jpg" alt="Heavy Recovery">
+                            </div>
+                            <div class="mini-info">
+                                <span class="tag" style="font-size: 0.6rem;">Case Study</span>
+                                <h4>Heavy Recovery: The N3 Narrows Incident</h4>
+                                <a href="#" class="learn-more">Read Report</a>
+                            </div>
+                        </div>
+
+                        <div class="glass-panel newsletter-card" style="padding: 1.5rem; margin-top: 1rem;">
+                            <h4>Join the Community</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0.5rem 0 1rem;">Get road
+                                safety alerts & special offers.</p>
+                            <form class="mini-form">
+                                <input type="email" placeholder="Email Address"
+                                    style="width: 100%; padding: 0.8rem; border-radius: 8px; margin-bottom: 0.5rem; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff;">
+                                <button type="submit" class="btn-primary w-full"
+                                    style="padding: 0.8rem;">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Community Corner -->
+        <section id="community" class="community">
+            <div class="section-header center">
+                <h2>Meet Our Fleet and Team</h2>
+                <div class="teal-line"></div>
+                <p>Real recoveries, real people. Join the Millaz community in KZN.</p>
+            </div>
+
+            <div class="gallery-preview animate-in">
+                <div class="gallery-wrapper">
+                    <div class="gallery-track">
+                        <img src="assets/gallery/WhatsApp Image 2025-11-05 at 2.07.29 PM.jpeg" alt="Millaz Recovery 1">
+                        <img src="assets/gallery/WhatsApp Image 2025-11-05 at 2.07.30 PM.jpeg" alt="Millaz Recovery 2">
+                        <img src="assets/gallery/WhatsApp Image 2025-11-05 at 2.07.31 PM (1).jpeg"
+                            alt="Millaz Recovery 3">
+                        <img src="assets/gallery/WhatsApp Image 2025-11-05 at 2.07.31 PM (2).jpeg"
+                            alt="Millaz Recovery 4">
+                        <img src="assets/gallery/WhatsApp Image 2025-11-05 at 2.07.31 PM.jpeg" alt="Millaz Recovery 5">
+                        <img src="assets/gallery/WhatsApp Image 2025-11-05 at 2.07.34 PM.jpeg" alt="Millaz Recovery 6">
+                        <img src="assets/gallery/WhatsApp Image 2025-11-05 at 2.07.35 PM (1).jpeg"
+                            alt="Millaz Recovery 7">
+                        <img src="assets/gallery/WhatsApp Image 2025-11-05 at 2.07.35 PM (2).jpeg"
+                            alt="Millaz Recovery 8">
+                        <img src="assets/gallery/WhatsApp Image 2025-11-05 at 2.07.35 PM.jpeg" alt="Millaz Recovery 9">
+                        <img src="assets/gallery/WhatsApp Image 2025-11-05 at 2.07.36 PM (1).jpeg"
+                            alt="Millaz Recovery 10">
+                        <img src="assets/gallery/WhatsApp Image 2025-11-05 at 2.07.36 PM (2).jpeg"
+                            alt="Millaz Recovery 11">
+                        <img src="assets/gallery/WhatsApp Image 2025-11-05 at 2.07.36 PM.jpeg" alt="Millaz Recovery 12">
+                        <img src="assets/gallery/WhatsApp Image 2025-11-05 at 2.07.37 PM (1).jpeg"
+                            alt="Millaz Recovery 13">
+                        <img src="assets/gallery/WhatsApp Image 2025-11-05 at 2.07.37 PM.jpeg" alt="Millaz Recovery 14">
+                        <img src="assets/gallery/WhatsApp Image 2025-11-05 at 2.07.38 PM (1).jpeg"
+                            alt="Millaz Recovery 15">
+                        <img src="assets/gallery/WhatsApp Image 2025-11-05 at 2.07.38 PM.jpeg" alt="Millaz Recovery 16">
+                        <img src="assets/gallery/WhatsApp Image 2025-11-05 at 2.07.39 PM (1).jpeg"
+                            alt="Millaz Recovery 17">
+                        <img src="assets/gallery/WhatsApp Image 2025-11-05 at 2.08.22 PM.jpeg" alt="Millaz Recovery 18">
+                        <img src="assets/gallery/WhatsApp Image 2025-11-05 at 2.08.23 PM (1).jpeg"
+                            alt="Millaz Recovery 19">
+                        <img src="assets/gallery/WhatsApp Image 2025-11-05 at 2.08.23 PM.jpeg" alt="Millaz Recovery 20">
+                        <img src="assets/gallery/WhatsApp Image 2025-12-19 at 12.57.01 PM (1).jpeg"
+                            alt="Millaz Recovery 21">
+                        <img src="assets/gallery/WhatsApp Image 2025-12-19 at 12.57.01 PM (2).jpeg"
+                            alt="Millaz Recovery 22">
+                        <img src="assets/gallery/WhatsApp Image 2025-12-19 at 12.57.00 PM (1).jpeg"
+                            alt="Millaz Recovery 23">
+                        <img src="assets/gallery/WhatsApp Image 2025-12-19 at 12.57.00 PM.jpeg"
+                            alt="Millaz Recovery 24">
+                        <img src="assets/gallery/WhatsApp Image 2025-12-19 at 12.56.59 PM (1).jpeg"
+                            alt="Millaz Recovery 25">
+                        <img src="assets/gallery/WhatsApp Image 2025-12-19 at 12.56.59 PM (2).jpeg"
+                            alt="Millaz Recovery 26">
+                        <img src="assets/gallery/WhatsApp Image 2025-12-19 at 12.56.59 PM.jpeg"
+                            alt="Millaz Recovery 27">
+                        <img src="assets/gallery/WhatsApp Image 2025-12-19 at 12.56.58 PM (1).jpeg"
+                            alt="Millaz Recovery 28">
+                        <img src="assets/gallery/WhatsApp Image 2025-12-19 at 12.56.58 PM.jpeg"
+                            alt="Millaz Recovery 29">
+                        <img src="assets/gallery/WhatsApp Image 2025-12-19 at 12.56.57 PM (1).jpeg"
+                            alt="Millaz Recovery 30">
+                        <img src="assets/gallery/WhatsApp Image 2025-12-19 at 12.56.57 PM.jpeg"
+                            alt="Millaz Recovery 31">
+                    </div>
+                </div>
+                <div class="gallery-controls">
+                    <button id="prev-btn" class="btn-glass"><i class="fas fa-chevron-left"></i></button>
+                    <button id="next-btn" class="btn-glass"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials" id="reviews">
+            <div class="section-header center">
+                <h2>Client Reviews</h2>
+                <div class="teal-line"></div>
+                <p>Don't just take our word for it. Here's what KZN has to say.</p>
+            </div>
+
+            <div class="hub-container">
+                <div class="testimonial-grid">
+                    <!-- Review 1 -->
+                    <div class="testimonial-card animate-in">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">"Fastest service in Durban! Had a flat tyre at 2am and Millaz was there
+                            in 20 minutes. Professional and kind."</p>
+                        <div class="client-info">
+                            <div class="client-avatar">JP</div>
+                            <div class="client-details">
+                                <h4>Jason P.</h4>
+                                <span>Umhlanga</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="testimonial-card animate-in" style="animation-delay: 0.1s;">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">"The only towing service I trust with my luxury vehicle. Handled my BMW
+                            with absolute care. Highly recommended!"</p>
+                        <div class="client-info">
+                            <div class="client-avatar">SM</div>
+                            <div class="client-details">
+                                <h4>Sarah M.</h4>
+                                <span>Ballito</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="testimonial-card animate-in" style="animation-delay: 0.2s;">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">"Incredible team. They managed a complex accident recovery for our fleet
+                            efficiently and safely. A true partner."</p>
+                        <div class="client-info">
+                            <div class="client-avatar">TK</div>
+                            <div class="client-details">
+                                <h4>Thabo K.</h4>
+                                <span>Logistics Manager</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="assets/millaz_logo_final.png" alt="Millaz Footer Logo">
+                <p>Setting the standard for professional recovery in KZN.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#hub">Authority Hub</a></li>
+                    <li><a href="#community">Community</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-phone"></i> +27 123 456 789</p>
+                <p><i class="fas fa-envelope"></i> help@millaztowing.co.za</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-map">
+                <h4>Find Us</h4>
+                <p>22, 24 Gillitts Rd<br>New Germany, Durban, 4091</p>
+                <div class="map-frame">
+                    <iframe
+                        src="https://maps.google.com/maps?q=22+24+Gillitts+Rd+New+Germany+Durban+4091&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        width="100%" height="150" style="border:0; border-radius: 8px;" allowfullscreen=""
+                        loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Millaz Towing. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
