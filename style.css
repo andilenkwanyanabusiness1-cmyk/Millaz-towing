@@ -643,20 +643,29 @@ footer {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1.5fr;
-    gap: 4rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
     margin-bottom: 60px;
 }
 
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+}
+
 .footer-brand img {
-    height: 60px;
+    height: 75px;
+    /* Increased by 25% */
     margin-bottom: 1.5rem;
 }
 
 .footer-brand p {
     color: var(--text-muted);
     max-width: 300px;
+    margin-top: auto;
+    /* Pushes text to bottom to align with neighbors */
 }
 
 .footer-links h4,
