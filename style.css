@@ -656,9 +656,10 @@ footer {
 }
 
 .footer-brand img {
-    height: 75px;
-    /* Increased by 25% */
-    margin-bottom: 1.5rem;
+    height: 85px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 1rem;
 }
 
 .footer-brand p {
