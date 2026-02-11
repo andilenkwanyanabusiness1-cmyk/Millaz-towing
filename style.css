@@ -745,67 +745,58 @@ footer {
 }
 
 /* Trust Bar Styles */
+/* Trust Bar Styles */
 .trust-bar {
-    background: var(--glass-bg);
-    border-bottom: 1px solid var(--glass-border);
-    padding: 1.5rem 0;
-    overflow: hidden;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 3rem 0;
     position: relative;
     z-index: 10;
 }
 
 .trust-container {
-    max-width: 100%;
+    max-width: 1200px;
+    width: 90%;
     margin: 0 auto;
     text-align: center;
 }
 
 .trust-title {
-    color: var(--color-primary);
-    font-size: 0.8rem;
+    color: #1a2a5e;
+    font-size: 0.9rem;
     letter-spacing: 2px;
-    margin-bottom: 1.2rem;
-    font-weight: 600;
+    margin-bottom: 2.5rem;
+    font-weight: 800;
     text-transform: uppercase;
-    opacity: 0.8;
-}
-
-.marquee-track {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.marquee-content {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-    animation: scroll 25s linear infinite;
-    padding-left: 100%;
-    /* Start off-screen */
-    min-width: 100%;
-}
-
-.marquee-content img {
-    height: 45px;
-    width: auto;
-    object-fit: contain;
-    filter: grayscale(100%) brightness(1.2);
-    /* Unified look */
-    opacity: 0.7;
-    transition: all 0.3s var(--smooth);
-    mix-blend-mode: screen;
-    /* Helps logos blend better on dark bg */
-}
-
-.marquee-content img:hover {
-    filter: grayscale(0%) brightness(1);
     opacity: 1;
-    transform: scale(1.1);
-    mix-blend-mode: normal;
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 3rem;
+    align-items: center;
+    justify-items: center;
+}
+
+.trust-grid img {
+    height: 60px;
+    width: auto;
+    max-width: 150px;
+    object-fit: contain;
+    /* Removed filters to show original colors */
+    opacity: 1;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    mix-blend-mode: multiply;
+    /* Better for white borders on white bg */
+}
+
+.trust-grid img:hover {
+    transform: scale(1.15);
+    cursor: pointer;
 }
 
 @keyframes scroll {
