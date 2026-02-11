@@ -14,24 +14,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Statistics Counter Animation
+    // Statistics Counter Animation - FIX: Ensure reliable triggering
     const stats = document.querySelectorAll('.stat-number');
     stats.forEach(stat => {
         const target = +stat.getAttribute('data-target');
-        
+
         ScrollTrigger.create({
             trigger: stat,
-            start: 'top 85%',
-            once: true, // Run only once
+            start: "top 95%", // Trigger earlier when element enters viewport
+            once: true,
             onEnter: () => {
                 const obj = { val: 0 };
                 gsap.to(obj, {
                     val: target,
-                    duration: 2.5,
-                    ease: 'power2.out',
+                    duration: 2, // Slightly faster for punchier feel
+                    ease: "power1.out",
                     onUpdate: () => {
-                        // Formatting: Add '+' for specific stats if needed, or just the number
-                        // The user asked for "950+", "1304+", "50+"
                         stat.textContent = Math.ceil(obj.val) + "+";
                     }
                 });

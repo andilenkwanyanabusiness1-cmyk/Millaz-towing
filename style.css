@@ -783,8 +783,9 @@ footer {
     display: flex;
     align-items: center;
     gap: 4rem;
-    animation: scroll 40s linear infinite;
-    padding-left: 100%; /* Start off-screen */
+    animation: scroll 25s linear infinite;
+    padding-left: 100%;
+    /* Start off-screen */
     min-width: 100%;
 }
 
@@ -792,10 +793,12 @@ footer {
     height: 45px;
     width: auto;
     object-fit: contain;
-    filter: grayscale(100%) brightness(1.2); /* Unified look */
+    filter: grayscale(100%) brightness(1.2);
+    /* Unified look */
     opacity: 0.7;
     transition: all 0.3s var(--smooth);
-    mix-blend-mode: screen; /* Helps logos blend better on dark bg */
+    mix-blend-mode: screen;
+    /* Helps logos blend better on dark bg */
 }
 
 .marquee-content img:hover {
@@ -809,6 +812,7 @@ footer {
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-100%);
     }
@@ -857,6 +861,7 @@ footer {
         transform: scale(1);
         opacity: 0.6;
     }
+
     100% {
         transform: scale(1.5);
         opacity: 0;
@@ -867,7 +872,8 @@ footer {
 .stats-section {
     padding: 80px 0;
     position: relative;
-    background: linear-gradient(to bottom, rgba(0, 212, 212, 0.05), transparent); /* Subtle gradient */
+    background: linear-gradient(to bottom, rgba(0, 212, 212, 0.05), transparent);
+    /* Subtle gradient */
 }
 
 .stats-container {
@@ -882,7 +888,8 @@ footer {
 .stat-card {
     padding: 2rem;
     text-align: center;
-    background: rgba(255, 255, 255, 0.05); /* Slightly clearer glass */
+    background: rgba(255, 255, 255, 0.05);
+    /* Slightly clearer glass */
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -903,9 +910,10 @@ footer {
 
 @media (max-width: 768px) {
     .stats-container {
-        grid-template-columns: repeat(2, 1fr); /* 2x2 grid on mobile */
+        grid-template-columns: repeat(2, 1fr);
+        /* 2x2 grid on mobile */
     }
-    
+
     .stat-number {
         font-size: 2.5rem;
     }
