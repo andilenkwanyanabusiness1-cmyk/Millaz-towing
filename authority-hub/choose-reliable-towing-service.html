@@ -813,519 +813,543 @@
                     <img src="../assets/millaz_logo_final.png" alt="Millaz Towing Logo">
                 </a>
             </div>
-            <ul class="nav-links" id="hub-nav-links" role="list">
-                <li><a href="../index.html#services">Services</a></li>
-                <li><a href="index.html" class="active">Authority Hub</a></li>
-                <li><a href="../index.html#community">Community</a></li>
-            </ul>
-            <a href="tel:+27123456789" class="btn-primary" id="nav-emergency-btn">
-                <i class="fas fa-phone" aria-hidden="true"></i> Emergency Call
-            </a>
-            <button class="mobile-menu-toggle" id="hub-mobile-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
+            ```
+            }
 
-    <!-- ─── Floating WhatsApp Button ─── -->
-    <a href="https://wa.me/27123456789" class="hub-whatsapp-btn" target="_blank" rel="noopener noreferrer"
-        aria-label="Chat with Millaz Towing on WhatsApp" id="whatsapp-float">
-        <i class="fab fa-whatsapp" aria-hidden="true"></i>
-        <span>Chat with Us</span>
-    </a>
+            .article-cta-banner h2 span {
+            color: var(--hub-primary);
+            }
 
-    <main>
+            .article-cta-banner p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            }
 
-        <!-- ─── ARTICLE HERO ─── -->
-        <section class="article-hero" aria-label="Article hero image">
+            .article-cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            }
 
-            <!-- Option A: Use when a real image is available -->
-            <!-- <img src="/assets/article-2.png" alt="How to Choose a Reliable Towing Service" class="article-hero-img"> -->
+            .cta-btn-call {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1rem 2rem;
+            background: var(--hub-primary);
+            color: var(--hub-navy);
+            border-radius: 12px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s var(--hub-smooth);
+            }
 
-            <!-- Option B: Placeholder (remove when real image is added) -->
-            <div class="article-hero-placeholder" aria-hidden="true">
-                <i class="fas fa-road"></i>
-            </div>
+            .cta-btn-call:hover {
+            background: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0, 212, 212, 0.35);
+            }
 
-            <div class="article-hero-overlay">
-                <div class="article-hero-content">
+            .cta-btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1rem 2rem;
+            background: rgba(37, 211, 102, 0.15);
+            border: 2px solid #25D366;
+            color: #25D366;
+            border-radius: 12px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s var(--hub-smooth);
+            }
 
-                    <!-- Breadcrumb -->
-                    <nav class="article-breadcrumb" aria-label="Breadcrumb" style="padding: 0 0 1rem;">
-                        <a href="../index.html">Home</a>
-                        <span class="bc-sep" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
-                        <a href="index.html">Authority Hub</a>
-                        <span class="bc-sep" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
-                        <span class="bc-current" aria-current="page">How to Choose a Reliable Towing Service</span>
-                    </nav>
+            .cta-btn-whatsapp:hover {
+            background: #25D366;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(37, 211, 102, 0.35);
+            }
 
-                    <span class="hub-tag">Consumer Guide</span>
-                    <h1>How to Choose a Reliable Towing Service</h1>
+            /* ── Article Navigation (prev / next) ─────────────────────── */
+            .article-nav {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
 
-                    <div class="article-meta">
-                        <div class="article-meta-item">
-                            <i class="fas fa-user-circle" aria-hidden="true"></i>
-                            Millaz Towing Team
+            .article-nav-link {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            padding: 1.25rem 1.5rem;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 16px;
+            text-decoration: none;
+            transition: all 0.3s var(--hub-smooth);
+            }
+
+            .article-nav-link:hover {
+            background: rgba(0, 212, 212, 0.1);
+            border-color: rgba(0, 212, 212, 0.4);
+            transform: translateY(-3px);
+            }
+
+            .article-nav-link.next {
+            text-align: right;
+            }
+
+            .article-nav-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--hub-primary);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-family: 'Outfit', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            }
+
+            .article-nav-link.next .article-nav-label {
+            justify-content: flex-end;
+            }
+
+            .article-nav-title {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.35;
+            }
+
+            /* ── Responsive ───────────────────────────────────────────── */
+            @media (max-width: 968px) {
+            .article-hero {
+            height: 400px;
+            }
+
+            .article-layout {
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            padding: 2.5rem 0 4rem;
+            }
+
+            /* Sidebar moves below article content on mobile */
+            .article-sidebar {
+            position: static;
+            order: 2;
+            }
+
+            .article-body {
+            order: 1;
+            }
+
+            .article-nav {
+            grid-template-columns: 1fr;
+            }
+
+            .article-nav-link.next {
+            text-align: left;
+            }
+
+            .article-nav-link.next .article-nav-label {
+            justify-content: flex-start;
+            }
+            }
+
+            @media (max-width: 600px) {
+            .article-hero {
+            height: 320px;
+            margin-top: 80px;
+            }
+
+            .article-hero-content h1 {
+            font-size: 1.5rem;
+            }
+
+            .article-cta-buttons {
+            flex-direction: column;
+            align-items: center;
+            }
+
+            .cta-btn-call,
+            .cta-btn-whatsapp {
+            width: 100%;
+            justify-content: center;
+            }
+            }
+            </style>
+            </head>
+
+            <body>
+
+                <!-- ─── Scroll Progress ─── -->
+                <div id="hub-scroll-progress-container">
+                    <div id="hub-scroll-progress-bar"></div>
+                </div>
+
+                <!-- ─── Navigation ─── -->
+                <nav class="hub-nav" id="hub-nav" aria-label="Main navigation">
+                    <div class="nav-container">
+                        <div class="logo">
+                            <a href="../index.html" aria-label="Millaz Towing Home">
+                                <img src="../assets/millaz_logo_final.png" alt="Millaz Towing Logo">
+                            </a>
                         </div>
-                        <div class="article-meta-divider" aria-hidden="true"></div>
-                        <div class="article-meta-item">
-                            <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-                            <time datetime="2026-01-28">28 Jan 2026</time>
-                        </div>
-                        <div class="article-meta-divider" aria-hidden="true"></div>
-                        <div class="article-meta-item">
-                            <i class="fas fa-clock" aria-hidden="true"></i>
-                            5 min read
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- ─── TWO-COLUMN LAYOUT ─── -->
-        <div class="article-layout">
-
-            <!-- ── LEFT: Article Body ── -->
-            <article class="article-body" aria-labelledby="article-main-heading">
-
-                <div class="article-content" id="article-main-heading">
-
-                    <p>When your vehicle breaks down or you're involved in an accident, the towing service you choose
-                        can make the difference between a resolved situation and a nightmare. Not all towing companies
-                        provide equal service, and making an informed choice protects both your vehicle and your wallet.
-                    </p>
-                    <h2>Research Before You Need Help</h2>
-                    <p>The worst time to choose a towing service is during an emergency when you're stressed and
-                        pressured to make quick decisions. Research reputable providers in your area now – for KZN
-                        motorists, this means companies servicing routes you regularly travel, from Durban through
-                        Pinetown, Westville, Hillcrest, and Kloof. Save multiple contacts in your phone so you're never
-                        without options.</p>
-                    <h2>Essential Credentials</h2>
-                    <p>Legitimate towing companies must hold proper licensing and insurance. Ask about their
-                        credentials, including registration with relevant authorities and liability coverage. This
-                        protects you if your vehicle is damaged during towing. Reputable operators display credentials
-                        proudly and answer questions without hesitation.</p>
-                    <h2>Service Coverage and Response Times</h2>
-                    <p>Verify the company services your regular routes and understands local roads. A provider familiar
-                        with N3 traffic patterns, M13 congestion points, and alternative routes through the upper
-                        highway areas can navigate efficiently to reach you. Ask about average response times – reliable
-                        services should reach you within 30-45 minutes in urban areas.</p>
-                    <h2>Transparent Pricing</h2>
-                    <p>Trustworthy towing companies provide clear pricing information upfront. Expect charges based on
-                        distance, vehicle type, and time of day (after-hours service typically costs more). Be wary of
-                        companies that refuse to discuss costs until after towing your vehicle – this is a major red
-                        flag. Request itemized invoices and understand what's included in the base rate versus
-                        additional fees.</p>
-                    <h2>Medical and Equipment Capabilities</h2>
-                    <p>Different vehicles require different towing equipment. Flatbed towing is safest for most
-                        vehicles, preventing wheel or transmission damage. Wheel-lift towing suits specific situations.
-                        The company should have properly maintained equipment and trained operators. Ask about their
-                        fleet and capabilities.</p>
-                    <h2>Customer Reviews and Reputation</h2>
-                    <p>Online reviews reveal patterns. While every business occasionally receives negative feedback,
-                        consistently poor reviews about hidden fees, vehicle damage, or unprofessional behavior indicate
-                        problems. Look for companies with strong local reputations, positive testimonials, and evidence
-                        of community involvement.</p>
-                    <h2>Your Rights</h2>
-                    <p>Remember, you always have the right to choose your towing provider. No one can force you to use a
-                        specific company, regardless of who arrives first at an accident scene. Take time to call your
-                        preferred provider even if another is present.</p>
-                    <h2>Building a Relationship</h2>
-                    <p>Consider establishing a relationship with a local towing provider before emergencies arise. Some
-                        companies offer membership programs or priority service for regular customers. Knowing you have
-                        a trusted provider reduces stress during already difficult situations.</p>
-
-                </div>
-
-                <!-- ── Social Share Row ── -->
-                <div class="article-share">
-                    <p>Share this article</p>
-                    <div class="share-buttons">
-                        <a href="#" class="share-btn share-btn-wa" id="share-whatsapp" target="_blank"
-                            rel="noopener noreferrer" aria-label="Share on WhatsApp">
-                            <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+                        <ul class="nav-links" id="hub-nav-links" role="list">
+                            <li><a href="../index.html#services">Services</a></li>
+                            <li><a href="index.html" class="active">Authority Hub</a></li>
+                            <li><a href="../index.html#community">Community</a></li>
+                        </ul>
+                        <a href="tel:0737453329" class="btn-primary" id="nav-emergency-btn">
+                            <i class="fas fa-phone" aria-hidden="true"></i> Emergency Call
                         </a>
-                        <a href="#" class="share-btn share-btn-fb" id="share-facebook" target="_blank"
-                            rel="noopener noreferrer" aria-label="Share on Facebook">
-                            <i class="fab fa-facebook" aria-hidden="true"></i> Facebook
-                        </a>
-                        <a href="#" class="share-btn share-btn-tw" id="share-twitter" target="_blank"
-                            rel="noopener noreferrer" aria-label="Share on X (Twitter)">
-                            <i class="fab fa-x-twitter" aria-hidden="true"></i> X
-                        </a>
-                    </div>
-                </div>
-
-            </article>
-
-            <!-- ── RIGHT: Sidebar ── -->
-            <aside class="article-sidebar" aria-label="Article sidebar">
-
-                <!-- 1. Need Help Now? -->
-                <div class="sidebar-card sidebar-help-card">
-                    <div class="sidebar-card-title">
-                        <i class="fas fa-headset" aria-hidden="true"></i>
-                        Need Help Now?
-                    </div>
-                    <p>Stranded on a KZN road? Our recovery team is on standby 24 hours a day, 7 days a week —
-                        including public holidays.</p>
-                    <a href="https://wa.me/27123456789" class="sidebar-wa-btn" target="_blank" rel="noopener noreferrer"
-                        aria-label="WhatsApp Millaz Towing">
-                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                        WhatsApp Us Now
-                    </a>
-                </div>
-
-                <!-- 2. Compact Newsletter -->
-                <div class="sidebar-card">
-                    <div class="sidebar-card-title">
-                        <i class="fas fa-envelope" aria-hidden="true"></i>
-                        Stay Road-Ready
-                    </div>
-                    <form class="sidebar-newsletter-form" name="sidebar-newsletter" method="POST" data-netlify="true"
-                        netlify-honeypot="bot-field" id="sidebar-newsletter-form"
-                        aria-label="Sidebar newsletter signup">
-                        <input type="hidden" name="form-name" value="sidebar-newsletter">
-                        <p style="display:none;"><label>Don't fill: <input name="bot-field"></label></p>
-
-                        <input type="text" name="name" class="sidebar-input" placeholder="Your name" required
-                            autocomplete="name" aria-label="Your name">
-                        <input type="email" name="email" class="sidebar-input" placeholder="Your email" required
-                            autocomplete="email" aria-label="Your email address">
-                        <button type="submit" class="sidebar-submit-btn" id="sidebar-submit-btn">
-                            Subscribe Free
+                        <button class="mobile-menu-toggle" id="hub-mobile-toggle" aria-label="Toggle navigation">
+                            <span></span>
+                            <span></span>
+                            <span></span>
                         </button>
-                    </form>
-                </div>
-
-                <!-- 3. Recent Articles -->
-                <div class="sidebar-card">
-                    <div class="sidebar-card-title">
-                        <i class="fas fa-newspaper" aria-hidden="true"></i>
-                        Recent Articles
                     </div>
-                    <ul class="sidebar-articles-list" role="list">
-                        <li>
-                            <a href="post-accident-management.html">
-                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
-                                Critical Protocols: Post-Accident Management
-                            </a>
-                        </li>
-                        <li>
-                            <a href="spotter-app-kzn-roads.html">
-                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
-                                How the Spotter App is Securing KZN Roads
-                            </a>
-                        </li>
-                        <li>
-                            <a href="towing-regulations-kzn.html">
-                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
-                                Understanding Towing Regulations in KZN
-                            </a>
-                        </li>
-                        <li>
-                            <a href="what-to-do-after-road-accident.html">
-                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
-                                What to Do After a Road Accident: A Complete Guide
-                            </a>
-                        </li>
-                        <li>
-                            <a href="top-5-causes-vehicle-breakdowns-n3.html">
-                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
-                                Top 5 Causes of Vehicle Breakdowns on the N3
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                </nav>
 
-                <!-- 4. Browse by Category -->
-                <div class="sidebar-card">
-                    <div class="sidebar-card-title">
-                        <i class="fas fa-tags" aria-hidden="true"></i>
-                        Browse by Category
-                    </div>
-                    <div class="sidebar-categories" role="list">
-                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Strategic Safety</a>
-                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Community</a>
-                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Regulations</a>
-                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Safety Guide</a>
-                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Road Safety</a>
-                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Safety Tips</a>
-                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Consumer Guide</a>
-                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Maintenance</a>
-                    </div>
-                </div>
-
-            </aside>
-
-        </div><!-- /.article-layout -->
-
-        <!-- ─── RELATED ARTICLES ─── -->
-        <section class="related-section" aria-labelledby="related-heading">
-            <div class="hub-section-header hub-animate">
-                <h2 id="related-heading">More from the Authority Hub</h2>
-                <p>Keep reading — more expert guides for KZN motorists</p>
-                <div class="hub-teal-line"></div>
-            </div>
-
-            <div class="articles-grid" id="related-grid">
-
-                <!-- Related Card 1 -->
-                <a href="post-accident-management.html" class="article-card hub-animate" id="related-1">
-                    <div class="article-card-img-wrap">
-                        <div class="article-card-img-placeholder" aria-hidden="true">
-                            <i class="fas fa-shield-halved"></i>
-                        </div>
-                    </div>
-                    <div class="article-card-body">
-                        <span class="hub-tag">Strategic Safety</span>
-                        <h3>Critical Protocols: Post-Accident Management</h3>
-                        <p>Mastering the first 15 minutes of an accident scene to ensure driver safety and proper
-                            documentation.</p>
-                        <div class="article-card-footer">
-                            <span class="article-card-date">
-                                <i class="fas fa-calendar-alt" aria-hidden="true"></i> 18 Feb 2026
-                            </span>
-                            <span class="btn-read-link">
-                                Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                            </span>
-                        </div>
-                    </div>
+                <!-- ─── Floating WhatsApp Button ─── -->
+                <a href="https://wa.me/27737453329" class="hub-whatsapp-btn" target="_blank" rel="noopener noreferrer"
+                    aria-label="Chat with Millaz Towing on WhatsApp" id="whatsapp-float">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    <span>Chat with Us</span>
                 </a>
 
-                <!-- Related Card 2 -->
-                <a href="towing-regulations-kzn.html" class="article-card hub-animate hub-animate-delay-1"
-                    id="related-2">
-                    <div class="article-card-img-wrap">
-                        <div class="article-card-img-placeholder" aria-hidden="true">
-                            <i class="fas fa-gavel"></i>
+                <main>
+
+                    <!-- ─── ARTICLE HERO ─── -->
+                    <section class="article-hero" aria-label="Article hero image">
+
+                        <!-- Option A: Use when a real image is available -->
+                        <!-- <img src="/assets/article-2.png" alt="How to Choose a Reliable Towing Service" class="article-hero-img"> -->
+
+                        <!-- Option B: Placeholder (remove when real image is added) -->
+                        <div class="article-hero-placeholder" aria-hidden="true">
+                            <i class="fas fa-road"></i>
                         </div>
-                    </div>
-                    <div class="article-card-body">
-                        <span class="hub-tag">Regulations</span>
-                        <h3>Understanding Towing Regulations in KZN</h3>
-                        <p>Know your rights and the legal framework governing towing operations across
-                            KwaZulu-Natal.</p>
-                        <div class="article-card-footer">
-                            <span class="article-card-date">
-                                <i class="fas fa-calendar-alt" aria-hidden="true"></i> 12 Feb 2026
-                            </span>
-                            <span class="btn-read-link">
-                                Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                            </span>
+
+                        <div class="article-hero-overlay">
+                            <div class="article-hero-content">
+
+                                <!-- Breadcrumb -->
+                                <nav class="article-breadcrumb" aria-label="Breadcrumb" style="padding: 0 0 1rem;">
+                                    <a href="../index.html">Home</a>
+                                    <span class="bc-sep" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+                                    <a href="index.html">Authority Hub</a>
+                                    <span class="bc-sep" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+                                    <span class="bc-current" aria-current="page">How to Choose a Reliable Towing
+                                        Service</span>
+                                </nav>
+
+                                <span class="hub-tag">Consumer Guide</span>
+                                <h1>How to Choose a Reliable Towing Service</h1>
+
+                                <div class="article-meta">
+                                    <div class="article-meta-item">
+                                        <i class="fas fa-user-circle" aria-hidden="true"></i>
+                                        Millaz Towing Team
+                                    </div>
+                                    <div class="article-meta-divider" aria-hidden="true"></div>
+                                    <div class="article-meta-item">
+                                        <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                                        <time datetime="2026-01-28">28 Jan 2026</time>
+                                    </div>
+                                    <div class="article-meta-divider" aria-hidden="true"></div>
+                                    <div class="article-meta-item">
+                                        <i class="fas fa-clock" aria-hidden="true"></i>
+                                        5 min read
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
+                    </section>
+
+                    <!-- ─── TWO-COLUMN LAYOUT ─── -->
+                    <div class="article-layout">
+
+                        <!-- ── LEFT: Article Body ── -->
+                        <article class="article-body" aria-labelledby="article-main-heading">
+
+                            <div class="article-content" id="article-main-heading">
+
+                                <p>When your vehicle breaks down or you're involved in an accident, the towing service
+                                    you choose
+                                    can make the difference between a resolved situation and a nightmare. Not all towing
+                                    companies
+                                    provide equal service, and making an informed choice protects both your vehicle and
+                                    your wallet.
+                                </p>
+                                <h2>Research Before You Need Help</h2>
+                                <p>The worst time to choose a towing service is during an emergency when you're stressed
+                                    and
+                                    pressured to make quick decisions. Research reputable providers in your area now –
+                                    for KZN
+                                    motorists, this means companies servicing routes you regularly travel, from Durban
+                                    through
+                                    Pinetown, Westville, Hillcrest, and Kloof. Save multiple contacts in your phone so
+                                    you're never
+                                    without options.</p>
+                                <h2>Essential Credentials</h2>
+                                <p>Legitimate towing companies must hold proper licensing and insurance. Ask about their
+                                    credentials, including registration with relevant authorities and liability
+                                    coverage. This
+                                    protects you if your vehicle is damaged during towing. Reputable operators display
+                                    credentials
+                                    proudly and answer questions without hesitation.</p>
+                                <h2>Service Coverage and Response Times</h2>
+                                <p>Verify the company services your regular routes and understands local roads. A
+                                    provider familiar
+                                    with N3 traffic patterns, M13 congestion points, and alternative routes through the
+                                    upper
+                                    highway areas can navigate efficiently to reach you. Ask about average response
+                                    times – reliable
+                                    services should reach you within 30-45 minutes in urban areas.</p>
+                                <h2>Transparent Pricing</h2>
+                                <p>Trustworthy towing companies provide clear pricing information upfront. Expect
+                                    charges based on
+                                    distance, vehicle type, and time of day (after-hours service typically costs more).
+                                    Be wary of
+                                    companies that refuse to discuss costs until after towing your vehicle – this is a
+                                    major red
+                                    flag. Request itemized invoices and understand what's included in the base rate
+                                    versus
+                                    additional fees.</p>
+                                <h2>Medical and Equipment Capabilities</h2>
+                                <p>Different vehicles require different towing equipment. Flatbed towing is safest for
+                                    most
+                                    vehicles, preventing wheel or transmission damage. Wheel-lift towing suits specific
+                                    situations.
+                                    The company should have properly maintained equipment and trained operators. Ask
+                                    about their
+                                    fleet and capabilities.</p>
+                                <h2>Customer Reviews and Reputation</h2>
+                                <p>Online reviews reveal patterns. While every business occasionally receives negative
+                                    feedback,
+                                    consistently poor reviews about hidden fees, vehicle damage, or unprofessional
+                                    behavior indicate
+                                    problems. Look for companies with strong local reputations, positive testimonials,
+                                    and evidence
+                                    of community involvement.</p>
+                                <h2>Your Rights</h2>
+                                <p>Remember, you always have the right to choose your towing provider. No one can force
+                                    you to use a
+                                    specific company, regardless of who arrives first at an accident scene. Take time to
+                                    call your
+                                    preferred provider even if another is present.</p>
+                                <h2>Building a Relationship</h2>
+                                <p>Consider establishing a relationship with a local towing provider before emergencies
+                                    arise. Some
+                                    companies offer membership programs or priority service for regular customers.
+                                    Knowing you have
+                                    a trusted provider reduces stress during already difficult situations.</p>
+
+                            </div>
+
+                            <!-- ── Social Share Row ── -->
+                            <div class="article-share">
+                                <p>Share this article</p>
+                                <div class="share-buttons">
+                                    <a href="#" class="share-btn share-btn-wa" id="share-whatsapp" target="_blank"
+                                        rel="noopener noreferrer" aria-label="Share on WhatsApp">
+                                        <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+                                    </a>
+                                    <a href="#" class="share-btn share-btn-fb" id="share-facebook" target="_blank"
+                                        rel="noopener noreferrer" aria-label="Share on Facebook">
+                                        <i class="fab fa-facebook" aria-hidden="true"></i> Facebook
+                                    </a>
+                                    <a href="#" class="share-btn share-btn-tw" id="share-twitter" target="_blank"
+                                        rel="noopener noreferrer" aria-label="Share on X (Twitter)">
+                                        <i class="fab fa-x-twitter" aria-hidden="true"></i> X
+                                    </a>
+                                </div>
+                            </div>
+
+                        </article>
+
+                        <!-- ── RIGHT: Sidebar ── -->
+                        <aside class="article-sidebar" aria-label="Article sidebar">
+
+                            <!-- 1. Need Help Now? -->
+                            <div class="sidebar-card sidebar-help-card">
+                                <div class="sidebar-card-title">
+                                    <i class="fas fa-headset" aria-hidden="true"></i>
+                                    Need Help Now?
+                                </div>
+                                <p>Stranded on a KZN road? Our recovery team is on standby 24 hours a day, 7 days a week
+                                    —
+                                    including public holidays.</p>
+                                <a href="https://wa.me/27737453329" class="sidebar-wa-btn" target="_blank"
+                                    rel="noopener noreferrer" aria-label="WhatsApp Millaz Towing">
+                                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                    WhatsApp Us Now
+                                </a>
+                            </div>
+
+                            <!-- 2. Compact Newsletter -->
+                            <div class="sidebar-card">
+                                <div class="sidebar-card-title">
+                                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                                    Stay Road-Ready
+                                </div>
+                                <form class="sidebar-newsletter-form" id="sidebar-newsletter-form"
+                                    aria-label="Sidebar newsletter signup">
+                                    <div class="hub-form-group">
+                                        <input type="text" name="first_name" class="sidebar-input"
+                                            placeholder="First Name" required autocomplete="given-name"
+                                            aria-label="First Name">
+                                    </div>
+                                    <div class="hub-form-group">
+                                        <input type="text" name="last_name" class="sidebar-input"
+                                            placeholder="Last Name" required autocomplete="family-name"
+                                            aria-label="Last Name">
+                                    </div>
+                                    <input type="email" name="email" class="sidebar-input" placeholder="Your email"
+                                        required autocomplete="email" aria-label="Your email address">
+                                    <button type="submit" class="sidebar-submit-btn" id="sidebar-submit-btn">
+                                        Subscribe Free
+                                    </button>
+                                    <div style="margin-top:1rem; border-radius:12px; overflow:hidden;">
+                                        <iframe
+                                            src="https://maps.google.com/maps?q=22+24+Gillitts+Road+West+Mead+Durban+4091&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                            width="100%" height="130" style="border:0; display:block;"
+                                            allowfullscreen="" loading="lazy"
+                                            title="Millaz Towing location map"></iframe>
+                                    </div>
+                            </div>
                     </div>
-                </a>
 
-                <!-- Related Card 3 -->
-                <a href="emergency-road-safety-tips-kzn.html" class="article-card hub-animate hub-animate-delay-2"
-                    id="related-3">
-                    <div class="article-card-img-wrap">
-                        <div class="article-card-img-placeholder" aria-hidden="true">
-                            <i class="fas fa-triangle-exclamation"></i>
-                        </div>
+                    <div class="hub-footer-bottom">
+                        <p>&copy; 2026 Millaz Towing. All Rights Reserved. &nbsp;|&nbsp;
+                            <a href="index.html" style="color:var(--hub-primary); text-decoration:none;">Authority
+                                Hub</a>
+                            &nbsp;|&nbsp;
+                            <a href="../admin/index.html"
+                                style="color:rgba(255,255,255,0.4); text-decoration:none; font-size:0.8rem;">CMS
+                                Login</a>
+                        </p>
                     </div>
-                    <div class="article-card-body">
-                        <span class="hub-tag">Safety Tips</span>
-                        <h3>Emergency Road Safety Tips for KZN Motorists</h3>
-                        <p>What to keep in your vehicle and the correct procedure for stopping on a busy KZN
-                            road.</p>
-                        <div class="article-card-footer">
-                            <span class="article-card-date">
-                                <i class="fas fa-calendar-alt" aria-hidden="true"></i> 1 Feb 2026
-                            </span>
-                            <span class="btn-read-link">
-                                Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                            </span>
-                        </div>
-                    </div>
-                </a>
+                    </footer>
 
-            </div>
-        </section>
+                    <!-- ─── JAVASCRIPT ─── -->
+                    <script>
+                        // ── Scroll Progress Bar ──────────────────────────────────────────
+                        const progressBar = document.getElementById('hub-scroll-progress-bar');
+                        window.addEventListener('scroll', () => {
+                            const scrollTop = window.scrollY;
+                            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                            progressBar.style.width = (scrollTop / docHeight * 100) + '%';
+                        }, { passive: true });
 
-        <!-- ─── FOOTER CTA BANNER ─── -->
-        <div class="article-cta-banner" role="complementary" aria-label="Emergency contact banner">
-            <div class="article-cta-banner-inner">
-                <h2>Stranded on a <span>KZN Road?</span> We're 24/7.</h2>
-                <p>Don't wait — our recovery team is always on standby across the greater Durban area, including
-                    Pinetown, Westville, Hillcrest, and Kloof.</p>
-                <div class="article-cta-buttons">
-                    <a href="tel:+27123456789" class="cta-btn-call" id="cta-call-btn">
-                        <i class="fas fa-phone" aria-hidden="true"></i>
-                        Call Millaz Towing Now
-                    </a>
-                    <a href="https://wa.me/27123456789" class="cta-btn-whatsapp" target="_blank"
-                        rel="noopener noreferrer" id="cta-wa-btn">
-                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                        WhatsApp Us
-                    </a>
-                </div>
-            </div>
-        </div>
+                        // ── Intersection Observer — animate on scroll ────────────────────
+                        const animateEls = document.querySelectorAll('.hub-animate');
+                        const observer = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    entry.target.classList.add('visible');
+                                    observer.unobserve(entry.target);
+                                }
+                            });
+                        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+                        animateEls.forEach(el => observer.observe(el));
 
-        <!-- ─── ARTICLE NAVIGATION ─── -->
-        <nav class="article-nav" aria-label="Article navigation">
+                        // ── Nav scroll effect ────────────────────────────────────────────
+                        const nav = document.getElementById('hub-nav');
+                        window.addEventListener('scroll', () => {
+                            nav.style.background = window.scrollY > 60
+                                ? 'rgba(26, 42, 94, 0.92)'
+                                : 'rgba(26, 42, 94, 0.55)';
+                            nav.style.backdropFilter = 'blur(24px)';
+                        }, { passive: true });
 
-            <!-- Previous Article -->
-            <a href="emergency-road-safety-tips.html" class="article-nav-link prev" id="prev-article-link">
-                <span class="article-nav-label">
-                    <i class="fas fa-arrow-left" aria-hidden="true"></i> Previous Article
-                </span>
-                <span class="article-nav-title">Emergency Road Safety Tips for KZN Motorists</span>
-            </a>
+                        // ── Social share buttons — build URLs dynamically ────────────────
+                        const pageUrl = encodeURIComponent(window.location.href);
+                        const pageTitle = encodeURIComponent(document.title);
 
-            <!-- Next Article -->
-            <a href="vehicle-maintenance-importance.html" class="article-nav-link next" id="next-article-link">
-                <span class="article-nav-label">
-                    Next Article <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                </span>
-                <span class="article-nav-title">The Importance of Regular Vehicle Maintenance</span>
-            </a>
+                        document.getElementById('share-whatsapp').href =
+                            `https://wa.me/?text=${pageTitle}%20${pageUrl}`;
+                        document.getElementById('share-facebook').href =
+                            `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+                        document.getElementById('share-twitter').href =
+                            `https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}`;
 
-        </nav>
+                        // ── Sidebar newsletter form ──────────────────────────────────────
+                        const sidebarForm = document.getElementById('sidebar-newsletter-form');
+                        if (sidebarForm) {
+                            sidebarForm.addEventListener('submit', async (e) => {
+                                e.preventDefault();
+                                const btn = document.getElementById('sidebar-submit-btn');
+                                const formData = new FormData(sidebarForm);
 
-    </main>
+                                btn.textContent = 'Subscribing...';
+                                btn.disabled = true;
 
-    <!-- ─── FOOTER ─── -->
-    <footer class="hub-footer" role="contentinfo">
-        <div class="hub-footer-content">
-            <div class="hub-footer-brand">
-                <img src="../assets/millaz_logo_final.png" alt="Millaz Towing Logo">
-                <p>Setting the standard for professional recovery in KZN.</p>
-            </div>
+                                try {
+                                    const response = await fetch('https://ygrsuwvumbdbacbpagfb.supabase.co/rest/v1/newsletter_subscribers', {
+                                        method: 'POST',
+                                        headers: {
+                                            'apikey': 'sb_publishable_AllqobGS8ujKcLJMw1iecw_nAwkEifW',
+                                            'Content-Type': 'application/json',
+                                            'Prefer': 'return=minimal'
+                                        },
+                                        body: JSON.stringify({
+                                            first_name: formData.get('first_name'),
+                                            last_name: formData.get('last_name'),
+                                            email: formData.get('email'),
+                                            source_page: window.location.pathname
+                                        })
+                                    });
 
-            <div class="hub-footer-col">
-                <h4>Quick Links</h4>
-                <ul role="list">
-                    <li><a href="../index.html#services">Services</a></li>
-                    <li><a href="index.html">Authority Hub</a></li>
-                    <li><a href="../index.html#community">Community</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </div>
+                                    if (response.ok) {
+                                        btn.textContent = '✓ You\'re subscribed!';
+                                        btn.style.background = '#25D366';
+                                        sidebarForm.reset();
+                                    } else {
+                                        throw new Error('Subscription failed');
+                                    }
+                                } catch (err) {
+                                    btn.textContent = 'Subscribe Free';
+                                    btn.disabled = false;
+                                    alert('Something went wrong. Please try again.');
+                                }
+                            });
+                        }
 
-            <div class="hub-footer-col">
-                <h4>Contact Us</h4>
-                <p><i class="fas fa-phone" aria-hidden="true"></i> +27 123 456 789</p>
-                <p><i class="fas fa-envelope" aria-hidden="true"></i> help@millaztowing.co.za</p>
-                <div class="hub-social-icons" aria-label="Social media links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                    <a href="https://wa.me/27123456789" aria-label="WhatsApp"><i class="fab fa-whatsapp"
-                            aria-hidden="true"></i></a>
-                </div>
-            </div>
+                        // ── Mobile Menu Toggle ───────────────────────────────────────────
+                        const mobileToggle = document.getElementById('hub-mobile-toggle');
+                        const navLinks = document.getElementById('hub-nav-links');
 
-            <div class="hub-footer-col">
-                <h4>Find Us</h4>
-                <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 22, 24 Gillitts Road<br>West Mead,
-                    Durban, 4091</p>
-                <div style="margin-top:1rem; border-radius:12px; overflow:hidden;">
-                    <iframe
-                        src="https://maps.google.com/maps?q=22+24+Gillitts+Road+West+Mead+Durban+4091&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                        width="100%" height="130" style="border:0; display:block;" allowfullscreen="" loading="lazy"
-                        title="Millaz Towing location map"></iframe>
-                </div>
-            </div>
-        </div>
+                        if (mobileToggle && navLinks) {
+                            mobileToggle.addEventListener('click', () => {
+                                mobileToggle.classList.toggle('active');
+                                navLinks.classList.toggle('active');
+                            });
+                            navLinks.querySelectorAll('a').forEach(link => {
+                                link.addEventListener('click', () => {
+                                    mobileToggle.classList.remove('active');
+                                    navLinks.classList.remove('active');
+                                });
+                            });
+                        }
+                    </script>
 
-        <div class="hub-footer-bottom">
-            <p>&copy; 2026 Millaz Towing. All Rights Reserved. &nbsp;|&nbsp;
-                <a href="index.html" style="color:var(--hub-primary); text-decoration:none;">Authority Hub</a>
-                &nbsp;|&nbsp;
-                <a href="../admin/index.html"
-                    style="color:rgba(255,255,255,0.4); text-decoration:none; font-size:0.8rem;">CMS Login</a>
-            </p>
-        </div>
-    </footer>
-
-    <!-- ─── JAVASCRIPT ─── -->
-    <script>
-        // ── Scroll Progress Bar ──────────────────────────────────────────
-        const progressBar = document.getElementById('hub-scroll-progress-bar');
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            progressBar.style.width = (scrollTop / docHeight * 100) + '%';
-        }, { passive: true });
-
-        // ── Intersection Observer — animate on scroll ────────────────────
-        const animateEls = document.querySelectorAll('.hub-animate');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-        animateEls.forEach(el => observer.observe(el));
-
-        // ── Nav scroll effect ────────────────────────────────────────────
-        const nav = document.getElementById('hub-nav');
-        window.addEventListener('scroll', () => {
-            nav.style.background = window.scrollY > 60
-                ? 'rgba(26, 42, 94, 0.92)'
-                : 'rgba(26, 42, 94, 0.55)';
-            nav.style.backdropFilter = 'blur(24px)';
-        }, { passive: true });
-
-        // ── Social share buttons — build URLs dynamically ────────────────
-        const pageUrl = encodeURIComponent(window.location.href);
-        const pageTitle = encodeURIComponent(document.title);
-
-        document.getElementById('share-whatsapp').href =
-            `https://wa.me/?text=${pageTitle}%20${pageUrl}`;
-        document.getElementById('share-facebook').href =
-            `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
-        document.getElementById('share-twitter').href =
-            `https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}`;
-
-        // ── Sidebar newsletter form ──────────────────────────────────────
-        const sidebarForm = document.getElementById('sidebar-newsletter-form');
-        if (sidebarForm) {
-            sidebarForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                const btn = document.getElementById('sidebar-submit-btn');
-                btn.textContent = 'Subscribing...';
-                btn.disabled = true;
-                try {
-                    await fetch('/', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                        body: new URLSearchParams(new FormData(sidebarForm)).toString()
-                    });
-                    btn.textContent = '✓ You\'re subscribed!';
-                    btn.style.background = '#25D366';
-                } catch {
-                    btn.textContent = 'Subscribe Free';
-                    btn.disabled = false;
-                }
-            });
-        }
-
-        // ── Mobile Menu Toggle ───────────────────────────────────────────
-        const mobileToggle = document.getElementById('hub-mobile-toggle');
-        const navLinks = document.getElementById('hub-nav-links');
-
-        if (mobileToggle && navLinks) {
-            mobileToggle.addEventListener('click', () => {
-                mobileToggle.classList.toggle('active');
-                navLinks.classList.toggle('active');
-            });
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileToggle.classList.remove('active');
-                    navLinks.classList.remove('active');
-                });
-            });
-        }
-    </script>
-
-</body>
+            </body>
 
 </html>

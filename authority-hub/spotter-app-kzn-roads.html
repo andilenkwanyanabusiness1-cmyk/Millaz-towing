@@ -813,551 +813,835 @@
                     <img src="../assets/millaz_logo_final.png" alt="Millaz Towing Logo">
                 </a>
             </div>
-            <ul class="nav-links" id="hub-nav-links" role="list">
-                <li><a href="../index.html#services">Services</a></li>
-                <li><a href="index.html" class="active">Authority Hub</a></li>
-                <li><a href="../index.html#community">Community</a></li>
-            </ul>
-            <a href="tel:+27123456789" class="btn-primary" id="nav-emergency-btn">
-                <i class="fas fa-phone" aria-hidden="true"></i> Emergency Call
-            </a>
-            <button class="mobile-menu-toggle" id="hub-mobile-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
+            }
 
-    <!-- ─── Floating WhatsApp Button ─── -->
-    <a href="https://wa.me/27123456789" class="hub-whatsapp-btn" target="_blank" rel="noopener noreferrer"
-        aria-label="Chat with Millaz Towing on WhatsApp" id="whatsapp-float">
-        <i class="fab fa-whatsapp" aria-hidden="true"></i>
-        <span>Chat with Us</span>
-    </a>
+            .article-cta-banner h2 span {
+            color: var(--hub-primary);
+            }
 
-    <main>
+            .article-cta-banner p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            }
 
-        <!-- ─── ARTICLE HERO ─── -->
-        <section class="article-hero" aria-label="Article hero image">
+            .article-cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            }
 
-            <!-- Option A: Use when a real image is available -->
-            <!-- <img src="/assets/hub-app.jpg" alt="How the Spotter App is Securing KZN Roads" class="article-hero-img"> -->
+            .cta-btn-call {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1rem 2rem;
+            background: var(--hub-primary);
+            color: var(--hub-navy);
+            border-radius: 12px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s var(--hub-smooth);
+            }
 
-            <!-- Option B: Placeholder (remove when real image is added) -->
-            <div class="article-hero-placeholder" aria-hidden="true">
-                <i class="fas fa-road"></i>
-            </div>
+            .cta-btn-call:hover {
+            background: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0, 212, 212, 0.35);
+            }
 
-            <div class="article-hero-overlay">
-                <div class="article-hero-content">
+            .cta-btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1rem 2rem;
+            background: rgba(37, 211, 102, 0.15);
+            border: 2px solid #25D366;
+            color: #25D366;
+            border-radius: 12px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s var(--hub-smooth);
+            }
 
-                    <!-- Breadcrumb -->
-                    <nav class="article-breadcrumb" aria-label="Breadcrumb" style="padding: 0 0 1rem;">
-                        <a href="../index.html">Home</a>
-                        <span class="bc-sep" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
-                        <a href="index.html">Authority Hub</a>
-                        <span class="bc-sep" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
-                        <span class="bc-current" aria-current="page">How the Spotter App is Securing KZN Roads</span>
+            .cta-btn-whatsapp:hover {
+            background: #25D366;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(37, 211, 102, 0.35);
+            }
+
+            /* ── Article Navigation (prev / next) ─────────────────────── */
+            .article-nav {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .article-nav-link {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            padding: 1.25rem 1.5rem;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 16px;
+            text-decoration: none;
+            transition: all 0.3s var(--hub-smooth);
+            }
+
+            .article-nav-link:hover {
+            background: rgba(0, 212, 212, 0.1);
+            border-color: rgba(0, 212, 212, 0.4);
+            transform: translateY(-3px);
+            }
+
+            .article-nav-link.next {
+            text-align: right;
+            }
+
+            .article-nav-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--hub-primary);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-family: 'Outfit', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            }
+
+            .article-nav-link.next .article-nav-label {
+            justify-content: flex-end;
+            }
+
+            .article-nav-title {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.35;
+            }
+
+            /* ── Responsive ───────────────────────────────────────────── */
+            @media (max-width: 968px) {
+            .article-hero {
+            height: 400px;
+            }
+
+            .article-layout {
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            padding: 2.5rem 0 4rem;
+            }
+
+            /* Sidebar moves below article content on mobile */
+            .article-sidebar {
+            position: static;
+            order: 2;
+            }
+
+            .article-body {
+            order: 1;
+            }
+
+            .article-nav {
+            grid-template-columns: 1fr;
+            }
+
+            .article-nav-link.next {
+            text-align: left;
+            }
+
+            .article-nav-link.next .article-nav-label {
+            justify-content: flex-start;
+            }
+            }
+
+            @media (max-width: 600px) {
+            .article-hero {
+            height: 320px;
+            margin-top: 80px;
+            }
+
+            .article-hero-content h1 {
+            font-size: 1.5rem;
+            }
+
+            .article-cta-buttons {
+            flex-direction: column;
+            align-items: center;
+            }
+
+            .cta-btn-call,
+            .cta-btn-whatsapp {
+            width: 100%;
+            justify-content: center;
+            }
+            }
+            </style>
+            </head>
+
+            <body>
+
+                <!-- ─── Scroll Progress ─── -->
+                <div id="hub-scroll-progress-container">
+                    <div id="hub-scroll-progress-bar"></div>
+                </div>
+
+                <!-- ─── Navigation ─── -->
+                <nav class="hub-nav" id="hub-nav" aria-label="Main navigation">
+                    <div class="nav-container">
+                        <div class="logo">
+                            <a href="../index.html" aria-label="Millaz Towing Home">
+                                <img src="../assets/millaz_logo_final.png" alt="Millaz Towing Logo">
+                            </a>
+                        </div>
+                        <ul class="nav-links" id="hub-nav-links" role="list">
+                            <li><a href="../index.html#services">Services</a></li>
+                            <li><a href="index.html" class="active">Authority Hub</a></li>
+                            <li><a href="../index.html#community">Community</a></li>
+                        </ul>
+                        <a href="tel:0737453329" class="btn-primary" id="nav-emergency-btn">
+                            <i class="fas fa-phone" aria-hidden="true"></i> Emergency Call
+                        </a>
+                        <button class="mobile-menu-toggle" id="hub-mobile-toggle" aria-label="Toggle navigation">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </nav>
+
+                <!-- ─── Floating WhatsApp Button ─── -->
+                <a href="https://wa.me/27737453329" class="hub-whatsapp-btn" target="_blank" rel="noopener noreferrer"
+                    aria-label="Chat with Millaz Towing on WhatsApp" id="whatsapp-float">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    <span>Chat with Us</span>
+                </a>
+
+                <main>
+
+                    <!-- ─── ARTICLE HERO ─── -->
+                    <section class="article-hero" aria-label="Article hero image">
+
+                        <!-- Option A: Use when a real image is available -->
+                        <!-- <img src="/assets/hub-app.jpg" alt="How the Spotter App is Securing KZN Roads" class="article-hero-img"> -->
+
+                        <!-- Option B: Placeholder (remove when real image is added) -->
+                        <div class="article-hero-placeholder" aria-hidden="true">
+                            <i class="fas fa-road"></i>
+                        </div>
+
+                        <div class="article-hero-overlay">
+                            <div class="article-hero-content">
+
+                                <!-- Breadcrumb -->
+                                <nav class="article-breadcrumb" aria-label="Breadcrumb" style="padding: 0 0 1rem;">
+                                    <a href="../index.html">Home</a>
+                                    <span class="bc-sep" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+                                    <a href="index.html">Authority Hub</a>
+                                    <span class="bc-sep" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+                                    <span class="bc-current" aria-current="page">How the Spotter App is Securing KZN
+                                        Roads</span>
+                                </nav>
+
+                                <span class="hub-tag" style="background:#FF6B2B; margin-right:8px;">FEATURED</span><span
+                                    class="hub-tag">Community</span>
+                                <h1>How the Spotter App is Securing KZN Roads</h1>
+
+                                <div class="article-meta">
+                                    <div class="article-meta-item">
+                                        <i class="fas fa-user-circle" aria-hidden="true"></i>
+                                        Millaz Towing Team
+                                    </div>
+                                    <div class="article-meta-divider" aria-hidden="true"></div>
+                                    <div class="article-meta-item">
+                                        <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                                        <time datetime="2026-02-15">15 Feb 2026</time>
+                                    </div>
+                                    <div class="article-meta-divider" aria-hidden="true"></div>
+                                    <div class="article-meta-item">
+                                        <i class="fas fa-clock" aria-hidden="true"></i>
+                                        6 min read
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ─── TWO-COLUMN LAYOUT ─── -->
+                    <div class="article-layout">
+
+                        <!-- ── LEFT: Article Body ── -->
+                        <article class="article-body" aria-labelledby="article-main-heading">
+
+                            <div class="article-content" id="article-main-heading">
+
+                                <p>Road safety has entered a new era. While traditional emergency response systems rely
+                                    on delayed
+                                    reporting and fragmented communication, technology now enables instant,
+                                    community-driven
+                                    solutions. The Millaz Towing Spotter App represents this evolution – transforming
+                                    every driver
+                                    into an active participant in securing KwaZulu-Natal's roads while revolutionizing
+                                    how
+                                    accidents, hazards, and traffic incidents are managed.</p>
+                                <h2>The Problem with Traditional Accident Response</h2>
+                                <p>When accidents occur on KZN's roads – whether on the busy N3, in Pinetown's
+                                    commercial districts,
+                                    or along Hillcrest's winding routes – critical minutes are lost. Victims struggle to
+                                    call
+                                    multiple emergency numbers. Dispatchers work to pinpoint exact locations. Response
+                                    teams
+                                    navigate to incidents based on vague descriptions.</p>
+                                <p>This fragmented approach costs time, and in emergencies, time costs lives. Delayed
+                                    medical
+                                    response worsens injuries. Extended road blockages create dangerous secondary
+                                    accidents. Unclear
+                                    information leads to inefficient resource deployment.</p>
+                                <h2>Enter the Spotter App: A Millaz Towing First</h2>
+                                <p>The Spotter App is Millaz Towing's innovative solution to these challenges – a
+                                    comprehensive
+                                    platform that puts road safety in every driver's hands. This isn't just another
+                                    traffic app;
+                                    it's a complete ecosystem connecting drivers, emergency responders, and road
+                                    authorities in
+                                    real-time.</p>
+                                <p>The concept is elegantly simple: empower every driver to become a "spotter" – someone
+                                    who can
+                                    instantly report accidents, hazards, and traffic incidents while receiving live
+                                    updates about
+                                    road conditions across KZN.</p>
+                                <h2>Instant Accident Reporting with GPS Precision</h2>
+                                <p>The app's core feature eliminates confusion and delay from accident reporting. When
+                                    you witness
+                                    or are involved in an accident, a single tap on the "Report Accident" button
+                                    initiates a
+                                    coordinated response. The app automatically captures your precise GPS coordinates,
+                                    eliminating
+                                    the "near the big tree past the garage" vagueness that plagues traditional reports.
+                                </p>
+                                <p>Your report includes essential details: number of vehicles involved, injury
+                                    indicators, hazard
+                                    type (fire, fuel spill, blocked lanes), and optional photos. This rich information
+                                    helps
+                                    response teams prepare appropriately before arrival.</p>
+                                <h2>Immediate Response Team Dispatch</h2>
+                                <p>Traditional systems route through multiple call centers and dispatch offices. The
+                                    Spotter App
+                                    connects you directly to Millaz Towing's response network. Your accident report
+                                    triggers
+                                    immediate notifications to the nearest available response units – whether towing
+                                    vehicles,
+                                    medical teams, or traffic management personnel.</p>
+                                <p>You receive real-time updates: "Response team dispatched – estimated arrival 12
+                                    minutes," "Team
+                                    is 5 minutes away," "Team has arrived at scene." This transparency reduces anxiety
+                                    during
+                                    stressful situations.</p>
+                                <h2>Compensating First Reporters</h2>
+                                <p>Here's where the Spotter App breaks new ground. First reporters – the people who spot
+                                    and report
+                                    accidents or hazards – receive compensation for their rapid response. This
+                                    innovative feature
+                                    transforms passive witnesses into active safety participants.</p>
+                                <p>Why compensate reporters? Because rapid reporting saves lives and reduces road chaos.
+                                    Someone who
+                                    witnesses an accident 30 seconds after it occurs can alert response teams five or
+                                    ten minutes
+                                    faster than if waiting for involved parties to make calls. Those minutes matter
+                                    enormously.</p>
+                                <h2>Live Traffic Updates</h2>
+                                <p>Beyond accident reporting, the Spotter App provides comprehensive real-time traffic
+                                    intelligence.
+                                    The integrated navigation system shows:</p>
+                                <ul>
+                                    <li>Accidents and Incidents: See where accidents have occurred, including
+                                        user-reported
+                                        incidents updated in real-time.</li>
+                                    <li>Roadblocks and Road Closures: Whether it's planned maintenance, police
+                                        roadblocks, or
+                                        emergency closures.</li>
+                                    <li>Traffic Congestion Levels: Color-coded routes show you traffic flow intensity.
+                                    </li>
+                                    <li>Hazard Warnings: Potholes, debris in road, broken traffic lights, dangerous
+                                        conditions.</li>
+                                </ul>
+                                <h2>How Community Reporting Works</h2>
+                                <p>The Spotter App's power lies in its community-driven approach. Every user contributes
+                                    to and
+                                    benefits from collective intelligence:</p>
+                                <ul>
+                                    <li>See something? Report it. Accident ahead? Tap the accident button. Massive
+                                        pothole? Report
+                                        the hazard.</li>
+                                    <li>Verify reports. When multiple users report the same incident, the app verifies
+                                        it as
+                                        confirmed.</li>
+                                    <li>Update in real-time. As situations change – accidents are cleared, roadblocks
+                                        end – the app
+                                        updates automatically.</li>
+                                </ul>
+                                <h2>Join the Movement</h2>
+                                <p>The Spotter App isn't just technology – it's a movement toward collective
+                                    responsibility for road
+                                    safety. Every download, every report, every shared piece of information makes KZN's
+                                    roads safer
+                                    for everyone.</p>
+                                <p>Whether you're a daily commuter navigating Pinetown's busy streets, a long-distance
+                                    traveler on
+                                    the N3, or a parent driving children around Westville and Hillcrest, the Spotter App
+                                    gives you
+                                    tools to protect yourself and help others.</p>
+                                <p>Download the Millaz Towing Spotter App today. Drive safer, navigate smarter, and join
+                                    thousands
+                                    of KZN drivers who are transforming how we share our roads.</p>
+
+                            </div>
+
+                            <!-- ── Social Share Row ── -->
+                            <div class="article-share">
+                                <p>Share this article</p>
+                                <div class="share-buttons">
+                                    <a href="#" class="share-btn share-btn-wa" id="share-whatsapp" target="_blank"
+                                        rel="noopener noreferrer" aria-label="Share on WhatsApp">
+                                        <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+                                    </a>
+                                    <a href="#" class="share-btn share-btn-fb" id="share-facebook" target="_blank"
+                                        rel="noopener noreferrer" aria-label="Share on Facebook">
+                                        <i class="fab fa-facebook" aria-hidden="true"></i> Facebook
+                                    </a>
+                                    <a href="#" class="share-btn share-btn-tw" id="share-twitter" target="_blank"
+                                        rel="noopener noreferrer" aria-label="Share on X (Twitter)">
+                                        <i class="fab fa-x-twitter" aria-hidden="true"></i> X
+                                    </a>
+                                </div>
+                            </div>
+
+                        </article>
+
+                        <!-- ── RIGHT: Sidebar ── -->
+                        <aside class="article-sidebar" aria-label="Article sidebar">
+
+                            <!-- 1. Need Help Now? -->
+                            <div class="sidebar-card sidebar-help-card">
+                                <div class="sidebar-card-title">
+                                    <i class="fas fa-headset" aria-hidden="true"></i>
+                                    Need Help Now?
+                                </div>
+                                <p>Stranded on a KZN road? Our recovery team is on standby 24 hours a day, 7 days a week
+                                    —
+                                    including public holidays.</p>
+                                <a href="https://wa.me/27737453329" class="sidebar-wa-btn" target="_blank"
+                                    rel="noopener noreferrer" aria-label="WhatsApp Millaz Towing">
+                                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                    WhatsApp Us Now
+                                </a>
+                            </div>
+
+                            <!-- 2. Compact Newsletter -->
+                            <div class="sidebar-card">
+                                <div class="sidebar-card-title">
+                                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                                    Stay Road-Ready
+                                </div>
+                                <form class="sidebar-newsletter-form" id="sidebar-newsletter-form"
+                                    aria-label="Sidebar newsletter signup">
+                                    <div class="hub-form-group">
+                                        <input type="text" name="first_name" class="sidebar-input"
+                                            placeholder="First Name" required autocomplete="given-name"
+                                            aria-label="First Name">
+                                    </div>
+                                    <div class="hub-form-group">
+                                        <input type="text" name="last_name" class="sidebar-input"
+                                            placeholder="Last Name" required autocomplete="family-name"
+                                            aria-label="Last Name">
+                                    </div>
+                                    <input type="email" name="email" class="sidebar-input" placeholder="Your email"
+                                        required autocomplete="email" aria-label="Your email address">
+                                    <button type="submit" class="sidebar-submit-btn" id="sidebar-submit-btn">
+                                        Subscribe Free
+                                    </button>
+                                </form>
+                            </div>
+
+                            <!-- 3. Recent Articles -->
+                            <div class="sidebar-card">
+                                <div class="sidebar-card-title">
+                                    <i class="fas fa-newspaper" aria-hidden="true"></i>
+                                    Recent Articles
+                                </div>
+                                <ul class="sidebar-articles-list" role="list">
+                                    <li>
+                                        <a href="post-accident-management.html">
+                                            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                            Critical Protocols: Post-Accident Management
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="spotter-app-kzn-roads.html">
+                                            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                            How the Spotter App is Securing KZN Roads
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="towing-regulations-kzn.html">
+                                            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                            Understanding Towing Regulations in KZN
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="what-to-do-after-road-accident.html">
+                                            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                            What to Do After a Road Accident: A Complete Guide
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="top-5-causes-vehicle-breakdowns-n3.html">
+                                            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                            Top 5 Causes of Vehicle Breakdowns on the N3
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- 4. Browse by Category -->
+                            <div class="sidebar-card">
+                                <div class="sidebar-card-title">
+                                    <i class="fas fa-tags" aria-hidden="true"></i>
+                                    Browse by Category
+                                </div>
+                                <div class="sidebar-categories" role="list">
+                                    <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Strategic
+                                        Safety</a>
+                                    <a href="index.html#all-articles" class="sidebar-cat-tag"
+                                        role="listitem">Community</a>
+                                    <a href="index.html#all-articles" class="sidebar-cat-tag"
+                                        role="listitem">Regulations</a>
+                                    <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Safety
+                                        Guide</a>
+                                    <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Road
+                                        Safety</a>
+                                    <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Safety
+                                        Tips</a>
+                                    <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Consumer
+                                        Guide</a>
+                                    <a href="index.html#all-articles" class="sidebar-cat-tag"
+                                        role="listitem">Maintenance</a>
+                                </div>
+                            </div>
+
+                        </aside>
+
+                    </div><!-- /.article-layout -->
+
+                    <!-- ─── RELATED ARTICLES ─── -->
+                    <section class="related-section" aria-labelledby="related-heading">
+                        <div class="hub-section-header hub-animate">
+                            <h2 id="related-heading">More from the Authority Hub</h2>
+                            <p>Keep reading — more expert guides for KZN motorists</p>
+                            <div class="hub-teal-line"></div>
+                        </div>
+
+                        <div class="articles-grid" id="related-grid">
+
+                            <!-- Related Card 1 -->
+                            <a href="post-accident-management.html" class="article-card hub-animate" id="related-1">
+                                <div class="article-card-img-wrap">
+                                    <div class="article-card-img-placeholder" aria-hidden="true">
+                                        <i class="fas fa-shield-halved"></i>
+                                    </div>
+                                </div>
+                                <div class="article-card-body">
+                                    <span class="hub-tag">Strategic Safety</span>
+                                    <h3>Critical Protocols: Post-Accident Management</h3>
+                                    <p>Mastering the first 15 minutes of an accident scene to ensure driver safety and
+                                        proper
+                                        documentation.</p>
+                                    <div class="article-card-footer">
+                                        <span class="article-card-date">
+                                            <i class="fas fa-calendar-alt" aria-hidden="true"></i> 18 Feb 2026
+                                        </span>
+                                        <span class="btn-read-link">
+                                            Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- Related Card 2 -->
+                            <a href="towing-regulations-kzn.html" class="article-card hub-animate hub-animate-delay-1"
+                                id="related-2">
+                                <div class="article-card-img-wrap">
+                                    <div class="article-card-img-placeholder" aria-hidden="true">
+                                        <i class="fas fa-gavel"></i>
+                                    </div>
+                                </div>
+                                <div class="article-card-body">
+                                    <span class="hub-tag">Regulations</span>
+                                    <h3>Understanding Towing Regulations in KZN</h3>
+                                    <p>Know your rights and the legal framework governing towing operations across
+                                        KwaZulu-Natal.</p>
+                                    <div class="article-card-footer">
+                                        <span class="article-card-date">
+                                            <i class="fas fa-calendar-alt" aria-hidden="true"></i> 12 Feb 2026
+                                        </span>
+                                        <span class="btn-read-link">
+                                            Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- Related Card 3 -->
+                            <a href="emergency-road-safety-tips-kzn.html"
+                                class="article-card hub-animate hub-animate-delay-2" id="related-3">
+                                <div class="article-card-img-wrap">
+                                    <div class="article-card-img-placeholder" aria-hidden="true">
+                                        <i class="fas fa-triangle-exclamation"></i>
+                                    </div>
+                                </div>
+                                <div class="article-card-body">
+                                    <span class="hub-tag">Safety Tips</span>
+                                    <h3>Emergency Road Safety Tips for KZN Motorists</h3>
+                                    <p>What to keep in your vehicle and the correct procedure for stopping on a busy KZN
+                                        road.</p>
+                                    <div class="article-card-footer">
+                                        <span class="article-card-date">
+                                            <i class="fas fa-calendar-alt" aria-hidden="true"></i> 1 Feb 2026
+                                        </span>
+                                        <span class="btn-read-link">
+                                            Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+
+                        </div>
+                    </section>
+
+                    <!-- ─── FOOTER CTA BANNER ─── -->
+                    <div class="article-cta-banner" role="complementary" aria-label="Emergency contact banner">
+                        <div class="article-cta-banner-inner">
+                            <h2>Stranded on a <span>KZN Road?</span> We're 24/7.</h2>
+                            <p>Don't wait — our recovery team is always on standby across the greater Durban area,
+                                including
+                                Pinetown, Westville, Hillcrest, and Kloof.</p>
+                            <div class="article-cta-buttons">
+                                <a href="tel:0737453329" class="cta-btn-call" id="cta-call-btn">
+                                    <i class="fas fa-phone" aria-hidden="true"></i>
+                                    Call Millaz Towing Now
+                                </a>
+                                <a href="https://wa.me/27737453329" class="cta-btn-whatsapp" target="_blank"
+                                    rel="noopener noreferrer" id="cta-wa-btn">
+                                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                    WhatsApp Us
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ─── ARTICLE NAVIGATION ─── -->
+                    <nav class="article-nav" aria-label="Article navigation">
+
+                        <!-- Previous Article -->
+                        <a href="post-accident-management.html" class="article-nav-link prev" id="prev-article-link">
+                            <span class="article-nav-label">
+                                <i class="fas fa-arrow-left" aria-hidden="true"></i> Previous Article
+                            </span>
+                            <span class="article-nav-title">Critical Protocols: Post-Accident Management</span>
+                        </a>
+
+                        <!-- Next Article -->
+                        <a href="towing-regulations-kzn.html" class="article-nav-link next" id="next-article-link">
+                            <span class="article-nav-label">
+                                Next Article <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </span>
+                            <span class="article-nav-title">Understanding Towing Regulations in KZN</span>
+                        </a>
+
                     </nav>
 
-                    <span class="hub-tag" style="background:#FF6B2B; margin-right:8px;">FEATURED</span><span
-                        class="hub-tag">Community</span>
-                    <h1>How the Spotter App is Securing KZN Roads</h1>
+                </main>
 
-                    <div class="article-meta">
-                        <div class="article-meta-item">
-                            <i class="fas fa-user-circle" aria-hidden="true"></i>
-                            Millaz Towing Team
+                <!-- ─── FOOTER ─── -->
+                <footer class="hub-footer" role="contentinfo">
+                    <div class="hub-footer-content">
+                        <div class="hub-footer-brand">
+                            <img src="../assets/millaz_logo_final.png" alt="Millaz Towing Logo">
+                            <p>Setting the standard for professional recovery in KZN.</p>
                         </div>
-                        <div class="article-meta-divider" aria-hidden="true"></div>
-                        <div class="article-meta-item">
-                            <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-                            <time datetime="2026-02-15">15 Feb 2026</time>
+
+                        <div class="hub-footer-col">
+                            <h4>Quick Links</h4>
+                            <ul role="list">
+                                <li><a href="../index.html#services">Services</a></li>
+                                <li><a href="index.html">Authority Hub</a></li>
+                                <li><a href="../index.html#community">Community</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
                         </div>
-                        <div class="article-meta-divider" aria-hidden="true"></div>
-                        <div class="article-meta-item">
-                            <i class="fas fa-clock" aria-hidden="true"></i>
-                            6 min read
+
+                        <div class="hub-footer-col">
+                            <h4>Contact Us</h4>
+                            <div class="contact-info">
+                                <p>📱 Cell: <a href="tel:0737453329" style="color: inherit; text-decoration: none;">073
+                                        745 3329</a></p>
+                                <p>☎️ Tel: <a href="tel:0312735137" style="color: inherit; text-decoration: none;">031
+                                        273 5137</a></p>
+                            </div>
+                            <p><i class="fas fa-envelope" aria-hidden="true"></i> help@millaztowing.co.za</p>
+                            <div class="hub-social-icons" aria-label="Social media links">
+                                <a href="#" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"
+                                        aria-hidden="true"></i></a>
+                                <a href="https://wa.me/27737453329" aria-label="WhatsApp"><i class="fab fa-whatsapp"
+                                        aria-hidden="true"></i></a>
+                            </div>
                         </div>
-                    </div>
 
-                </div>
-            </div>
-        </section>
-
-        <!-- ─── TWO-COLUMN LAYOUT ─── -->
-        <div class="article-layout">
-
-            <!-- ── LEFT: Article Body ── -->
-            <article class="article-body" aria-labelledby="article-main-heading">
-
-                <div class="article-content" id="article-main-heading">
-
-                    <p>Road safety has entered a new era. While traditional emergency response systems rely on delayed
-                        reporting and fragmented communication, technology now enables instant, community-driven
-                        solutions. The Millaz Towing Spotter App represents this evolution – transforming every driver
-                        into an active participant in securing KwaZulu-Natal's roads while revolutionizing how
-                        accidents, hazards, and traffic incidents are managed.</p>
-                    <h2>The Problem with Traditional Accident Response</h2>
-                    <p>When accidents occur on KZN's roads – whether on the busy N3, in Pinetown's commercial districts,
-                        or along Hillcrest's winding routes – critical minutes are lost. Victims struggle to call
-                        multiple emergency numbers. Dispatchers work to pinpoint exact locations. Response teams
-                        navigate to incidents based on vague descriptions.</p>
-                    <p>This fragmented approach costs time, and in emergencies, time costs lives. Delayed medical
-                        response worsens injuries. Extended road blockages create dangerous secondary accidents. Unclear
-                        information leads to inefficient resource deployment.</p>
-                    <h2>Enter the Spotter App: A Millaz Towing First</h2>
-                    <p>The Spotter App is Millaz Towing's innovative solution to these challenges – a comprehensive
-                        platform that puts road safety in every driver's hands. This isn't just another traffic app;
-                        it's a complete ecosystem connecting drivers, emergency responders, and road authorities in
-                        real-time.</p>
-                    <p>The concept is elegantly simple: empower every driver to become a "spotter" – someone who can
-                        instantly report accidents, hazards, and traffic incidents while receiving live updates about
-                        road conditions across KZN.</p>
-                    <h2>Instant Accident Reporting with GPS Precision</h2>
-                    <p>The app's core feature eliminates confusion and delay from accident reporting. When you witness
-                        or are involved in an accident, a single tap on the "Report Accident" button initiates a
-                        coordinated response. The app automatically captures your precise GPS coordinates, eliminating
-                        the "near the big tree past the garage" vagueness that plagues traditional reports.</p>
-                    <p>Your report includes essential details: number of vehicles involved, injury indicators, hazard
-                        type (fire, fuel spill, blocked lanes), and optional photos. This rich information helps
-                        response teams prepare appropriately before arrival.</p>
-                    <h2>Immediate Response Team Dispatch</h2>
-                    <p>Traditional systems route through multiple call centers and dispatch offices. The Spotter App
-                        connects you directly to Millaz Towing's response network. Your accident report triggers
-                        immediate notifications to the nearest available response units – whether towing vehicles,
-                        medical teams, or traffic management personnel.</p>
-                    <p>You receive real-time updates: "Response team dispatched – estimated arrival 12 minutes," "Team
-                        is 5 minutes away," "Team has arrived at scene." This transparency reduces anxiety during
-                        stressful situations.</p>
-                    <h2>Compensating First Reporters</h2>
-                    <p>Here's where the Spotter App breaks new ground. First reporters – the people who spot and report
-                        accidents or hazards – receive compensation for their rapid response. This innovative feature
-                        transforms passive witnesses into active safety participants.</p>
-                    <p>Why compensate reporters? Because rapid reporting saves lives and reduces road chaos. Someone who
-                        witnesses an accident 30 seconds after it occurs can alert response teams five or ten minutes
-                        faster than if waiting for involved parties to make calls. Those minutes matter enormously.</p>
-                    <h2>Live Traffic Updates</h2>
-                    <p>Beyond accident reporting, the Spotter App provides comprehensive real-time traffic intelligence.
-                        The integrated navigation system shows:</p>
-                    <ul>
-                        <li>Accidents and Incidents: See where accidents have occurred, including user-reported
-                            incidents updated in real-time.</li>
-                        <li>Roadblocks and Road Closures: Whether it's planned maintenance, police roadblocks, or
-                            emergency closures.</li>
-                        <li>Traffic Congestion Levels: Color-coded routes show you traffic flow intensity.</li>
-                        <li>Hazard Warnings: Potholes, debris in road, broken traffic lights, dangerous conditions.</li>
-                    </ul>
-                    <h2>How Community Reporting Works</h2>
-                    <p>The Spotter App's power lies in its community-driven approach. Every user contributes to and
-                        benefits from collective intelligence:</p>
-                    <ul>
-                        <li>See something? Report it. Accident ahead? Tap the accident button. Massive pothole? Report
-                            the hazard.</li>
-                        <li>Verify reports. When multiple users report the same incident, the app verifies it as
-                            confirmed.</li>
-                        <li>Update in real-time. As situations change – accidents are cleared, roadblocks end – the app
-                            updates automatically.</li>
-                    </ul>
-                    <h2>Join the Movement</h2>
-                    <p>The Spotter App isn't just technology – it's a movement toward collective responsibility for road
-                        safety. Every download, every report, every shared piece of information makes KZN's roads safer
-                        for everyone.</p>
-                    <p>Whether you're a daily commuter navigating Pinetown's busy streets, a long-distance traveler on
-                        the N3, or a parent driving children around Westville and Hillcrest, the Spotter App gives you
-                        tools to protect yourself and help others.</p>
-                    <p>Download the Millaz Towing Spotter App today. Drive safer, navigate smarter, and join thousands
-                        of KZN drivers who are transforming how we share our roads.</p>
-
-                </div>
-
-                <!-- ── Social Share Row ── -->
-                <div class="article-share">
-                    <p>Share this article</p>
-                    <div class="share-buttons">
-                        <a href="#" class="share-btn share-btn-wa" id="share-whatsapp" target="_blank"
-                            rel="noopener noreferrer" aria-label="Share on WhatsApp">
-                            <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
-                        </a>
-                        <a href="#" class="share-btn share-btn-fb" id="share-facebook" target="_blank"
-                            rel="noopener noreferrer" aria-label="Share on Facebook">
-                            <i class="fab fa-facebook" aria-hidden="true"></i> Facebook
-                        </a>
-                        <a href="#" class="share-btn share-btn-tw" id="share-twitter" target="_blank"
-                            rel="noopener noreferrer" aria-label="Share on X (Twitter)">
-                            <i class="fab fa-x-twitter" aria-hidden="true"></i> X
-                        </a>
-                    </div>
-                </div>
-
-            </article>
-
-            <!-- ── RIGHT: Sidebar ── -->
-            <aside class="article-sidebar" aria-label="Article sidebar">
-
-                <!-- 1. Need Help Now? -->
-                <div class="sidebar-card sidebar-help-card">
-                    <div class="sidebar-card-title">
-                        <i class="fas fa-headset" aria-hidden="true"></i>
-                        Need Help Now?
-                    </div>
-                    <p>Stranded on a KZN road? Our recovery team is on standby 24 hours a day, 7 days a week —
-                        including public holidays.</p>
-                    <a href="https://wa.me/27123456789" class="sidebar-wa-btn" target="_blank" rel="noopener noreferrer"
-                        aria-label="WhatsApp Millaz Towing">
-                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                        WhatsApp Us Now
-                    </a>
-                </div>
-
-                <!-- 2. Compact Newsletter -->
-                <div class="sidebar-card">
-                    <div class="sidebar-card-title">
-                        <i class="fas fa-envelope" aria-hidden="true"></i>
-                        Stay Road-Ready
-                    </div>
-                    <form class="sidebar-newsletter-form" name="sidebar-newsletter" method="POST" data-netlify="true"
-                        netlify-honeypot="bot-field" id="sidebar-newsletter-form"
-                        aria-label="Sidebar newsletter signup">
-                        <input type="hidden" name="form-name" value="sidebar-newsletter">
-                        <p style="display:none;"><label>Don't fill: <input name="bot-field"></label></p>
-
-                        <input type="text" name="name" class="sidebar-input" placeholder="Your name" required
-                            autocomplete="name" aria-label="Your name">
-                        <input type="email" name="email" class="sidebar-input" placeholder="Your email" required
-                            autocomplete="email" aria-label="Your email address">
-                        <button type="submit" class="sidebar-submit-btn" id="sidebar-submit-btn">
-                            Subscribe Free
-                        </button>
-                    </form>
-                </div>
-
-                <!-- 3. Recent Articles -->
-                <div class="sidebar-card">
-                    <div class="sidebar-card-title">
-                        <i class="fas fa-newspaper" aria-hidden="true"></i>
-                        Recent Articles
-                    </div>
-                    <ul class="sidebar-articles-list" role="list">
-                        <li>
-                            <a href="post-accident-management.html">
-                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
-                                Critical Protocols: Post-Accident Management
-                            </a>
-                        </li>
-                        <li>
-                            <a href="spotter-app-kzn-roads.html">
-                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
-                                How the Spotter App is Securing KZN Roads
-                            </a>
-                        </li>
-                        <li>
-                            <a href="towing-regulations-kzn.html">
-                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
-                                Understanding Towing Regulations in KZN
-                            </a>
-                        </li>
-                        <li>
-                            <a href="what-to-do-after-road-accident.html">
-                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
-                                What to Do After a Road Accident: A Complete Guide
-                            </a>
-                        </li>
-                        <li>
-                            <a href="top-5-causes-vehicle-breakdowns-n3.html">
-                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
-                                Top 5 Causes of Vehicle Breakdowns on the N3
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- 4. Browse by Category -->
-                <div class="sidebar-card">
-                    <div class="sidebar-card-title">
-                        <i class="fas fa-tags" aria-hidden="true"></i>
-                        Browse by Category
-                    </div>
-                    <div class="sidebar-categories" role="list">
-                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Strategic Safety</a>
-                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Community</a>
-                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Regulations</a>
-                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Safety Guide</a>
-                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Road Safety</a>
-                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Safety Tips</a>
-                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Consumer Guide</a>
-                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Maintenance</a>
-                    </div>
-                </div>
-
-            </aside>
-
-        </div><!-- /.article-layout -->
-
-        <!-- ─── RELATED ARTICLES ─── -->
-        <section class="related-section" aria-labelledby="related-heading">
-            <div class="hub-section-header hub-animate">
-                <h2 id="related-heading">More from the Authority Hub</h2>
-                <p>Keep reading — more expert guides for KZN motorists</p>
-                <div class="hub-teal-line"></div>
-            </div>
-
-            <div class="articles-grid" id="related-grid">
-
-                <!-- Related Card 1 -->
-                <a href="post-accident-management.html" class="article-card hub-animate" id="related-1">
-                    <div class="article-card-img-wrap">
-                        <div class="article-card-img-placeholder" aria-hidden="true">
-                            <i class="fas fa-shield-halved"></i>
+                        <div class="hub-footer-col">
+                            <h4>Find Us</h4>
+                            <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 22, 24 Gillitts Road<br>West
+                                Mead,
+                                Durban, 4091</p>
+                            <div style="margin-top:1rem; border-radius:12px; overflow:hidden;">
+                                <iframe
+                                    src="https://maps.google.com/maps?q=22+24+Gillitts+Road+West+Mead+Durban+4091&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                    width="100%" height="130" style="border:0; display:block;" allowfullscreen=""
+                                    loading="lazy" title="Millaz Towing location map"></iframe>
+                            </div>
                         </div>
                     </div>
-                    <div class="article-card-body">
-                        <span class="hub-tag">Strategic Safety</span>
-                        <h3>Critical Protocols: Post-Accident Management</h3>
-                        <p>Mastering the first 15 minutes of an accident scene to ensure driver safety and proper
-                            documentation.</p>
-                        <div class="article-card-footer">
-                            <span class="article-card-date">
-                                <i class="fas fa-calendar-alt" aria-hidden="true"></i> 18 Feb 2026
-                            </span>
-                            <span class="btn-read-link">
-                                Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                            </span>
-                        </div>
+
+                    <div class="hub-footer-bottom">
+                        <p>&copy; 2026 Millaz Towing. All Rights Reserved. &nbsp;|&nbsp;
+                            <a href="index.html" style="color:var(--hub-primary); text-decoration:none;">Authority
+                                Hub</a>
+                            &nbsp;|&nbsp;
+                            <a href="../admin/index.html"
+                                style="color:rgba(255,255,255,0.4); text-decoration:none; font-size:0.8rem;">CMS
+                                Login</a>
+                        </p>
                     </div>
-                </a>
+                </footer>
 
-                <!-- Related Card 2 -->
-                <a href="towing-regulations-kzn.html" class="article-card hub-animate hub-animate-delay-1"
-                    id="related-2">
-                    <div class="article-card-img-wrap">
-                        <div class="article-card-img-placeholder" aria-hidden="true">
-                            <i class="fas fa-gavel"></i>
-                        </div>
-                    </div>
-                    <div class="article-card-body">
-                        <span class="hub-tag">Regulations</span>
-                        <h3>Understanding Towing Regulations in KZN</h3>
-                        <p>Know your rights and the legal framework governing towing operations across
-                            KwaZulu-Natal.</p>
-                        <div class="article-card-footer">
-                            <span class="article-card-date">
-                                <i class="fas fa-calendar-alt" aria-hidden="true"></i> 12 Feb 2026
-                            </span>
-                            <span class="btn-read-link">
-                                Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                            </span>
-                        </div>
-                    </div>
-                </a>
+                <!-- ─── JAVASCRIPT ─── -->
+                <script>
+                    // ── Scroll Progress Bar ──────────────────────────────────────────
+                    const progressBar = document.getElementById('hub-scroll-progress-bar');
+                    window.addEventListener('scroll', () => {
+                        const scrollTop = window.scrollY;
+                        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                        progressBar.style.width = (scrollTop / docHeight * 100) + '%';
+                    }, { passive: true });
 
-                <!-- Related Card 3 -->
-                <a href="emergency-road-safety-tips-kzn.html" class="article-card hub-animate hub-animate-delay-2"
-                    id="related-3">
-                    <div class="article-card-img-wrap">
-                        <div class="article-card-img-placeholder" aria-hidden="true">
-                            <i class="fas fa-triangle-exclamation"></i>
-                        </div>
-                    </div>
-                    <div class="article-card-body">
-                        <span class="hub-tag">Safety Tips</span>
-                        <h3>Emergency Road Safety Tips for KZN Motorists</h3>
-                        <p>What to keep in your vehicle and the correct procedure for stopping on a busy KZN
-                            road.</p>
-                        <div class="article-card-footer">
-                            <span class="article-card-date">
-                                <i class="fas fa-calendar-alt" aria-hidden="true"></i> 1 Feb 2026
-                            </span>
-                            <span class="btn-read-link">
-                                Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                            </span>
-                        </div>
-                    </div>
-                </a>
+                    // ── Intersection Observer — animate on scroll ────────────────────
+                    const animateEls = document.querySelectorAll('.hub-animate');
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+                    animateEls.forEach(el => observer.observe(el));
 
-            </div>
-        </section>
+                    // ── Nav scroll effect ────────────────────────────────────────────
+                    const nav = document.getElementById('hub-nav');
+                    window.addEventListener('scroll', () => {
+                        nav.style.background = window.scrollY > 60
+                            ? 'rgba(26, 42, 94, 0.92)'
+                            : 'rgba(26, 42, 94, 0.55)';
+                        nav.style.backdropFilter = 'blur(24px)';
+                    }, { passive: true });
 
-        <!-- ─── FOOTER CTA BANNER ─── -->
-        <div class="article-cta-banner" role="complementary" aria-label="Emergency contact banner">
-            <div class="article-cta-banner-inner">
-                <h2>Stranded on a <span>KZN Road?</span> We're 24/7.</h2>
-                <p>Don't wait — our recovery team is always on standby across the greater Durban area, including
-                    Pinetown, Westville, Hillcrest, and Kloof.</p>
-                <div class="article-cta-buttons">
-                    <a href="tel:+27123456789" class="cta-btn-call" id="cta-call-btn">
-                        <i class="fas fa-phone" aria-hidden="true"></i>
-                        Call Millaz Towing Now
-                    </a>
-                    <a href="https://wa.me/27123456789" class="cta-btn-whatsapp" target="_blank"
-                        rel="noopener noreferrer" id="cta-wa-btn">
-                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                        WhatsApp Us
-                    </a>
-                </div>
-            </div>
-        </div>
+                    // ── Social share buttons — build URLs dynamically ────────────────
+                    const pageUrl = encodeURIComponent(window.location.href);
+                    const pageTitle = encodeURIComponent(document.title);
 
-        <!-- ─── ARTICLE NAVIGATION ─── -->
-        <nav class="article-nav" aria-label="Article navigation">
+                    document.getElementById('share-whatsapp').href =
+                        `https://wa.me/?text=${pageTitle}%20${pageUrl}`;
+                    document.getElementById('share-facebook').href =
+                        `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+                    document.getElementById('share-twitter').href =
+                        `https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}`;
 
-            <!-- Previous Article -->
-            <a href="post-accident-management.html" class="article-nav-link prev" id="prev-article-link">
-                <span class="article-nav-label">
-                    <i class="fas fa-arrow-left" aria-hidden="true"></i> Previous Article
-                </span>
-                <span class="article-nav-title">Critical Protocols: Post-Accident Management</span>
-            </a>
+                    // ── Sidebar newsletter form ──────────────────────────────────────
+                    const sidebarForm = document.getElementById('sidebar-newsletter-form');
+                    if (sidebarForm) {
+                        sidebarForm.addEventListener('submit', async (e) => {
+                            e.preventDefault();
+                            const btn = document.getElementById('sidebar-submit-btn');
+                            const formData = new FormData(sidebarForm);
 
-            <!-- Next Article -->
-            <a href="towing-regulations-kzn.html" class="article-nav-link next" id="next-article-link">
-                <span class="article-nav-label">
-                    Next Article <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                </span>
-                <span class="article-nav-title">Understanding Towing Regulations in KZN</span>
-            </a>
+                            btn.textContent = 'Subscribing...';
+                            btn.disabled = true;
 
-        </nav>
+                            try {
+                                const response = await fetch('https://ygrsuwvumbdbacbpagfb.supabase.co/rest/v1/newsletter_subscribers', {
+                                    method: 'POST',
+                                    headers: {
+                                        'apikey': 'sb_publishable_AllqobGS8ujKcLJMw1iecw_nAwkEifW',
+                                        'Content-Type': 'application/json',
+                                        'Prefer': 'return=minimal'
+                                    },
+                                    body: JSON.stringify({
+                                        first_name: formData.get('first_name'),
+                                        last_name: formData.get('last_name'),
+                                        email: formData.get('email'),
+                                        source_page: window.location.pathname
+                                    })
+                                });
 
-    </main>
-
-    <!-- ─── FOOTER ─── -->
-    <footer class="hub-footer" role="contentinfo">
-        <div class="hub-footer-content">
-            <div class="hub-footer-brand">
-                <img src="../assets/millaz_logo_final.png" alt="Millaz Towing Logo">
-                <p>Setting the standard for professional recovery in KZN.</p>
-            </div>
-
-            <div class="hub-footer-col">
-                <h4>Quick Links</h4>
-                <ul role="list">
-                    <li><a href="../index.html#services">Services</a></li>
-                    <li><a href="index.html">Authority Hub</a></li>
-                    <li><a href="../index.html#community">Community</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </div>
-
-            <div class="hub-footer-col">
-                <h4>Contact Us</h4>
-                <p><i class="fas fa-phone" aria-hidden="true"></i> +27 123 456 789</p>
-                <p><i class="fas fa-envelope" aria-hidden="true"></i> help@millaztowing.co.za</p>
-                <div class="hub-social-icons" aria-label="Social media links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                    <a href="https://wa.me/27123456789" aria-label="WhatsApp"><i class="fab fa-whatsapp"
-                            aria-hidden="true"></i></a>
-                </div>
-            </div>
-
-            <div class="hub-footer-col">
-                <h4>Find Us</h4>
-                <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 22, 24 Gillitts Road<br>West Mead,
-                    Durban, 4091</p>
-                <div style="margin-top:1rem; border-radius:12px; overflow:hidden;">
-                    <iframe
-                        src="https://maps.google.com/maps?q=22+24+Gillitts+Road+West+Mead+Durban+4091&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                        width="100%" height="130" style="border:0; display:block;" allowfullscreen="" loading="lazy"
-                        title="Millaz Towing location map"></iframe>
-                </div>
-            </div>
-        </div>
-
-        <div class="hub-footer-bottom">
-            <p>&copy; 2026 Millaz Towing. All Rights Reserved. &nbsp;|&nbsp;
-                <a href="index.html" style="color:var(--hub-primary); text-decoration:none;">Authority Hub</a>
-                &nbsp;|&nbsp;
-                <a href="../admin/index.html"
-                    style="color:rgba(255,255,255,0.4); text-decoration:none; font-size:0.8rem;">CMS Login</a>
-            </p>
-        </div>
-    </footer>
-
-    <!-- ─── JAVASCRIPT ─── -->
-    <script>
-        // ── Scroll Progress Bar ──────────────────────────────────────────
-        const progressBar = document.getElementById('hub-scroll-progress-bar');
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            progressBar.style.width = (scrollTop / docHeight * 100) + '%';
-        }, { passive: true });
-
-        // ── Intersection Observer — animate on scroll ────────────────────
-        const animateEls = document.querySelectorAll('.hub-animate');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-        animateEls.forEach(el => observer.observe(el));
-
-        // ── Nav scroll effect ────────────────────────────────────────────
-        const nav = document.getElementById('hub-nav');
-        window.addEventListener('scroll', () => {
-            nav.style.background = window.scrollY > 60
-                ? 'rgba(26, 42, 94, 0.92)'
-                : 'rgba(26, 42, 94, 0.55)';
-            nav.style.backdropFilter = 'blur(24px)';
-        }, { passive: true });
-
-        // ── Social share buttons — build URLs dynamically ────────────────
-        const pageUrl = encodeURIComponent(window.location.href);
-        const pageTitle = encodeURIComponent(document.title);
-
-        document.getElementById('share-whatsapp').href =
-            `https://wa.me/?text=${pageTitle}%20${pageUrl}`;
-        document.getElementById('share-facebook').href =
-            `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
-        document.getElementById('share-twitter').href =
-            `https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}`;
-
-        // ── Sidebar newsletter form ──────────────────────────────────────
-        const sidebarForm = document.getElementById('sidebar-newsletter-form');
-        if (sidebarForm) {
-            sidebarForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                const btn = document.getElementById('sidebar-submit-btn');
-                btn.textContent = 'Subscribing...';
-                btn.disabled = true;
-                try {
-                    await fetch('/', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                        body: new URLSearchParams(new FormData(sidebarForm)).toString()
+                                if (response.ok) {
+                                    btn.textContent = '✓ You\'re subscribed!';
+                                    btn.style.background = '#25D366';
+                                    sidebarForm.reset();
+                                } else {
+                                    throw new Error('Subscription failed');
+                                }
+                            } catch (err) {
+                                btn.textContent = 'Subscribe Free';
+                                btn.disabled = false;
+                                alert('Something went wrong. Please try again.');
+                            }
+                        });
                     });
-                    btn.textContent = '✓ You\'re subscribed!';
-                    btn.style.background = '#25D366';
-                } catch {
-                    btn.textContent = 'Subscribe Free';
-                    btn.disabled = false;
-                }
-            });
         }
 
-        // ── Mobile Menu Toggle ───────────────────────────────────────────
-        const mobileToggle = document.getElementById('hub-mobile-toggle');
-        const navLinks = document.getElementById('hub-nav-links');
+                    // ── Mobile Menu Toggle ───────────────────────────────────────────
+                    const mobileToggle = document.getElementById('hub-mobile-toggle');
+                    const navLinks = document.getElementById('hub-nav-links');
 
-        if (mobileToggle && navLinks) {
-            mobileToggle.addEventListener('click', () => {
-                mobileToggle.classList.toggle('active');
-                navLinks.classList.toggle('active');
-            });
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileToggle.classList.remove('active');
-                    navLinks.classList.remove('active');
-                });
-            });
-        }
-    </script>
+                    if (mobileToggle && navLinks) {
+                        mobileToggle.addEventListener('click', () => {
+                            mobileToggle.classList.toggle('active');
+                            navLinks.classList.toggle('active');
+                        });
+                        navLinks.querySelectorAll('a').forEach(link => {
+                            link.addEventListener('click', () => {
+                                mobileToggle.classList.remove('active');
+                                navLinks.classList.remove('active');
+                            });
+                        });
+                    }
+                </script>
 
-</body>
+            </body>
 
 </html>

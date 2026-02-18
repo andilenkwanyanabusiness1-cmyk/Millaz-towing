@@ -33,12 +33,12 @@
                 <li><a href="authority-hub/index.html">Authority Hub</a></li>
                 <li><a href="#community">Community</a></li>
             </ul>
-            <a href="tel:+123456789" class="btn-primary"><i class="fas fa-phone"></i> Emergency Call</a>
+            <a href="tel:0737453329" class="btn-primary"><i class="fas fa-phone"></i> Emergency Call</a>
         </div>
     </nav>
 
     <!-- WhatsApp Chat Button -->
-    <a href="https://wa.me/27123456789" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+    <a href="https://wa.me/27737453329" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -60,20 +60,28 @@
                     <p>Enter your details and our team will be dispatched instantly.</p>
                     <form id="emergency-form">
                         <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+                            <input type="text" name="first_name" placeholder="First Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" placeholder="Phone Number" required>
+                            <input type="text" name="last_name" placeholder="Last Name" required>
                         </div>
                         <div class="form-group">
-                            <select required>
-                                <option value="" disabled selected>Service Needed</option>
-                                <option value="towing">24/7 Towing</option>
-                                <option value="recovery">Accident Recovery</option>
-                                <option value="roadside">Roadside Assistance</option>
+                            <input type="tel" name="contact_number" placeholder="073 745 3329" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email (optional)">
+                        </div>
+                        <div class="form-group">
+                            <select name="service_type" required>
+                                <option value="" disabled selected>Select Service</option>
+                                <option value="immediate_tow">Immediate Tow</option>
+                                <option value="roadside_assistance">Roadside Assistance</option>
+                                <option value="accident_recovery">Accident Recovery</option>
+                                <option value="vehicle_transport">Vehicle Transport</option>
                             </select>
                         </div>
-                        <button type="submit" class="btn-primary w-full">Dispatch Now</button>
+                        <button type="submit" id="dispatch-btn" class="btn-primary w-full">Dispatch Now</button>
+                        <div id="dispatch-message"></div>
                     </form>
                 </div>
             </div>
@@ -236,11 +244,22 @@
                             <h4>Join the Community</h4>
                             <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0.5rem 0 1rem;">Get road
                                 safety alerts & special offers.</p>
-                            <form class="mini-form">
-                                <input type="email" placeholder="Email Address"
-                                    style="width: 100%; padding: 0.8rem; border-radius: 8px; margin-bottom: 0.5rem; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff;">
-                                <button type="submit" class="btn-primary w-full"
+                            <form id="index-newsletter-form" class="mini-form">
+                                <div class="form-group" style="margin-bottom: 0.5rem;">
+                                    <input type="text" name="first_name" placeholder="First Name" required
+                                        style="width: 100%; padding: 0.8rem; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff;">
+                                </div>
+                                <div class="form-group" style="margin-bottom: 0.5rem;">
+                                    <input type="text" name="last_name" placeholder="Last Name" required
+                                        style="width: 100%; padding: 0.8rem; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff;">
+                                </div>
+                                <div class="form-group" style="margin-bottom: 0.5rem;">
+                                    <input type="email" name="email" placeholder="Email Address" required
+                                        style="width: 100%; padding: 0.8rem; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff;">
+                                </div>
+                                <button type="submit" id="index-subscribe-btn" class="btn-primary w-full"
                                     style="padding: 0.8rem;">Subscribe</button>
+                                <div id="index-newsletter-message" style="margin-top: 0.5rem; font-size: 0.8rem;"></div>
                             </form>
                         </div>
                     </div>
@@ -406,12 +425,16 @@
             </div>
             <div class="footer-contact">
                 <h4>Contact Us</h4>
-                <p><i class="fas fa-phone"></i> +27 123 456 789</p>
+                <div class="contact-info">
+                    <p><strong>Call Us 24/7</strong></p>
+                    <p>📱 Cell: <a href="tel:0737453329">073 745 3329</a></p>
+                    <p>☎️ Tel: <a href="tel:0312735137">031 273 5137</a></p>
+                </div>
                 <p><i class="fas fa-envelope"></i> help@millaztowing.co.za</p>
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://wa.me/27737453329"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             <div class="footer-map">
@@ -431,6 +454,101 @@
     </footer>
 
     <script src="main.js"></script>
+    <script>
+        const SUPABASE_URL = 'https://ygrsuwvumbdbacbpagfb.supabase.co';
+        const SUPABASE_ANON_KEY = 'sb_publishable_AllqobGS8ujKcLJMw1iecw_nAwkEifW';
+
+        // Emergency Service Request Form
+        const emergencyForm = document.getElementById('emergency-form');
+        if (emergencyForm) {
+            emergencyForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const dispatchBtn = document.getElementById('dispatch-btn');
+                const messageDiv = document.getElementById('dispatch-message');
+                const formData = new FormData(emergencyForm);
+
+                dispatchBtn.textContent = 'Dispatching...';
+                dispatchBtn.disabled = true;
+
+                const requestData = {
+                    first_name: formData.get('first_name'),
+                    last_name: formData.get('last_name'),
+                    contact_number: formData.get('contact_number'),
+                    email: formData.get('email') || null,
+                    service_type: formData.get('service_type')
+                };
+
+                try {
+                    const response = await fetch(`${SUPABASE_URL}/rest/v1/service_requests`, {
+                        method: 'POST',
+                        headers: {
+                            'apikey': SUPABASE_ANON_KEY,
+                            'Content-Type': 'application/json',
+                            'Prefer': 'return=minimal'
+                        },
+                        body: JSON.stringify(requestData)
+                    });
+
+                    if (response.ok) {
+                        messageDiv.innerHTML = `<p style="color: #4CAF50; margin-top: 1rem;">✓ Team dispatched! We'll contact you at ${requestData.contact_number} within 5 minutes.</p>`;
+                        emergencyForm.reset();
+                    } else {
+                        throw new Error('Dispatch failed');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    messageDiv.innerHTML = '<p style="color: #ff4d4d; margin-top: 1rem;">Unable to dispatch. Please call us: <a href="tel:0737453329" style="color: #fff; text-decoration: underline;">073 745 3329</a></p>';
+                } finally {
+                    dispatchBtn.textContent = 'Dispatch Now';
+                    dispatchBtn.disabled = false;
+                }
+            });
+        }
+
+        // Sidebar Newsletter Form
+        const newsletterForm = document.getElementById('index-newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const subscribeBtn = document.getElementById('index-subscribe-btn');
+                const messageDiv = document.getElementById('index-newsletter-message');
+                const formData = new FormData(newsletterForm);
+
+                subscribeBtn.textContent = 'Subscribing...';
+                subscribeBtn.disabled = true;
+
+                try {
+                    const response = await fetch(`${SUPABASE_URL}/rest/v1/newsletter_subscribers`, {
+                        method: 'POST',
+                        headers: {
+                            'apikey': SUPABASE_ANON_KEY,
+                            'Content-Type': 'application/json',
+                            'Prefer': 'return=minimal'
+                        },
+                        body: JSON.stringify({
+                            first_name: formData.get('first_name'),
+                            last_name: formData.get('last_name'),
+                            email: formData.get('email'),
+                            source_page: window.location.pathname
+                        })
+                    });
+
+                    if (response.ok) {
+                        messageDiv.innerHTML = '<p style="color: #4CAF50;">✓ Subscribed! Check your email.</p>';
+                        newsletterForm.reset();
+                    } else {
+                        throw new Error('Subscription failed');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    messageDiv.innerHTML = '<p style="color: #ff4d4d;">Something went wrong. Please try again.</p>';
+                } finally {
+                    subscribeBtn.textContent = 'Subscribe';
+                    subscribeBtn.disabled = false;
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
