@@ -5,19 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- ═══════════════════════════════════════════════════════════
+         TEMPLATE PLACEHOLDERS — replace per article:
+         Critical Protocols: Post-Accident Management       → e.g. "Critical Protocols: Post-Accident Management"
+         post-accident-management        → e.g. "post-accident-management"
+         Mastering the first 15 minutes of an accident scene to ensure driver safety, vehicle security, and proper documentation for insurance claims. → 155-char meta description
+         Strategic Safety    → e.g. "Strategic Safety"
+         18 Feb 2026        → e.g. "18 February 2026"
+         2026-02-18    → e.g. "2026-02-18"
+         7 min read           → e.g. "7 min read"
+         /assets/hub-safety.jpg      → path to hero image
+         Critical Protocols: Post-Accident Management      → descriptive alt text
+         The Importance of Regular Vehicle Maintenance  → title of previous article
+         vehicle-maintenance-importance.html   → filename of previous article
+         How the Spotter App is Securing KZN Roads  → title of next article
+         spotter-app-kzn-roads.html   → filename of next article
+    ═══════════════════════════════════════════════════════════ -->
+
     <title>Critical Protocols: Post-Accident Management | Authority Hub — Millaz Towing</title>
     <meta name="description"
-        content="Master the critical first 15 minutes after a road accident. Professional protocols for safety, documentation, and emergency response on KZN roads.">
+        content="Mastering the first 15 minutes of an accident scene to ensure driver safety, vehicle security, and proper documentation for insurance claims.">
     <meta name="author" content="Millaz Towing Team">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Critical Protocols: Post-Accident Management | Millaz Towing Authority Hub">
     <meta property="og:description"
-        content="Master the critical first 15 minutes after a road accident. Professional protocols for safety, documentation, and emergency response on KZN roads.">
+        content="Mastering the first 15 minutes of an accident scene to ensure driver safety, vehicle security, and proper documentation for insurance claims.">
     <meta property="og:type" content="article">
     <meta property="og:url"
         content="https://radiant-croissant-f6869e.netlify.app/authority-hub/post-accident-management.html">
-    <meta property="og:image" content="../assets/hub-safety.jpg">
+    <meta property="og:image" content="/assets/hub-safety.jpg">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,6 +48,7 @@
 
     <!-- Hub Styles -->
     <link rel="stylesheet" href="hub.css">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <!-- Article-specific styles (scoped, no impact on hub.css or style.css) -->
     <style>
@@ -795,7 +813,7 @@
                     <img src="../assets/millaz_logo_final.png" alt="Millaz Towing Logo">
                 </a>
             </div>
-            <ul class="nav-links" role="list">
+            <ul class="nav-links" id="hub-nav-links" role="list">
                 <li><a href="../index.html#services">Services</a></li>
                 <li><a href="index.html" class="active">Authority Hub</a></li>
                 <li><a href="../index.html#community">Community</a></li>
@@ -803,6 +821,11 @@
             <a href="tel:+27123456789" class="btn-primary" id="nav-emergency-btn">
                 <i class="fas fa-phone" aria-hidden="true"></i> Emergency Call
             </a>
+            <button class="mobile-menu-toggle" id="hub-mobile-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
@@ -816,57 +839,67 @@
     <main>
 
         <!-- ─── ARTICLE HERO ─── -->
-        <header class="article-hero" aria-labelledby="article-title">
-            <img src="../assets/hub-safety.jpg" alt="Post-accident scene safety and documentation"
-                class="article-hero-img">
+        <section class="article-hero" aria-label="Article hero image">
+
+            <!-- Option A: Use when a real image is available -->
+            <!-- <img src="/assets/hub-safety.jpg" alt="Critical Protocols: Post-Accident Management" class="article-hero-img"> -->
+
+            <!-- Option B: Placeholder (remove when real image is added) -->
+            <div class="article-hero-placeholder" aria-hidden="true">
+                <i class="fas fa-road"></i>
+            </div>
+
             <div class="article-hero-overlay">
                 <div class="article-hero-content">
-                    <span class="featured-badge">
-                        <i class="fas fa-star" aria-hidden="true"></i> Featured
-                    </span>
-                    <span class="hub-tag">Safety Tips</span>
-                    <h1 id="article-title">Critical Protocols: Post-Accident Management</h1>
+
+                    <!-- Breadcrumb -->
+                    <nav class="article-breadcrumb" aria-label="Breadcrumb" style="padding: 0 0 1rem;">
+                        <a href="../index.html">Home</a>
+                        <span class="bc-sep" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+                        <a href="index.html">Authority Hub</a>
+                        <span class="bc-sep" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+                        <span class="bc-current" aria-current="page">Critical Protocols: Post-Accident Management</span>
+                    </nav>
+
+                    <span class="hub-tag" style="background:#FF6B2B; margin-right:8px;">FEATURED</span><span
+                        class="hub-tag">Strategic Safety</span>
+                    <h1>Critical Protocols: Post-Accident Management</h1>
+
                     <div class="article-meta">
                         <div class="article-meta-item">
+                            <i class="fas fa-user-circle" aria-hidden="true"></i>
+                            Millaz Towing Team
+                        </div>
+                        <div class="article-meta-divider" aria-hidden="true"></div>
+                        <div class="article-meta-item">
                             <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-                            <time datetime="2026-02-18">18 February 2026</time>
+                            <time datetime="2026-02-18">18 Feb 2026</time>
                         </div>
                         <div class="article-meta-divider" aria-hidden="true"></div>
                         <div class="article-meta-item">
                             <i class="fas fa-clock" aria-hidden="true"></i>
-                            <span>5 min read</span>
-                        </div>
-                        <div class="article-meta-divider" aria-hidden="true"></div>
-                        <div class="article-meta-item">
-                            <i class="fas fa-user-edit" aria-hidden="true"></i>
-                            <span>Millaz Team</span>
+                            7 min read
                         </div>
                     </div>
+
                 </div>
             </div>
-        </header>
+        </section>
 
-        <!-- ─── BREADCRUMB ─── -->
-        <nav class="article-breadcrumb" aria-label="Breadcrumb">
-            <a href="index.html">Authority Hub</a>
-            <i class="fas fa-chevron-right bc-sep" aria-hidden="true"></i>
-            <span class="bc-current" aria-current="page">Critical Protocols: Post-Accident Management</span>
-        </nav>
-
-        <!-- ─── LAYOUT ─── -->
+        <!-- ─── TWO-COLUMN LAYOUT ─── -->
         <div class="article-layout">
 
-            <!-- Main Content -->
-            <article class="article-body">
-                <div class="article-content">
-                    <p><strong>Mastering the First 15 Minutes</strong></p>
+            <!-- ── LEFT: Article Body ── -->
+            <article class="article-body" aria-labelledby="article-main-heading">
+
+                <div class="article-content" id="article-main-heading">
+
                     <p>The first 15 minutes following a road accident are the most critical. Your actions during this
                         brief window can mean the difference between a manageable situation and a catastrophic outcome.
                         Whether you're involved in a minor fender-bender in Westville or a serious collision on the N3,
                         mastering these protocols ensures driver safety, protects vehicle integrity, and establishes the
                         foundation for insurance and legal processes.</p>
-
-                    <h2>Seconds 1-60: Immediate Safety Assessment</h2>
+                    <h2>Minutes 1-3: Immediate Safety Assessment</h2>
                     <p>The moment impact occurs, your brain floods with adrenaline. Fight the urge to panic. Take three
                         deep breaths, then immediately assess the situation. Are you injured? Can you move? Check
                         yourself first – you cannot help others if you're incapacitated. Check all passengers
@@ -874,8 +907,7 @@
                     <p>Quickly evaluate your vehicle's position. Are you in active traffic lanes? Is there smoke or fuel
                         leaking? Can you see clearly around your vehicle? This 60-second assessment determines your next
                         critical decisions.</p>
-
-                    <h2>Minutes 1-3: Secure the Scene</h2>
+                    <h2>Minutes 3-5: Secure the Scene</h2>
                     <p>If your vehicle is drivable and you're in a dangerous position (highway lane, blind curve,
                         intersection), move it immediately to the shoulder or nearest safe area. Turn off the engine and
                         activate hazard lights. This is not about preserving evidence – it's about preventing secondary
@@ -887,21 +919,17 @@
                     <p>Deploy warning triangles or reflectors at least 45 meters (approximately 50 large steps) behind
                         your vehicle on the same side of the road. On highways, increase this to 100 meters. If
                         visibility is poor due to weather, curves, or hills, place warnings even further back.</p>
-
-                    <h2>Minutes 3-5: Emergency Communications</h2>
+                    <h2>Minutes 5-8: Emergency Communications</h2>
                     <p>Contact emergency services immediately if anyone is injured, vehicles are blocking traffic, or
                         hazardous materials are involved. Dial 10177 (national emergency) or 112 from your mobile phone.
                         Provide clear, calm information: exact location (use highway markers, GPS coordinates, or
                         landmarks), number of vehicles involved, injuries, and any immediate dangers (fire, fuel spills,
-                        trapped occupants). </p>
-
-                    <div class="article-callout">
-                        <p><strong>Pro Tip:</strong> The Millaz Towing Spotter App allows you to report accidents with a
-                            single tap, automatically transmitting your GPS location and dispatching the nearest
-                            response team.</p>
-                    </div>
-
-                    <h2>Minutes 5-8: Medical Triage</h2>
+                        trapped occupants).</p>
+                    <p>This is where technology becomes your ally. The Millaz Towing Spotter App allows you to report
+                        accidents with a single tap, automatically transmitting your GPS location and dispatching the
+                        nearest response team. First reporters even receive compensation for their rapid response –
+                        turning witnesses into heroes who help secure KZN's roads.</p>
+                    <h2>Minutes 8-12: Medical Triage</h2>
                     <p>If trained in first aid, check injured persons systematically. Do not move anyone unless they're
                         in immediate danger (fire, traffic). Moving injured people can worsen spinal injuries or
                         internal trauma. Keep injured persons warm, calm, and still until medical professionals arrive.
@@ -909,75 +937,121 @@
                     <p>Watch for signs of shock: pale skin, rapid breathing, confusion, or loss of consciousness. Shock
                         can be life-threatening and may not appear immediately. Anyone exhibiting shock symptoms needs
                         urgent medical attention.</p>
-                    <p>Never remove motorcycle helmets or attempt to treat serious bleeding unless you're trained. Your
-                        role is to stabilize and comfort until professionals arrive, not to provide advanced medical
-                        care.</p>
-
-                    <h2>Minutes 8-12: Evidence Documentation</h2>
+                    <h2>Minutes 12-15: Evidence Documentation</h2>
                     <p>Once safety is secured and emergency services are contacted, begin documenting the scene. This
-                        evidence is crucial for insurance claims and potential legal proceedings. Photograph everything
-                        from multiple angles: all vehicles involved, damage close-ups, license plates, street signs, and
-                        road conditions.</p>
-
-                    <h2>Minutes 12-15: Information Exchange</h2>
-                    <p>Exchange essential information with all involved parties: full names, contact numbers, license
-                        numbers, and insurance details. Write down witness names and contact information. Get a police
-                        case number if they attend the scene.</p>
-
-                    <div class="article-warning">
-                        <p><strong>Critical Don't:</strong> Don't admit fault – even if you believe you caused the
-                            accident. Official fault determination involves many factors you may not understand in the
-                            moment.</p>
-                    </div>
-
+                        evidence is crucial for insurance claims and potential legal proceedings.</p>
+                    <p>Photograph everything from multiple angles:</p>
+                    <ul>
+                        <li>All vehicles involved (four sides of each vehicle)</li>
+                        <li>Damage close-ups</li>
+                        <li>License plates clearly visible</li>
+                        <li>Street signs, traffic signals, and road markings</li>
+                        <li>Skid marks, debris patterns, and fluid spills</li>
+                        <li>Weather and road conditions</li>
+                        <li>Vehicle positions relative to road features</li>
+                    </ul>
+                    <h2>Information Exchange</h2>
+                    <p>Exchange essential information with all involved parties:</p>
+                    <ul>
+                        <li>Full names and contact numbers</li>
+                        <li>Driver's license numbers</li>
+                        <li>Vehicle registration and license plates</li>
+                        <li>Insurance company names and policy numbers</li>
+                        <li>Vehicle make, model, and color</li>
+                    </ul>
+                    <p>Write down witness names and contact information. Witnesses often leave quickly, and their
+                        statements can be invaluable later.</p>
+                    <h2>Critical Don'ts</h2>
+                    <p>Don't admit fault – even if you believe you caused the accident. Say "I'm sorry this happened,"
+                        not "I'm sorry I caused this." Official fault determination involves many factors you may not
+                        understand in the moment.</p>
+                    <p>Don't sign anything except official police or emergency documents. Never sign blank forms or
+                        documents you haven't read thoroughly.</p>
+                    <p>Don't leave the scene until all official procedures are complete, unless medical emergencies
+                        require it. Leaving prematurely can result in criminal charges.</p>
                     <h2>The Bottom Line</h2>
                     <p>The first 15 minutes after an accident set the trajectory for everything that follows. Mastering
                         these critical protocols protects lives, preserves evidence, and ensures you receive the support
-                        you need. Stay calm, follow the sequence, and remember that professional help is there to
-                        support you through the process.</p>
+                        you need. Stay calm, follow the sequence, and remember that professional help – whether
+                        emergency services, insurance providers, or trusted towing companies like Millaz Towing – is
+                        there to support you through the process.</p>
+
                 </div>
 
-                <!-- Social Share -->
+                <!-- ── Social Share Row ── -->
                 <div class="article-share">
-                    <p>Share this Protocol</p>
+                    <p>Share this article</p>
                     <div class="share-buttons">
-                        <a href="#" class="share-btn share-btn-wa" id="share-whatsapp">
-                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        <a href="#" class="share-btn share-btn-wa" id="share-whatsapp" target="_blank"
+                            rel="noopener noreferrer" aria-label="Share on WhatsApp">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
                         </a>
-                        <a href="#" class="share-btn share-btn-fb" id="share-facebook">
-                            <i class="fab fa-facebook-f"></i> Facebook
+                        <a href="#" class="share-btn share-btn-fb" id="share-facebook" target="_blank"
+                            rel="noopener noreferrer" aria-label="Share on Facebook">
+                            <i class="fab fa-facebook" aria-hidden="true"></i> Facebook
                         </a>
-                        <a href="#" class="share-btn share-btn-tw" id="share-twitter">
-                            <i class="fab fa-x-twitter"></i> Twitter
+                        <a href="#" class="share-btn share-btn-tw" id="share-twitter" target="_blank"
+                            rel="noopener noreferrer" aria-label="Share on X (Twitter)">
+                            <i class="fab fa-x-twitter" aria-hidden="true"></i> X
                         </a>
                     </div>
                 </div>
+
             </article>
 
-            <!-- Sidebar -->
-            <aside class="article-sidebar">
+            <!-- ── RIGHT: Sidebar ── -->
+            <aside class="article-sidebar" aria-label="Article sidebar">
 
-                <!-- 1. Need Help Now -->
+                <!-- 1. Need Help Now? -->
                 <div class="sidebar-card sidebar-help-card">
                     <div class="sidebar-card-title">
                         <i class="fas fa-headset" aria-hidden="true"></i>
                         Need Help Now?
                     </div>
-                    <p>Stranded on a KZN road? Our recovery team is on standby 24 hours a day, 7 days a week.</p>
-                    <a href="https://wa.me/27123456789" class="sidebar-wa-btn" target="_blank"
-                        rel="noopener noreferrer">
+                    <p>Stranded on a KZN road? Our recovery team is on standby 24 hours a day, 7 days a week —
+                        including public holidays.</p>
+                    <a href="https://wa.me/27123456789" class="sidebar-wa-btn" target="_blank" rel="noopener noreferrer"
+                        aria-label="WhatsApp Millaz Towing">
                         <i class="fab fa-whatsapp" aria-hidden="true"></i>
                         WhatsApp Us Now
                     </a>
                 </div>
 
-                <!-- 2. Recent Articles -->
+                <!-- 2. Compact Newsletter -->
+                <div class="sidebar-card">
+                    <div class="sidebar-card-title">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        Stay Road-Ready
+                    </div>
+                    <form class="sidebar-newsletter-form" name="sidebar-newsletter" method="POST" data-netlify="true"
+                        netlify-honeypot="bot-field" id="sidebar-newsletter-form"
+                        aria-label="Sidebar newsletter signup">
+                        <input type="hidden" name="form-name" value="sidebar-newsletter">
+                        <p style="display:none;"><label>Don't fill: <input name="bot-field"></label></p>
+
+                        <input type="text" name="name" class="sidebar-input" placeholder="Your name" required
+                            autocomplete="name" aria-label="Your name">
+                        <input type="email" name="email" class="sidebar-input" placeholder="Your email" required
+                            autocomplete="email" aria-label="Your email address">
+                        <button type="submit" class="sidebar-submit-btn" id="sidebar-submit-btn">
+                            Subscribe Free
+                        </button>
+                    </form>
+                </div>
+
+                <!-- 3. Recent Articles -->
                 <div class="sidebar-card">
                     <div class="sidebar-card-title">
                         <i class="fas fa-newspaper" aria-hidden="true"></i>
-                        Authority Insights
+                        Recent Articles
                     </div>
                     <ul class="sidebar-articles-list" role="list">
+                        <li>
+                            <a href="post-accident-management.html">
+                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                Critical Protocols: Post-Accident Management
+                            </a>
+                        </li>
                         <li>
                             <a href="spotter-app-kzn-roads.html">
                                 <i class="fas fa-chevron-right" aria-hidden="true"></i>
@@ -991,24 +1065,35 @@
                             </a>
                         </li>
                         <li>
-                            <a href="what-to-do-after-accident.html">
+                            <a href="what-to-do-after-road-accident.html">
                                 <i class="fas fa-chevron-right" aria-hidden="true"></i>
-                                What to Do After a Road Accident
+                                What to Do After a Road Accident: A Complete Guide
+                            </a>
+                        </li>
+                        <li>
+                            <a href="top-5-causes-vehicle-breakdowns-n3.html">
+                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                Top 5 Causes of Vehicle Breakdowns on the N3
                             </a>
                         </li>
                     </ul>
                 </div>
 
-                <!-- 3. Categories -->
+                <!-- 4. Browse by Category -->
                 <div class="sidebar-card">
                     <div class="sidebar-card-title">
                         <i class="fas fa-tags" aria-hidden="true"></i>
-                        Categories
+                        Browse by Category
                     </div>
                     <div class="sidebar-categories" role="list">
-                        <a href="index.html#all-articles" class="sidebar-cat-tag">Safety Tips</a>
-                        <a href="index.html#all-articles" class="sidebar-cat-tag">Technology</a>
-                        <a href="index.html#all-articles" class="sidebar-cat-tag">Industry News</a>
+                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Strategic Safety</a>
+                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Community</a>
+                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Regulations</a>
+                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Safety Guide</a>
+                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Road Safety</a>
+                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Safety Tips</a>
+                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Consumer Guide</a>
+                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Maintenance</a>
                     </div>
                 </div>
 
@@ -1019,51 +1104,80 @@
         <!-- ─── RELATED ARTICLES ─── -->
         <section class="related-section" aria-labelledby="related-heading">
             <div class="hub-section-header hub-animate">
-                <h2 id="related-heading">More Safety Guides</h2>
+                <h2 id="related-heading">More from the Authority Hub</h2>
                 <p>Keep reading — more expert guides for KZN motorists</p>
                 <div class="hub-teal-line"></div>
             </div>
 
-            <div class="articles-grid">
+            <div class="articles-grid" id="related-grid">
 
-                <a href="spotter-app-kzn-roads.html" class="article-card hub-animate">
+                <!-- Related Card 1 -->
+                <a href="post-accident-management.html" class="article-card hub-animate" id="related-1">
                     <div class="article-card-img-wrap">
-                        <img src="../assets/hub-app.jpg" alt="Spotter App Impact">
+                        <div class="article-card-img-placeholder" aria-hidden="true">
+                            <i class="fas fa-shield-halved"></i>
+                        </div>
                     </div>
                     <div class="article-card-body">
-                        <span class="hub-tag">Technology</span>
-                        <h3>How the Spotter App is Securing KZN Roads</h3>
-                        <p>Discover how this community-driven platform is transforming road safety in KZN.</p>
+                        <span class="hub-tag">Strategic Safety</span>
+                        <h3>Critical Protocols: Post-Accident Management</h3>
+                        <p>Mastering the first 15 minutes of an accident scene to ensure driver safety and proper
+                            documentation.</p>
                         <div class="article-card-footer">
-                            <span class="btn-read-link">Read More <i class="fas fa-arrow-right"></i></span>
+                            <span class="article-card-date">
+                                <i class="fas fa-calendar-alt" aria-hidden="true"></i> 18 Feb 2026
+                            </span>
+                            <span class="btn-read-link">
+                                Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </span>
                         </div>
                     </div>
                 </a>
 
-                <a href="what-to-do-after-accident.html" class="article-card hub-animate hub-animate-delay-1">
+                <!-- Related Card 2 -->
+                <a href="towing-regulations-kzn.html" class="article-card hub-animate hub-animate-delay-1"
+                    id="related-2">
                     <div class="article-card-img-wrap">
-                        <img src="../assets/hub-recovery.jpg" alt="Accident Guide">
+                        <div class="article-card-img-placeholder" aria-hidden="true">
+                            <i class="fas fa-gavel"></i>
+                        </div>
                     </div>
                     <div class="article-card-body">
-                        <span class="hub-tag">Safety Guide</span>
-                        <h3>What to Do After a Road Accident</h3>
-                        <p>A step-by-step checklist covering safety, police reports, and insurance documentation.</p>
+                        <span class="hub-tag">Regulations</span>
+                        <h3>Understanding Towing Regulations in KZN</h3>
+                        <p>Know your rights and the legal framework governing towing operations across
+                            KwaZulu-Natal.</p>
                         <div class="article-card-footer">
-                            <span class="btn-read-link">Read More <i class="fas fa-arrow-right"></i></span>
+                            <span class="article-card-date">
+                                <i class="fas fa-calendar-alt" aria-hidden="true"></i> 12 Feb 2026
+                            </span>
+                            <span class="btn-read-link">
+                                Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </span>
                         </div>
                     </div>
                 </a>
 
-                <a href="emergency-road-safety-tips.html" class="article-card hub-animate hub-animate-delay-2">
+                <!-- Related Card 3 -->
+                <a href="emergency-road-safety-tips-kzn.html" class="article-card hub-animate hub-animate-delay-2"
+                    id="related-3">
                     <div class="article-card-img-wrap">
-                        <img src="../assets/article-1.png" alt="Safety Tips">
+                        <div class="article-card-img-placeholder" aria-hidden="true">
+                            <i class="fas fa-triangle-exclamation"></i>
+                        </div>
                     </div>
                     <div class="article-card-body">
                         <span class="hub-tag">Safety Tips</span>
-                        <h3>Emergency Road Safety Tips</h3>
-                        <p>What to keep in your vehicle and the correct procedure for stopping on a busy road.</p>
+                        <h3>Emergency Road Safety Tips for KZN Motorists</h3>
+                        <p>What to keep in your vehicle and the correct procedure for stopping on a busy KZN
+                            road.</p>
                         <div class="article-card-footer">
-                            <span class="btn-read-link">Read More <i class="fas fa-arrow-right"></i></span>
+                            <span class="article-card-date">
+                                <i class="fas fa-calendar-alt" aria-hidden="true"></i> 1 Feb 2026
+                            </span>
+                            <span class="btn-read-link">
+                                Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </span>
                         </div>
                     </div>
                 </a>
@@ -1072,13 +1186,20 @@
         </section>
 
         <!-- ─── FOOTER CTA BANNER ─── -->
-        <div class="article-cta-banner" role="complementary">
+        <div class="article-cta-banner" role="complementary" aria-label="Emergency contact banner">
             <div class="article-cta-banner-inner">
                 <h2>Stranded on a <span>KZN Road?</span> We're 24/7.</h2>
-                <p>Don't wait — our recovery team is always on standby across Durban, Pinetown, and Hillcrest.</p>
+                <p>Don't wait — our recovery team is always on standby across the greater Durban area, including
+                    Pinetown, Westville, Hillcrest, and Kloof.</p>
                 <div class="article-cta-buttons">
-                    <a href="tel:+27123456789" class="cta-btn-call">
-                        <i class="fas fa-phone"></i> Call Millaz Now
+                    <a href="tel:+27123456789" class="cta-btn-call" id="cta-call-btn">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        Call Millaz Towing Now
+                    </a>
+                    <a href="https://wa.me/27123456789" class="cta-btn-whatsapp" target="_blank"
+                        rel="noopener noreferrer" id="cta-wa-btn">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        WhatsApp Us
                     </a>
                 </div>
             </div>
@@ -1086,26 +1207,83 @@
 
         <!-- ─── ARTICLE NAVIGATION ─── -->
         <nav class="article-nav" aria-label="Article navigation">
-            <a href="vehicle-maintenance-importance.html" class="article-nav-link prev">
-                <span class="article-nav-label"><i class="fas fa-arrow-left"></i> Previous</span>
+
+            <!-- Previous Article -->
+            <a href="vehicle-maintenance-importance.html" class="article-nav-link prev" id="prev-article-link">
+                <span class="article-nav-label">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i> Previous Article
+                </span>
                 <span class="article-nav-title">The Importance of Regular Vehicle Maintenance</span>
             </a>
-            <a href="spotter-app-kzn-roads.html" class="article-nav-link next">
-                <span class="article-nav-label">Next <i class="fas fa-arrow-right"></i></span>
+
+            <!-- Next Article -->
+            <a href="spotter-app-kzn-roads.html" class="article-nav-link next" id="next-article-link">
+                <span class="article-nav-label">
+                    Next Article <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </span>
                 <span class="article-nav-title">How the Spotter App is Securing KZN Roads</span>
             </a>
+
         </nav>
 
     </main>
 
-    <footer class="hub-footer">
+    <!-- ─── FOOTER ─── -->
+    <footer class="hub-footer" role="contentinfo">
+        <div class="hub-footer-content">
+            <div class="hub-footer-brand">
+                <img src="../assets/millaz_logo_final.png" alt="Millaz Towing Logo">
+                <p>Setting the standard for professional recovery in KZN.</p>
+            </div>
+
+            <div class="hub-footer-col">
+                <h4>Quick Links</h4>
+                <ul role="list">
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="index.html">Authority Hub</a></li>
+                    <li><a href="../index.html#community">Community</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="hub-footer-col">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-phone" aria-hidden="true"></i> +27 123 456 789</p>
+                <p><i class="fas fa-envelope" aria-hidden="true"></i> help@millaztowing.co.za</p>
+                <div class="hub-social-icons" aria-label="Social media links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://wa.me/27123456789" aria-label="WhatsApp"><i class="fab fa-whatsapp"
+                            aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <div class="hub-footer-col">
+                <h4>Find Us</h4>
+                <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 22, 24 Gillitts Road<br>West Mead,
+                    Durban, 4091</p>
+                <div style="margin-top:1rem; border-radius:12px; overflow:hidden;">
+                    <iframe
+                        src="https://maps.google.com/maps?q=22+24+Gillitts+Road+West+Mead+Durban+4091&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        width="100%" height="130" style="border:0; display:block;" allowfullscreen="" loading="lazy"
+                        title="Millaz Towing location map"></iframe>
+                </div>
+            </div>
+        </div>
+
         <div class="hub-footer-bottom">
-            <p>&copy; 2026 Millaz Towing. All Rights Reserved.</p>
+            <p>&copy; 2026 Millaz Towing. All Rights Reserved. &nbsp;|&nbsp;
+                <a href="index.html" style="color:var(--hub-primary); text-decoration:none;">Authority Hub</a>
+                &nbsp;|&nbsp;
+                <a href="../admin/index.html"
+                    style="color:rgba(255,255,255,0.4); text-decoration:none; font-size:0.8rem;">CMS Login</a>
+            </p>
         </div>
     </footer>
 
+    <!-- ─── JAVASCRIPT ─── -->
     <script>
-        // Scroll Progress
+        // ── Scroll Progress Bar ──────────────────────────────────────────
         const progressBar = document.getElementById('hub-scroll-progress-bar');
         window.addEventListener('scroll', () => {
             const scrollTop = window.scrollY;
@@ -1113,13 +1291,79 @@
             progressBar.style.width = (scrollTop / docHeight * 100) + '%';
         }, { passive: true });
 
-        // Share Buttons
+        // ── Intersection Observer — animate on scroll ────────────────────
+        const animateEls = document.querySelectorAll('.hub-animate');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        animateEls.forEach(el => observer.observe(el));
+
+        // ── Nav scroll effect ────────────────────────────────────────────
+        const nav = document.getElementById('hub-nav');
+        window.addEventListener('scroll', () => {
+            nav.style.background = window.scrollY > 60
+                ? 'rgba(26, 42, 94, 0.92)'
+                : 'rgba(26, 42, 94, 0.55)';
+            nav.style.backdropFilter = 'blur(24px)';
+        }, { passive: true });
+
+        // ── Social share buttons — build URLs dynamically ────────────────
         const pageUrl = encodeURIComponent(window.location.href);
         const pageTitle = encodeURIComponent(document.title);
-        document.getElementById('share-whatsapp').href = `https://wa.me/?text=${pageTitle}%20${pageUrl}`;
-        document.getElementById('share-facebook').href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
-        document.getElementById('share-twitter').href = `https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}`;
+
+        document.getElementById('share-whatsapp').href =
+            `https://wa.me/?text=${pageTitle}%20${pageUrl}`;
+        document.getElementById('share-facebook').href =
+            `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+        document.getElementById('share-twitter').href =
+            `https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}`;
+
+        // ── Sidebar newsletter form ──────────────────────────────────────
+        const sidebarForm = document.getElementById('sidebar-newsletter-form');
+        if (sidebarForm) {
+            sidebarForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const btn = document.getElementById('sidebar-submit-btn');
+                btn.textContent = 'Subscribing...';
+                btn.disabled = true;
+                try {
+                    await fetch('/', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        body: new URLSearchParams(new FormData(sidebarForm)).toString()
+                    });
+                    btn.textContent = '✓ You\'re subscribed!';
+                    btn.style.background = '#25D366';
+                } catch {
+                    btn.textContent = 'Subscribe Free';
+                    btn.disabled = false;
+                }
+            });
+        }
+
+        // ── Mobile Menu Toggle ───────────────────────────────────────────
+        const mobileToggle = document.getElementById('hub-mobile-toggle');
+        const navLinks = document.getElementById('hub-nav-links');
+
+        if (mobileToggle && navLinks) {
+            mobileToggle.addEventListener('click', () => {
+                mobileToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileToggle.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+        }
     </script>
+
 </body>
 
 </html>

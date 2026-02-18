@@ -45,6 +45,7 @@
 
     <!-- Hub Styles -->
     <link rel="stylesheet" href="hub.css">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <!-- Article-specific styles (scoped, no impact on hub.css or style.css) -->
     <style>
@@ -809,11 +810,17 @@
                     <img src="../assets/millaz_logo_final.png" alt="Millaz Towing Logo">
                 </a>
             </div>
-            <ul class="nav-links" role="list">
+            <ul class="nav-links" id="hub-nav-links" role="list">
                 <li><a href="../index.html#services">Services</a></li>
                 <li><a href="index.html" class="active">Authority Hub</a></li>
                 <li><a href="../index.html#community">Community</a></li>
             </ul>
+            <div class="hub-mobile-toggle" id="hub-mobile-toggle" aria-label="Toggle navigation" role="button"
+                tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <a href="tel:+27123456789" class="btn-primary" id="nav-emergency-btn">
                 <i class="fas fa-phone" aria-hidden="true"></i> Emergency Call
             </a>
@@ -1265,11 +1272,11 @@
             </div>
         </div>
 
-        <div class="hub-footer-bottom">
-            <p>&copy; 2026 Millaz Towing. All Rights Reserved. &nbsp;|&nbsp;
-                <a href="index.html" style="color:var(--hub-primary); text-decoration:none;">Authority Hub</a>
-            </p>
-        </div>
+        <p>&copy; 2026 Millaz Towing. All Rights Reserved. &nbsp;|&nbsp;
+            <a href="index.html" style="color:var(--hub-primary); text-decoration:none;">Authority Hub</a> &nbsp;|&nbsp;
+            <a href="../admin/index.html"
+                style="color:rgba(255,255,255,0.4); text-decoration:none; font-size:0.8rem;">CMS Login</a>
+        </p>
     </footer>
 
     <!-- ─── JAVASCRIPT ─── -->
@@ -1334,6 +1341,25 @@
                     btn.textContent = 'Subscribe Free';
                     btn.disabled = false;
                 }
+            });
+        }
+
+        // ── Mobile Menu Toggle ───────────────────────────────────────────
+        const mobileToggle = document.getElementById('hub-mobile-toggle');
+        const navLinks = document.getElementById('hub-nav-links');
+
+        if (mobileToggle && navLinks) {
+            mobileToggle.addEventListener('click', () => {
+                mobileToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            // Close menu on link click
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileToggle.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
             });
         }
     </script>

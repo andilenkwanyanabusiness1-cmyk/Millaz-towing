@@ -5,19 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- ═══════════════════════════════════════════════════════════
+         TEMPLATE PLACEHOLDERS — replace per article:
+         How the Spotter App is Securing KZN Roads       → e.g. "Critical Protocols: Post-Accident Management"
+         spotter-app-kzn-roads        → e.g. "post-accident-management"
+         Discover how this community-driven platform is transforming road safety in Pinetown, Westville, Hillcrest, and Kloof — and how Millaz Towing is at the centre of it. → 155-char meta description
+         Community    → e.g. "Strategic Safety"
+         15 Feb 2026        → e.g. "18 February 2026"
+         2026-02-15    → e.g. "2026-02-18"
+         6 min read           → e.g. "7 min read"
+         /assets/hub-app.jpg      → path to hero image
+         How the Spotter App is Securing KZN Roads      → descriptive alt text
+         Critical Protocols: Post-Accident Management  → title of previous article
+         post-accident-management.html   → filename of previous article
+         Understanding Towing Regulations in KZN  → title of next article
+         towing-regulations-kzn.html   → filename of next article
+    ═══════════════════════════════════════════════════════════ -->
+
     <title>How the Spotter App is Securing KZN Roads | Authority Hub — Millaz Towing</title>
     <meta name="description"
-        content="Discover how digital transformation is making road travel safer in KZN. From real-time accident reporting to verified emergency services.">
+        content="Discover how this community-driven platform is transforming road safety in Pinetown, Westville, Hillcrest, and Kloof — and how Millaz Towing is at the centre of it.">
     <meta name="author" content="Millaz Towing Team">
 
     <!-- Open Graph -->
     <meta property="og:title" content="How the Spotter App is Securing KZN Roads | Millaz Towing Authority Hub">
     <meta property="og:description"
-        content="Discover how digital transformation is making road travel safer in KZN. From real-time accident reporting to verified emergency services.">
+        content="Discover how this community-driven platform is transforming road safety in Pinetown, Westville, Hillcrest, and Kloof — and how Millaz Towing is at the centre of it.">
     <meta property="og:type" content="article">
     <meta property="og:url"
         content="https://radiant-croissant-f6869e.netlify.app/authority-hub/spotter-app-kzn-roads.html">
-    <meta property="og:image" content="../assets/hub-app.jpg">
+    <meta property="og:image" content="/assets/hub-app.jpg">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,8 +48,9 @@
 
     <!-- Hub Styles -->
     <link rel="stylesheet" href="hub.css">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-    <!-- Article-specific styles -->
+    <!-- Article-specific styles (scoped, no impact on hub.css or style.css) -->
     <style>
         /* ── Article Hero ─────────────────────────────────────────── */
         .article-hero {
@@ -40,6 +58,7 @@
             height: 520px;
             overflow: hidden;
             margin-top: 100px;
+            /* clear fixed nav */
         }
 
         .article-hero-img {
@@ -47,6 +66,21 @@
             height: 100%;
             object-fit: cover;
             filter: brightness(0.45) saturate(1.1);
+        }
+
+        /* Placeholder shown when no image is available */
+        .article-hero-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a2a5e 0%, #2563a8 50%, #00a8cc 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .article-hero-placeholder i {
+            font-size: 6rem;
+            color: rgba(0, 212, 212, 0.3);
         }
 
         .article-hero-overlay {
@@ -143,13 +177,14 @@
         .article-breadcrumb .bc-current {
             color: rgba(255, 255, 255, 0.85);
             font-weight: 600;
+            /* Truncate long titles */
             max-width: 300px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
-        /* ── Layout ─────────────────────────────────────────── */
+        /* ── Two-column layout ────────────────────────────────────── */
         .article-layout {
             width: 90%;
             max-width: 1200px;
@@ -159,6 +194,12 @@
             grid-template-columns: 65fr 35fr;
             gap: 3.5rem;
             align-items: start;
+        }
+
+        /* ── Article Body ─────────────────────────────────────────── */
+        .article-body {
+            min-width: 0;
+            /* prevent grid blowout */
         }
 
         .article-content {
@@ -180,10 +221,57 @@
             border-bottom: 2px solid rgba(0, 212, 212, 0.25);
         }
 
+        .article-content h3 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--hub-primary);
+            margin: 2rem 0 0.75rem;
+            line-height: 1.3;
+        }
+
         .article-content p {
             margin-bottom: 1.4rem;
         }
 
+        .article-content ul,
+        .article-content ol {
+            margin: 0 0 1.4rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .article-content li {
+            padding-left: 0.25rem;
+        }
+
+        .article-content ul li::marker {
+            color: var(--hub-primary);
+        }
+
+        .article-content ol li::marker {
+            color: var(--hub-primary);
+            font-weight: 700;
+        }
+
+        .article-content strong {
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .article-content a {
+            color: var(--hub-primary);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: opacity 0.2s;
+        }
+
+        .article-content a:hover {
+            opacity: 0.8;
+        }
+
+        /* Callout / tip box */
         .article-callout {
             background: rgba(0, 212, 212, 0.1);
             border-left: 4px solid var(--hub-primary);
@@ -192,10 +280,46 @@
             margin: 2rem 0;
         }
 
+        .article-callout p {
+            margin: 0;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .article-callout strong {
+            color: var(--hub-primary);
+        }
+
+        /* Warning box */
+        .article-warning {
+            background: rgba(255, 107, 43, 0.1);
+            border-left: 4px solid var(--hub-orange);
+            border-radius: 0 12px 12px 0;
+            padding: 1.25rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .article-warning p {
+            margin: 0;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* ── Social Share Row ─────────────────────────────────────── */
         .article-share {
             margin-top: 3rem;
             padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .article-share p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.55);
+            margin-bottom: 0.75rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .share-buttons {
@@ -214,7 +338,7 @@
             font-weight: 700;
             font-size: 0.85rem;
             text-decoration: none;
-            transition: all 0.3s;
+            transition: all 0.3s var(--hub-smooth);
             border: 1px solid transparent;
         }
 
@@ -224,27 +348,83 @@
             color: #25D366;
         }
 
+        .share-btn-wa:hover {
+            background: #25D366;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
         .share-btn-fb {
             background: rgba(24, 119, 242, 0.15);
             border-color: rgba(24, 119, 242, 0.4);
             color: #1877F2;
         }
 
-        /* Sidebar */
+        .share-btn-fb:hover {
+            background: #1877F2;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .share-btn-tw {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .share-btn-tw:hover {
+            background: #000;
+            color: #fff;
+            border-color: #000;
+            transform: translateY(-2px);
+        }
+
+        /* ── Sidebar ──────────────────────────────────────────────── */
         .article-sidebar {
             display: flex;
             flex-direction: column;
             gap: 1.75rem;
             position: sticky;
             top: 120px;
+            /* below fixed nav */
         }
 
         .sidebar-card {
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.18);
             border-radius: 20px;
             padding: 1.75rem;
+        }
+
+        .sidebar-card-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sidebar-card-title i {
+            color: var(--hub-primary);
+            font-size: 0.9rem;
+        }
+
+        /* Need Help Now */
+        .sidebar-help-card {
+            background: linear-gradient(135deg, rgba(0, 212, 212, 0.15) 0%, rgba(26, 42, 94, 0.6) 100%);
+            border-color: rgba(0, 212, 212, 0.35);
+        }
+
+        .sidebar-help-card p {
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.78);
+            margin-bottom: 1.25rem;
+            line-height: 1.55;
         }
 
         .sidebar-wa-btn {
@@ -259,11 +439,249 @@
             border-radius: 12px;
             font-family: 'Outfit', sans-serif;
             font-weight: 800;
+            font-size: 0.95rem;
             text-decoration: none;
-            transition: all 0.3s;
+            transition: all 0.3s var(--hub-smooth);
         }
 
-        /* Nav */
+        .sidebar-wa-btn:hover {
+            background: #1ebe5d;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .sidebar-wa-btn i {
+            font-size: 1.2rem;
+        }
+
+        /* Compact newsletter */
+        .sidebar-newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .sidebar-input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: #fff;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.88rem;
+            transition: all 0.3s;
+            box-sizing: border-box;
+        }
+
+        .sidebar-input::placeholder {
+            color: rgba(255, 255, 255, 0.38);
+        }
+
+        .sidebar-input:focus {
+            outline: none;
+            border-color: var(--hub-primary);
+            background: rgba(255, 255, 255, 0.11);
+            box-shadow: 0 0 0 3px rgba(0, 212, 212, 0.12);
+        }
+
+        .sidebar-submit-btn {
+            width: 100%;
+            padding: 0.85rem;
+            background: var(--hub-primary);
+            color: var(--hub-navy);
+            border: none;
+            border-radius: 10px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s var(--hub-smooth);
+        }
+
+        .sidebar-submit-btn:hover {
+            background: #fff;
+            color: var(--hub-navy);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 212, 212, 0.3);
+        }
+
+        /* Recent articles widget */
+        .sidebar-articles-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .sidebar-articles-list li {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .sidebar-articles-list li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar-articles-list a {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 0.85rem 0;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 0.88rem;
+            line-height: 1.4;
+            font-family: 'Work Sans', sans-serif;
+            transition: color 0.2s;
+        }
+
+        .sidebar-articles-list a:hover {
+            color: var(--hub-primary);
+        }
+
+        .sidebar-articles-list a i {
+            color: var(--hub-primary);
+            font-size: 0.7rem;
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+
+        /* Browse by category */
+        .sidebar-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .sidebar-cat-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: rgba(255, 255, 255, 0.75);
+            padding: 5px 14px;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            font-family: 'Work Sans', sans-serif;
+            text-decoration: none;
+            transition: all 0.25s;
+        }
+
+        .sidebar-cat-tag:hover {
+            background: rgba(0, 212, 212, 0.15);
+            border-color: rgba(0, 212, 212, 0.5);
+            color: var(--hub-primary);
+        }
+
+        /* ── Related Articles ─────────────────────────────────────── */
+        .related-section {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 0 5rem;
+        }
+
+        .related-section .hub-section-header {
+            margin-bottom: 2.5rem;
+        }
+
+        /* ── Footer CTA Banner ────────────────────────────────────── */
+        .article-cta-banner {
+            background: linear-gradient(135deg, rgba(26, 42, 94, 0.95) 0%, rgba(0, 168, 204, 0.4) 100%);
+            border-top: 1px solid rgba(0, 212, 212, 0.3);
+            border-bottom: 1px solid rgba(0, 212, 212, 0.3);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-cta-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, rgba(0, 212, 212, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .article-cta-banner-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .article-cta-banner h2 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            color: #fff;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+        }
+
+        .article-cta-banner h2 span {
+            color: var(--hub-primary);
+        }
+
+        .article-cta-banner p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .article-cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn-call {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1rem 2rem;
+            background: var(--hub-primary);
+            color: var(--hub-navy);
+            border-radius: 12px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s var(--hub-smooth);
+        }
+
+        .cta-btn-call:hover {
+            background: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0, 212, 212, 0.35);
+        }
+
+        .cta-btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1rem 2rem;
+            background: rgba(37, 211, 102, 0.15);
+            border: 2px solid #25D366;
+            color: #25D366;
+            border-radius: 12px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s var(--hub-smooth);
+        }
+
+        .cta-btn-whatsapp:hover {
+            background: #25D366;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(37, 211, 102, 0.35);
+        }
+
+        /* ── Article Navigation (prev / next) ─────────────────────── */
         .article-nav {
             width: 90%;
             max-width: 1200px;
@@ -276,29 +694,105 @@
         }
 
         .article-nav-link {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
             padding: 1.25rem 1.5rem;
             background: rgba(255, 255, 255, 0.06);
             border: 1px solid rgba(255, 255, 255, 0.14);
             border-radius: 16px;
             text-decoration: none;
-            transition: all 0.3s;
+            transition: all 0.3s var(--hub-smooth);
+        }
+
+        .article-nav-link:hover {
+            background: rgba(0, 212, 212, 0.1);
+            border-color: rgba(0, 212, 212, 0.4);
+            transform: translateY(-3px);
         }
 
         .article-nav-link.next {
             text-align: right;
         }
 
+        .article-nav-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--hub-primary);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-family: 'Outfit', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .article-nav-link.next .article-nav-label {
+            justify-content: flex-end;
+        }
+
+        .article-nav-title {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.35;
+        }
+
+        /* ── Responsive ───────────────────────────────────────────── */
         @media (max-width: 968px) {
-            .article-layout {
-                grid-template-columns: 1fr;
+            .article-hero {
+                height: 400px;
             }
 
+            .article-layout {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                padding: 2.5rem 0 4rem;
+            }
+
+            /* Sidebar moves below article content on mobile */
             .article-sidebar {
                 position: static;
+                order: 2;
+            }
+
+            .article-body {
+                order: 1;
             }
 
             .article-nav {
                 grid-template-columns: 1fr;
+            }
+
+            .article-nav-link.next {
+                text-align: left;
+            }
+
+            .article-nav-link.next .article-nav-label {
+                justify-content: flex-start;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .article-hero {
+                height: 320px;
+                margin-top: 80px;
+            }
+
+            .article-hero-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .article-cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-btn-call,
+            .cta-btn-whatsapp {
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
@@ -306,166 +800,564 @@
 
 <body>
 
-    <!-- Scroll Progress -->
+    <!-- ─── Scroll Progress ─── -->
     <div id="hub-scroll-progress-container">
         <div id="hub-scroll-progress-bar"></div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="hub-nav" id="hub-nav">
+    <!-- ─── Navigation ─── -->
+    <nav class="hub-nav" id="hub-nav" aria-label="Main navigation">
         <div class="nav-container">
             <div class="logo">
-                <a href="../index.html"><img src="../assets/millaz_logo_final.png" alt="Logo"></a>
+                <a href="../index.html" aria-label="Millaz Towing Home">
+                    <img src="../assets/millaz_logo_final.png" alt="Millaz Towing Logo">
+                </a>
             </div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="hub-nav-links" role="list">
                 <li><a href="../index.html#services">Services</a></li>
                 <li><a href="index.html" class="active">Authority Hub</a></li>
                 <li><a href="../index.html#community">Community</a></li>
             </ul>
-            <a href="tel:+27123456789" class="btn-primary"><i class="fas fa-phone"></i> Emergency Call</a>
+            <a href="tel:+27123456789" class="btn-primary" id="nav-emergency-btn">
+                <i class="fas fa-phone" aria-hidden="true"></i> Emergency Call
+            </a>
+            <button class="mobile-menu-toggle" id="hub-mobile-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
-    <!-- WhatsApp -->
-    <a href="https://wa.me/27123456789" class="hub-whatsapp-btn" id="whatsapp-float">
-        <i class="fab fa-whatsapp"></i><span>Chat with Us</span>
+    <!-- ─── Floating WhatsApp Button ─── -->
+    <a href="https://wa.me/27123456789" class="hub-whatsapp-btn" target="_blank" rel="noopener noreferrer"
+        aria-label="Chat with Millaz Towing on WhatsApp" id="whatsapp-float">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        <span>Chat with Us</span>
     </a>
 
     <main>
-        <header class="article-hero">
-            <img src="../assets/hub-app.jpg" alt="Spotter App" class="article-hero-img">
+
+        <!-- ─── ARTICLE HERO ─── -->
+        <section class="article-hero" aria-label="Article hero image">
+
+            <!-- Option A: Use when a real image is available -->
+            <!-- <img src="/assets/hub-app.jpg" alt="How the Spotter App is Securing KZN Roads" class="article-hero-img"> -->
+
+            <!-- Option B: Placeholder (remove when real image is added) -->
+            <div class="article-hero-placeholder" aria-hidden="true">
+                <i class="fas fa-road"></i>
+            </div>
+
             <div class="article-hero-overlay">
                 <div class="article-hero-content">
-                    <span class="featured-badge"><i class="fas fa-star"></i> Featured</span>
-                    <span class="hub-tag">Technology</span>
+
+                    <!-- Breadcrumb -->
+                    <nav class="article-breadcrumb" aria-label="Breadcrumb" style="padding: 0 0 1rem;">
+                        <a href="../index.html">Home</a>
+                        <span class="bc-sep" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+                        <a href="index.html">Authority Hub</a>
+                        <span class="bc-sep" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+                        <span class="bc-current" aria-current="page">How the Spotter App is Securing KZN Roads</span>
+                    </nav>
+
+                    <span class="hub-tag" style="background:#FF6B2B; margin-right:8px;">FEATURED</span><span
+                        class="hub-tag">Community</span>
                     <h1>How the Spotter App is Securing KZN Roads</h1>
+
                     <div class="article-meta">
-                        <div class="article-meta-item"><i class="fas fa-calendar-alt"></i><time datetime="2026-02-18">18
-                                February 2026</time></div>
-                        <div class="article-meta-divider"></div>
-                        <div class="article-meta-item"><i class="fas fa-clock"></i><span>6 min read</span></div>
+                        <div class="article-meta-item">
+                            <i class="fas fa-user-circle" aria-hidden="true"></i>
+                            Millaz Towing Team
+                        </div>
+                        <div class="article-meta-divider" aria-hidden="true"></div>
+                        <div class="article-meta-item">
+                            <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                            <time datetime="2026-02-15">15 Feb 2026</time>
+                        </div>
+                        <div class="article-meta-divider" aria-hidden="true"></div>
+                        <div class="article-meta-item">
+                            <i class="fas fa-clock" aria-hidden="true"></i>
+                            6 min read
+                        </div>
                     </div>
+
                 </div>
             </div>
-        </header>
+        </section>
 
-        <nav class="article-breadcrumb">
-            <a href="index.html">Authority Hub</a>
-            <i class="fas fa-chevron-right bc-sep"></i>
-            <span class="bc-current">How the Spotter App is Securing KZN Roads</span>
-        </nav>
-
+        <!-- ─── TWO-COLUMN LAYOUT ─── -->
         <div class="article-layout">
-            <article class="article-body">
-                <div class="article-content">
-                    <p><strong>A Digital Revolution in Road Safety</strong></p>
-                    <p>KwaZulu-Natal's road network, particularly the N3 corridor connecting Durban to Johannesburg, is
-                        among the busiest and most challenging in South Africa. For years, the delay between an accident
-                        occurring and emergency services arriving was a major factor in road fatalities. Today, however,
-                        a digital revolution is taking place. The Spotter App is not just a reporting tool; it’s a
-                        community-driven lifeline that is fundamentally securing KZN’s roads through real-time data and
-                        verified responses.</p>
 
-                    <h2>The Problem: The 'Golden Hour' Deficit</h2>
-                    <p>In emergency medicine, the "Golden Hour" refers to the first 60 minutes after a traumatic injury.
-                        If a patient receives definitive care during this time, their chances of survival increase
-                        exponentially. In South Africa, the average response time for road accidents can sometimes
-                        exceed this critical window due to poor location reporting, traffic congestion, and fragmented
-                        communication between response teams.</p>
+            <!-- ── LEFT: Article Body ── -->
+            <article class="article-body" aria-labelledby="article-main-heading">
 
-                    <h2>How the Spotter App Works</h2>
-                    <p>The Spotter App leverages the power of community vigilance and geolocation technology. When a
-                        registered user ("Spotter") witnesses an accident or road hazard, they can log it instantly. The
-                        app automatically grabs the precise GPS coordinates and allows the user to upload photos and
-                        brief descriptions.</p>
-                    <p>This information is instantly transmitted to a centralized dispatch hub and shared with verified
-                        emergency services, including police, ambulances, and specialized recovery teams like Millaz
-                        Towing. By eliminating the "Where are you?" conversation, the app can shave 10 to 15 minutes off
-                        the total response time.</p>
+                <div class="article-content" id="article-main-heading">
 
-                    <div class="article-callout">
-                        <p><strong>Did you know?</strong> Every minute saved in accident response time directly
-                            correlates to a reduction in secondary collision risk by 5%.</p>
-                    </div>
+                    <p>Road safety has entered a new era. While traditional emergency response systems rely on delayed
+                        reporting and fragmented communication, technology now enables instant, community-driven
+                        solutions. The Millaz Towing Spotter App represents this evolution – transforming every driver
+                        into an active participant in securing KwaZulu-Natal's roads while revolutionizing how
+                        accidents, hazards, and traffic incidents are managed.</p>
+                    <h2>The Problem with Traditional Accident Response</h2>
+                    <p>When accidents occur on KZN's roads – whether on the busy N3, in Pinetown's commercial districts,
+                        or along Hillcrest's winding routes – critical minutes are lost. Victims struggle to call
+                        multiple emergency numbers. Dispatchers work to pinpoint exact locations. Response teams
+                        navigate to incidents based on vague descriptions.</p>
+                    <p>This fragmented approach costs time, and in emergencies, time costs lives. Delayed medical
+                        response worsens injuries. Extended road blockages create dangerous secondary accidents. Unclear
+                        information leads to inefficient resource deployment.</p>
+                    <h2>Enter the Spotter App: A Millaz Towing First</h2>
+                    <p>The Spotter App is Millaz Towing's innovative solution to these challenges – a comprehensive
+                        platform that puts road safety in every driver's hands. This isn't just another traffic app;
+                        it's a complete ecosystem connecting drivers, emergency responders, and road authorities in
+                        real-time.</p>
+                    <p>The concept is elegantly simple: empower every driver to become a "spotter" – someone who can
+                        instantly report accidents, hazards, and traffic incidents while receiving live updates about
+                        road conditions across KZN.</p>
+                    <h2>Instant Accident Reporting with GPS Precision</h2>
+                    <p>The app's core feature eliminates confusion and delay from accident reporting. When you witness
+                        or are involved in an accident, a single tap on the "Report Accident" button initiates a
+                        coordinated response. The app automatically captures your precise GPS coordinates, eliminating
+                        the "near the big tree past the garage" vagueness that plagues traditional reports.</p>
+                    <p>Your report includes essential details: number of vehicles involved, injury indicators, hazard
+                        type (fire, fuel spill, blocked lanes), and optional photos. This rich information helps
+                        response teams prepare appropriately before arrival.</p>
+                    <h2>Immediate Response Team Dispatch</h2>
+                    <p>Traditional systems route through multiple call centers and dispatch offices. The Spotter App
+                        connects you directly to Millaz Towing's response network. Your accident report triggers
+                        immediate notifications to the nearest available response units – whether towing vehicles,
+                        medical teams, or traffic management personnel.</p>
+                    <p>You receive real-time updates: "Response team dispatched – estimated arrival 12 minutes," "Team
+                        is 5 minutes away," "Team has arrived at scene." This transparency reduces anxiety during
+                        stressful situations.</p>
+                    <h2>Compensating First Reporters</h2>
+                    <p>Here's where the Spotter App breaks new ground. First reporters – the people who spot and report
+                        accidents or hazards – receive compensation for their rapid response. This innovative feature
+                        transforms passive witnesses into active safety participants.</p>
+                    <p>Why compensate reporters? Because rapid reporting saves lives and reduces road chaos. Someone who
+                        witnesses an accident 30 seconds after it occurs can alert response teams five or ten minutes
+                        faster than if waiting for involved parties to make calls. Those minutes matter enormously.</p>
+                    <h2>Live Traffic Updates</h2>
+                    <p>Beyond accident reporting, the Spotter App provides comprehensive real-time traffic intelligence.
+                        The integrated navigation system shows:</p>
+                    <ul>
+                        <li>Accidents and Incidents: See where accidents have occurred, including user-reported
+                            incidents updated in real-time.</li>
+                        <li>Roadblocks and Road Closures: Whether it's planned maintenance, police roadblocks, or
+                            emergency closures.</li>
+                        <li>Traffic Congestion Levels: Color-coded routes show you traffic flow intensity.</li>
+                        <li>Hazard Warnings: Potholes, debris in road, broken traffic lights, dangerous conditions.</li>
+                    </ul>
+                    <h2>How Community Reporting Works</h2>
+                    <p>The Spotter App's power lies in its community-driven approach. Every user contributes to and
+                        benefits from collective intelligence:</p>
+                    <ul>
+                        <li>See something? Report it. Accident ahead? Tap the accident button. Massive pothole? Report
+                            the hazard.</li>
+                        <li>Verify reports. When multiple users report the same incident, the app verifies it as
+                            confirmed.</li>
+                        <li>Update in real-time. As situations change – accidents are cleared, roadblocks end – the app
+                            updates automatically.</li>
+                    </ul>
+                    <h2>Join the Movement</h2>
+                    <p>The Spotter App isn't just technology – it's a movement toward collective responsibility for road
+                        safety. Every download, every report, every shared piece of information makes KZN's roads safer
+                        for everyone.</p>
+                    <p>Whether you're a daily commuter navigating Pinetown's busy streets, a long-distance traveler on
+                        the N3, or a parent driving children around Westville and Hillcrest, the Spotter App gives you
+                        tools to protect yourself and help others.</p>
+                    <p>Download the Millaz Towing Spotter App today. Drive safer, navigate smarter, and join thousands
+                        of KZN drivers who are transforming how we share our roads.</p>
 
-                    <h2>Verification: Preventing 'Ghost Calls'</h2>
-                    <p>One of the biggest challenges for KZN emergency services is the prevalence of "ghost calls" or
-                        duplicate reports that misallocate resources. The Spotter App uses a reputation-based system.
-                        Verified Spotters have their reports prioritized, and the platform allows for real-time
-                        validation by other nearby users. This ensures that when Millaz Towing is dispatched, the
-                        situation is real, the location is accurate, and the resources are appropriate.</p>
-
-                    <h2>Securing the N3 Corridor</h2>
-                    <p>The N3 is notorious for heavy vehicle traffic and extreme weather conditions, especially through
-                        the Town Hill and Van Reenen's Pass sections. The Spotter App has become particularly vital
-                        here. By warning other users of accidents or hazards ahead, it prevents the massive pile-ups
-                        that often characterize these tricky road stretches.</p>
-
-                    <h2>The Bottom Line</h2>
-                    <p>Road safety in South Africa is evolving from a reactive model to a proactive, tech-enabled
-                        community effort. The Spotter App isn't just about reporting crashes; it's about building a
-                        digital shield over our roads. By downloading the app and becoming an active spotter, you're not
-                        just a spectator—you're a vital part of the recovery and safety ecosystem in KwaZulu-Natal.</p>
                 </div>
 
+                <!-- ── Social Share Row ── -->
                 <div class="article-share">
-                    <p>Share this Insight</p>
+                    <p>Share this article</p>
                     <div class="share-buttons">
-                        <a href="#" class="share-btn share-btn-wa" id="share-whatsapp"><i class="fab fa-whatsapp"></i>
-                            WhatsApp</a>
-                        <a href="#" class="share-btn share-btn-fb" id="share-facebook"><i class="fab fa-facebook-f"></i>
-                            Facebook</a>
+                        <a href="#" class="share-btn share-btn-wa" id="share-whatsapp" target="_blank"
+                            rel="noopener noreferrer" aria-label="Share on WhatsApp">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+                        </a>
+                        <a href="#" class="share-btn share-btn-fb" id="share-facebook" target="_blank"
+                            rel="noopener noreferrer" aria-label="Share on Facebook">
+                            <i class="fab fa-facebook" aria-hidden="true"></i> Facebook
+                        </a>
+                        <a href="#" class="share-btn share-btn-tw" id="share-twitter" target="_blank"
+                            rel="noopener noreferrer" aria-label="Share on X (Twitter)">
+                            <i class="fab fa-x-twitter" aria-hidden="true"></i> X
+                        </a>
                     </div>
                 </div>
+
             </article>
 
-            <aside class="article-sidebar">
-                <div class="sidebar-card">
-                    <h3>Need Emergency Help?</h3>
-                    <p>Our fleet is fully integrated with KZN's emergency networks for 24/7 rapid response.</p>
-                    <a href="https://wa.me/27123456789" class="sidebar-wa-btn"><i class="fab fa-whatsapp"></i> WhatsApp
-                        Us Now</a>
+            <!-- ── RIGHT: Sidebar ── -->
+            <aside class="article-sidebar" aria-label="Article sidebar">
+
+                <!-- 1. Need Help Now? -->
+                <div class="sidebar-card sidebar-help-card">
+                    <div class="sidebar-card-title">
+                        <i class="fas fa-headset" aria-hidden="true"></i>
+                        Need Help Now?
+                    </div>
+                    <p>Stranded on a KZN road? Our recovery team is on standby 24 hours a day, 7 days a week —
+                        including public holidays.</p>
+                    <a href="https://wa.me/27123456789" class="sidebar-wa-btn" target="_blank" rel="noopener noreferrer"
+                        aria-label="WhatsApp Millaz Towing">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        WhatsApp Us Now
+                    </a>
                 </div>
+
+                <!-- 2. Compact Newsletter -->
                 <div class="sidebar-card">
-                    <h3>More Hub Insights</h3>
-                    <ul style="list-style:none; padding:0; line-height:2;">
-                        <li><a href="post-accident-management.html"
-                                style="color:#fff; text-decoration:none;">Post-Accident Protocols</a></li>
-                        <li><a href="towing-regulations-kzn.html" style="color:#fff; text-decoration:none;">KZN Towing
-                                Regulations</a></li>
-                        <li><a href="emergency-road-safety-tips.html"
-                                style="color:#fff; text-decoration:none;">Emergency Safety Tips</a></li>
+                    <div class="sidebar-card-title">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        Stay Road-Ready
+                    </div>
+                    <form class="sidebar-newsletter-form" name="sidebar-newsletter" method="POST" data-netlify="true"
+                        netlify-honeypot="bot-field" id="sidebar-newsletter-form"
+                        aria-label="Sidebar newsletter signup">
+                        <input type="hidden" name="form-name" value="sidebar-newsletter">
+                        <p style="display:none;"><label>Don't fill: <input name="bot-field"></label></p>
+
+                        <input type="text" name="name" class="sidebar-input" placeholder="Your name" required
+                            autocomplete="name" aria-label="Your name">
+                        <input type="email" name="email" class="sidebar-input" placeholder="Your email" required
+                            autocomplete="email" aria-label="Your email address">
+                        <button type="submit" class="sidebar-submit-btn" id="sidebar-submit-btn">
+                            Subscribe Free
+                        </button>
+                    </form>
+                </div>
+
+                <!-- 3. Recent Articles -->
+                <div class="sidebar-card">
+                    <div class="sidebar-card-title">
+                        <i class="fas fa-newspaper" aria-hidden="true"></i>
+                        Recent Articles
+                    </div>
+                    <ul class="sidebar-articles-list" role="list">
+                        <li>
+                            <a href="post-accident-management.html">
+                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                Critical Protocols: Post-Accident Management
+                            </a>
+                        </li>
+                        <li>
+                            <a href="spotter-app-kzn-roads.html">
+                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                How the Spotter App is Securing KZN Roads
+                            </a>
+                        </li>
+                        <li>
+                            <a href="towing-regulations-kzn.html">
+                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                Understanding Towing Regulations in KZN
+                            </a>
+                        </li>
+                        <li>
+                            <a href="what-to-do-after-road-accident.html">
+                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                What to Do After a Road Accident: A Complete Guide
+                            </a>
+                        </li>
+                        <li>
+                            <a href="top-5-causes-vehicle-breakdowns-n3.html">
+                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                Top 5 Causes of Vehicle Breakdowns on the N3
+                            </a>
+                        </li>
                     </ul>
                 </div>
+
+                <!-- 4. Browse by Category -->
+                <div class="sidebar-card">
+                    <div class="sidebar-card-title">
+                        <i class="fas fa-tags" aria-hidden="true"></i>
+                        Browse by Category
+                    </div>
+                    <div class="sidebar-categories" role="list">
+                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Strategic Safety</a>
+                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Community</a>
+                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Regulations</a>
+                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Safety Guide</a>
+                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Road Safety</a>
+                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Safety Tips</a>
+                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Consumer Guide</a>
+                        <a href="index.html#all-articles" class="sidebar-cat-tag" role="listitem">Maintenance</a>
+                    </div>
+                </div>
+
             </aside>
+
+        </div><!-- /.article-layout -->
+
+        <!-- ─── RELATED ARTICLES ─── -->
+        <section class="related-section" aria-labelledby="related-heading">
+            <div class="hub-section-header hub-animate">
+                <h2 id="related-heading">More from the Authority Hub</h2>
+                <p>Keep reading — more expert guides for KZN motorists</p>
+                <div class="hub-teal-line"></div>
+            </div>
+
+            <div class="articles-grid" id="related-grid">
+
+                <!-- Related Card 1 -->
+                <a href="post-accident-management.html" class="article-card hub-animate" id="related-1">
+                    <div class="article-card-img-wrap">
+                        <div class="article-card-img-placeholder" aria-hidden="true">
+                            <i class="fas fa-shield-halved"></i>
+                        </div>
+                    </div>
+                    <div class="article-card-body">
+                        <span class="hub-tag">Strategic Safety</span>
+                        <h3>Critical Protocols: Post-Accident Management</h3>
+                        <p>Mastering the first 15 minutes of an accident scene to ensure driver safety and proper
+                            documentation.</p>
+                        <div class="article-card-footer">
+                            <span class="article-card-date">
+                                <i class="fas fa-calendar-alt" aria-hidden="true"></i> 18 Feb 2026
+                            </span>
+                            <span class="btn-read-link">
+                                Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Related Card 2 -->
+                <a href="towing-regulations-kzn.html" class="article-card hub-animate hub-animate-delay-1"
+                    id="related-2">
+                    <div class="article-card-img-wrap">
+                        <div class="article-card-img-placeholder" aria-hidden="true">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                    </div>
+                    <div class="article-card-body">
+                        <span class="hub-tag">Regulations</span>
+                        <h3>Understanding Towing Regulations in KZN</h3>
+                        <p>Know your rights and the legal framework governing towing operations across
+                            KwaZulu-Natal.</p>
+                        <div class="article-card-footer">
+                            <span class="article-card-date">
+                                <i class="fas fa-calendar-alt" aria-hidden="true"></i> 12 Feb 2026
+                            </span>
+                            <span class="btn-read-link">
+                                Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Related Card 3 -->
+                <a href="emergency-road-safety-tips-kzn.html" class="article-card hub-animate hub-animate-delay-2"
+                    id="related-3">
+                    <div class="article-card-img-wrap">
+                        <div class="article-card-img-placeholder" aria-hidden="true">
+                            <i class="fas fa-triangle-exclamation"></i>
+                        </div>
+                    </div>
+                    <div class="article-card-body">
+                        <span class="hub-tag">Safety Tips</span>
+                        <h3>Emergency Road Safety Tips for KZN Motorists</h3>
+                        <p>What to keep in your vehicle and the correct procedure for stopping on a busy KZN
+                            road.</p>
+                        <div class="article-card-footer">
+                            <span class="article-card-date">
+                                <i class="fas fa-calendar-alt" aria-hidden="true"></i> 1 Feb 2026
+                            </span>
+                            <span class="btn-read-link">
+                                Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- ─── FOOTER CTA BANNER ─── -->
+        <div class="article-cta-banner" role="complementary" aria-label="Emergency contact banner">
+            <div class="article-cta-banner-inner">
+                <h2>Stranded on a <span>KZN Road?</span> We're 24/7.</h2>
+                <p>Don't wait — our recovery team is always on standby across the greater Durban area, including
+                    Pinetown, Westville, Hillcrest, and Kloof.</p>
+                <div class="article-cta-buttons">
+                    <a href="tel:+27123456789" class="cta-btn-call" id="cta-call-btn">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        Call Millaz Towing Now
+                    </a>
+                    <a href="https://wa.me/27123456789" class="cta-btn-whatsapp" target="_blank"
+                        rel="noopener noreferrer" id="cta-wa-btn">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        WhatsApp Us
+                    </a>
+                </div>
+            </div>
         </div>
 
-        <nav class="article-nav">
-            <a href="post-accident-management.html" class="article-nav-link prev">
-                <span style="color:var(--hub-primary); font-size:0.8rem; font-weight:bold;">PREVIOUS</span><br>
-                <span style="color:#fff;">Critical Protocols: Post-Accident Management</span>
+        <!-- ─── ARTICLE NAVIGATION ─── -->
+        <nav class="article-nav" aria-label="Article navigation">
+
+            <!-- Previous Article -->
+            <a href="post-accident-management.html" class="article-nav-link prev" id="prev-article-link">
+                <span class="article-nav-label">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i> Previous Article
+                </span>
+                <span class="article-nav-title">Critical Protocols: Post-Accident Management</span>
             </a>
-            <a href="towing-regulations-kzn.html" class="article-nav-link next">
-                <span style="color:var(--hub-primary); font-size:0.8rem; font-weight:bold;">NEXT</span><br>
-                <span style="color:#fff;">Understanding Towing Regulations in KZN</span>
+
+            <!-- Next Article -->
+            <a href="towing-regulations-kzn.html" class="article-nav-link next" id="next-article-link">
+                <span class="article-nav-label">
+                    Next Article <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </span>
+                <span class="article-nav-title">Understanding Towing Regulations in KZN</span>
             </a>
+
         </nav>
+
     </main>
 
-    <footer class="hub-footer">
+    <!-- ─── FOOTER ─── -->
+    <footer class="hub-footer" role="contentinfo">
+        <div class="hub-footer-content">
+            <div class="hub-footer-brand">
+                <img src="../assets/millaz_logo_final.png" alt="Millaz Towing Logo">
+                <p>Setting the standard for professional recovery in KZN.</p>
+            </div>
+
+            <div class="hub-footer-col">
+                <h4>Quick Links</h4>
+                <ul role="list">
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="index.html">Authority Hub</a></li>
+                    <li><a href="../index.html#community">Community</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="hub-footer-col">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-phone" aria-hidden="true"></i> +27 123 456 789</p>
+                <p><i class="fas fa-envelope" aria-hidden="true"></i> help@millaztowing.co.za</p>
+                <div class="hub-social-icons" aria-label="Social media links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://wa.me/27123456789" aria-label="WhatsApp"><i class="fab fa-whatsapp"
+                            aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <div class="hub-footer-col">
+                <h4>Find Us</h4>
+                <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 22, 24 Gillitts Road<br>West Mead,
+                    Durban, 4091</p>
+                <div style="margin-top:1rem; border-radius:12px; overflow:hidden;">
+                    <iframe
+                        src="https://maps.google.com/maps?q=22+24+Gillitts+Road+West+Mead+Durban+4091&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        width="100%" height="130" style="border:0; display:block;" allowfullscreen="" loading="lazy"
+                        title="Millaz Towing location map"></iframe>
+                </div>
+            </div>
+        </div>
+
         <div class="hub-footer-bottom">
-            <p>&copy; 2026 Millaz Towing. All Rights Reserved.</p>
+            <p>&copy; 2026 Millaz Towing. All Rights Reserved. &nbsp;|&nbsp;
+                <a href="index.html" style="color:var(--hub-primary); text-decoration:none;">Authority Hub</a>
+                &nbsp;|&nbsp;
+                <a href="../admin/index.html"
+                    style="color:rgba(255,255,255,0.4); text-decoration:none; font-size:0.8rem;">CMS Login</a>
+            </p>
         </div>
     </footer>
 
+    <!-- ─── JAVASCRIPT ─── -->
     <script>
+        // ── Scroll Progress Bar ──────────────────────────────────────────
         const progressBar = document.getElementById('hub-scroll-progress-bar');
         window.addEventListener('scroll', () => {
             const scrollTop = window.scrollY;
             const docHeight = document.documentElement.scrollHeight - window.innerHeight;
             progressBar.style.width = (scrollTop / docHeight * 100) + '%';
         }, { passive: true });
+
+        // ── Intersection Observer — animate on scroll ────────────────────
+        const animateEls = document.querySelectorAll('.hub-animate');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        animateEls.forEach(el => observer.observe(el));
+
+        // ── Nav scroll effect ────────────────────────────────────────────
+        const nav = document.getElementById('hub-nav');
+        window.addEventListener('scroll', () => {
+            nav.style.background = window.scrollY > 60
+                ? 'rgba(26, 42, 94, 0.92)'
+                : 'rgba(26, 42, 94, 0.55)';
+            nav.style.backdropFilter = 'blur(24px)';
+        }, { passive: true });
+
+        // ── Social share buttons — build URLs dynamically ────────────────
+        const pageUrl = encodeURIComponent(window.location.href);
+        const pageTitle = encodeURIComponent(document.title);
+
+        document.getElementById('share-whatsapp').href =
+            `https://wa.me/?text=${pageTitle}%20${pageUrl}`;
+        document.getElementById('share-facebook').href =
+            `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+        document.getElementById('share-twitter').href =
+            `https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}`;
+
+        // ── Sidebar newsletter form ──────────────────────────────────────
+        const sidebarForm = document.getElementById('sidebar-newsletter-form');
+        if (sidebarForm) {
+            sidebarForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const btn = document.getElementById('sidebar-submit-btn');
+                btn.textContent = 'Subscribing...';
+                btn.disabled = true;
+                try {
+                    await fetch('/', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        body: new URLSearchParams(new FormData(sidebarForm)).toString()
+                    });
+                    btn.textContent = '✓ You\'re subscribed!';
+                    btn.style.background = '#25D366';
+                } catch {
+                    btn.textContent = 'Subscribe Free';
+                    btn.disabled = false;
+                }
+            });
+        }
+
+        // ── Mobile Menu Toggle ───────────────────────────────────────────
+        const mobileToggle = document.getElementById('hub-mobile-toggle');
+        const navLinks = document.getElementById('hub-nav-links');
+
+        if (mobileToggle && navLinks) {
+            mobileToggle.addEventListener('click', () => {
+                mobileToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileToggle.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+        }
     </script>
+
 </body>
 
 </html>

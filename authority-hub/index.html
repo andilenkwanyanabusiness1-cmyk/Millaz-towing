@@ -20,6 +20,7 @@
 
     <!-- Hub Styles (self-contained, does NOT modify main style.css) -->
     <link rel="stylesheet" href="hub.css">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 
 <body>
@@ -37,11 +38,17 @@
                     <img src="../assets/millaz_logo_final.png" alt="Millaz Towing Logo">
                 </a>
             </div>
-            <ul class="nav-links" role="list">
+            <ul class="nav-links" id="hub-nav-links" role="list">
                 <li><a href="../index.html#services">Services</a></li>
                 <li><a href="index.html" class="active">Authority Hub</a></li>
                 <li><a href="../index.html#community">Community</a></li>
             </ul>
+            <div class="hub-mobile-toggle" id="hub-mobile-toggle" aria-label="Toggle navigation" role="button"
+                tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <a href="tel:+27123456789" class="btn-primary" id="nav-emergency-btn">
                 <i class="fas fa-phone" aria-hidden="true"></i> Emergency Call
             </a>
@@ -159,13 +166,54 @@
 
             <div class="articles-grid" id="articles-grid">
 
-                <!-- Article 3: Towing Regulations -->
-                <a href="towing-regulations-kzn.html" class="article-card hub-animate" id="article-card-3"
-                    aria-label="Read: Understanding Towing Regulations in KZN">
+                <!-- Article 1: Critical Protocols: Post-Accident Management -->
+                <a href="post-accident-management.html" class="article-card hub-animate" id="article-card-1">
                     <div class="article-card-img-wrap">
-                        <div class="article-card-img-placeholder" aria-hidden="true">
-                            <i class="fas fa-gavel"></i>
+                        <img src="../assets/hub-safety.jpg" alt="Critical Protocols: Post-Accident Management"
+                            loading="lazy">
+                    </div>
+                    <div class="article-card-body">
+                        <span class="hub-tag">Strategic Safety</span>
+                        <h3>Critical Protocols: Post-Accident Management</h3>
+                        <p>Mastering the first 15 minutes of an accident scene to ensure driver safety, vehicle
+                            security, and proper documentation for insurance claims.</p>
+                        <div class="article-card-footer">
+                            <span class="article-card-date">
+                                <i class="fas fa-calendar-alt"></i> 18 Feb 2026
+                            </span>
+                            <span class="btn-read-link">
+                                Read More <i class="fas fa-arrow-right"></i>
+                            </span>
                         </div>
+                    </div>
+                </a>
+
+                <!-- Article 2: How the Spotter App is Securing KZN Roads -->
+                <a href="spotter-app-kzn-roads.html" class="article-card hub-animate" id="article-card-2">
+                    <div class="article-card-img-wrap">
+                        <img src="../assets/hub-app.jpg" alt="How the Spotter App is Securing KZN Roads" loading="lazy">
+                    </div>
+                    <div class="article-card-body">
+                        <span class="hub-tag">Community</span>
+                        <h3>How the Spotter App is Securing KZN Roads</h3>
+                        <p>Discover how this community-driven platform is transforming road safety in Pinetown,
+                            Westville, Hillcrest, and Kloof — and how Millaz Towing is at the centre of it.</p>
+                        <div class="article-card-footer">
+                            <span class="article-card-date">
+                                <i class="fas fa-calendar-alt"></i> 15 Feb 2026
+                            </span>
+                            <span class="btn-read-link">
+                                Read More <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Article 3: Understanding Towing Regulations in KZN -->
+                <a href="towing-regulations-kzn.html" class="article-card hub-animate" id="article-card-3">
+                    <div class="article-card-img-wrap">
+                        <img src="../assets/hub-recovery.jpg" alt="Understanding Towing Regulations in KZN"
+                            loading="lazy">
                     </div>
                     <div class="article-card-body">
                         <span class="hub-tag">Regulations</span>
@@ -174,20 +222,20 @@
                             what operators must comply with and what you're entitled to as a motorist.</p>
                         <div class="article-card-footer">
                             <span class="article-card-date">
-                                <i class="fas fa-calendar-alt" aria-hidden="true"></i> 12 Feb 2026
+                                <i class="fas fa-calendar-alt"></i> 12 Feb 2026
                             </span>
                             <span class="btn-read-link">
-                                Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                Read More <i class="fas fa-arrow-right"></i>
                             </span>
                         </div>
                     </div>
                 </a>
 
-                <!-- Article 4: What to Do After a Road Accident -->
-                <a href="what-to-do-after-accident.html" class="article-card hub-animate hub-animate-delay-1"
-                    id="article-card-4" aria-label="Read: What to Do After a Road Accident: A Complete Guide">
+                <!-- Article 4: What to Do After a Road Accident: A Complete Guide -->
+                <a href="what-to-do-after-road-accident.html" class="article-card hub-animate" id="article-card-4">
                     <div class="article-card-img-wrap">
-                        <img src="../assets/hub-recovery.jpg" alt="Road Accident Guide" loading="lazy">
+                        <img src="../assets/hub-recovery.jpg" alt="What to Do After a Road Accident: A Complete Guide"
+                            loading="lazy">
                     </div>
                     <div class="article-card-body">
                         <span class="hub-tag">Safety Guide</span>
@@ -196,20 +244,20 @@
                             getting the right towing service — when it matters most.</p>
                         <div class="article-card-footer">
                             <span class="article-card-date">
-                                <i class="fas fa-calendar-alt" aria-hidden="true"></i> 10 Feb 2026
+                                <i class="fas fa-calendar-alt"></i> 10 Feb 2026
                             </span>
                             <span class="btn-read-link">
-                                Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                Read More <i class="fas fa-arrow-right"></i>
                             </span>
                         </div>
                     </div>
                 </a>
 
-                <!-- Article 5: Top 5 Causes of Breakdowns on N3 -->
-                <a href="vehicle-breakdowns-n3.html" class="article-card hub-animate hub-animate-delay-2"
-                    id="article-card-5" aria-label="Read: Top 5 Causes of Vehicle Breakdowns on the N3">
+                <!-- Article 5: Top 5 Causes of Vehicle Breakdowns on the N3 -->
+                <a href="vehicle-breakdowns-n3.html" class="article-card hub-animate" id="article-card-5">
                     <div class="article-card-img-wrap">
-                        <img src="../assets/hub-tech.jpg" alt="Vehicle Breakdowns N3" loading="lazy">
+                        <img src="../assets/hub-tech.jpg" alt="Top 5 Causes of Vehicle Breakdowns on the N3"
+                            loading="lazy">
                     </div>
                     <div class="article-card-body">
                         <span class="hub-tag">Road Safety</span>
@@ -218,20 +266,20 @@
                             stranded on the N3, and how to prevent each one.</p>
                         <div class="article-card-footer">
                             <span class="article-card-date">
-                                <i class="fas fa-calendar-alt" aria-hidden="true"></i> 5 Feb 2026
+                                <i class="fas fa-calendar-alt"></i> 05 Feb 2026
                             </span>
                             <span class="btn-read-link">
-                                Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                Read More <i class="fas fa-arrow-right"></i>
                             </span>
                         </div>
                     </div>
                 </a>
 
-                <!-- Article 6: Emergency Road Safety Tips -->
-                <a href="emergency-road-safety-tips.html" class="article-card hub-animate" id="article-card-6"
-                    aria-label="Read: Emergency Road Safety Tips for KZN Motorists">
+                <!-- Article 6: Emergency Road Safety Tips for KZN Motorists -->
+                <a href="emergency-road-safety-tips.html" class="article-card hub-animate" id="article-card-6">
                     <div class="article-card-img-wrap">
-                        <img src="../assets/article-1.png" alt="Emergency Road Safety Tips" loading="lazy">
+                        <img src="../assets/article-1.png" alt="Emergency Road Safety Tips for KZN Motorists"
+                            loading="lazy">
                     </div>
                     <div class="article-card-body">
                         <span class="hub-tag">Safety Tips</span>
@@ -240,20 +288,19 @@
                             stopping on a busy KZN road or highway.</p>
                         <div class="article-card-footer">
                             <span class="article-card-date">
-                                <i class="fas fa-calendar-alt" aria-hidden="true"></i> 1 Feb 2026
+                                <i class="fas fa-calendar-alt"></i> 01 Feb 2026
                             </span>
                             <span class="btn-read-link">
-                                Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                Read More <i class="fas fa-arrow-right"></i>
                             </span>
                         </div>
                     </div>
                 </a>
 
-                <!-- Article 7: How to Choose a Towing Service -->
-                <a href="choose-reliable-towing-service.html" class="article-card hub-animate hub-animate-delay-1"
-                    id="article-card-7" aria-label="Read: How to Choose a Reliable Towing Service">
+                <!-- Article 7: How to Choose a Reliable Towing Service -->
+                <a href="choose-reliable-towing-service.html" class="article-card hub-animate" id="article-card-7">
                     <div class="article-card-img-wrap">
-                        <img src="../assets/article-2.png" alt="Choosing a Towing Service" loading="lazy">
+                        <img src="../assets/article-2.png" alt="How to Choose a Reliable Towing Service" loading="lazy">
                     </div>
                     <div class="article-card-body">
                         <span class="hub-tag">Consumer Guide</span>
@@ -262,20 +309,20 @@
                             and why local reputation matters more than price.</p>
                         <div class="article-card-footer">
                             <span class="article-card-date">
-                                <i class="fas fa-calendar-alt" aria-hidden="true"></i> 28 Jan 2026
+                                <i class="fas fa-calendar-alt"></i> 28 Jan 2026
                             </span>
                             <span class="btn-read-link">
-                                Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                Read More <i class="fas fa-arrow-right"></i>
                             </span>
                         </div>
                     </div>
                 </a>
 
-                <!-- Article 8: Vehicle Maintenance -->
-                <a href="vehicle-maintenance-importance.html" class="article-card hub-animate hub-animate-delay-2"
-                    id="article-card-8" aria-label="Read: The Importance of Regular Vehicle Maintenance">
+                <!-- Article 8: The Importance of Regular Vehicle Maintenance -->
+                <a href="vehicle-maintenance-importance.html" class="article-card hub-animate" id="article-card-8">
                     <div class="article-card-img-wrap">
-                        <img src="../assets/article-3.png" alt="Vehicle Maintenance" loading="lazy">
+                        <img src="../assets/article-3.png" alt="The Importance of Regular Vehicle Maintenance"
+                            loading="lazy">
                     </div>
                     <div class="article-card-body">
                         <span class="hub-tag">Maintenance</span>
@@ -284,15 +331,14 @@
                             costly breakdowns and avoidable accidents on our roads.</p>
                         <div class="article-card-footer">
                             <span class="article-card-date">
-                                <i class="fas fa-calendar-alt" aria-hidden="true"></i> 20 Jan 2026
+                                <i class="fas fa-calendar-alt"></i> 20 Jan 2026
                             </span>
                             <span class="btn-read-link">
-                                Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                Read More <i class="fas fa-arrow-right"></i>
                             </span>
                         </div>
                     </div>
                 </a>
-
             </div>
         </section>
 
@@ -425,8 +471,12 @@
         </div>
 
         <div class="hub-footer-bottom">
-            <p>&copy; 2026 Millaz Towing. All Rights Reserved. &nbsp;|&nbsp; <a href="index.html"
-                    style="color:var(--hub-primary); text-decoration:none;">Authority Hub</a></p>
+            <p>&copy; 2026 Millaz Towing. All Rights Reserved. &nbsp;|&nbsp;
+                <a href="index.html" style="color:var(--hub-primary); text-decoration:none;">Authority Hub</a>
+                &nbsp;|&nbsp;
+                <a href="../admin/index.html"
+                    style="color:rgba(255,255,255,0.4); text-decoration:none; font-size:0.8rem;">CMS Login</a>
+            </p>
         </div>
     </footer>
 
@@ -505,6 +555,25 @@
             }
             lastScroll = current;
         }, { passive: true });
+
+        // ── Mobile Menu Toggle ───────────────────────────────────────────
+        const mobileToggle = document.getElementById('hub-mobile-toggle');
+        const navLinks = document.getElementById('hub-nav-links');
+
+        if (mobileToggle && navLinks) {
+            mobileToggle.addEventListener('click', () => {
+                mobileToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            // Close menu on link click
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileToggle.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+        }
     </script>
 
 </body>

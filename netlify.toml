@@ -1,0 +1,3 @@
+[build]
+  command = "python authority-hub/generate_articles.py"
+  publish = "."
