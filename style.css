@@ -1607,8 +1607,8 @@ select option {
     height: 80%;
     /* Aligning centrally with the feature cards */
     align-self: center;
-    transform: translateY(-20%);
-    /* Shifted up by 20% */
+    transform: translateY(5%);
+    /* Shifted down to give intro text breathing room */
 }
 
 .team-image-container img {
