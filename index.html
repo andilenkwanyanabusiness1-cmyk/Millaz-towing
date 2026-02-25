@@ -26,14 +26,14 @@
     </div>
     <nav class="glass-panel">
         <div class="nav-container">
-            <div class="logo">
-                <img src="assets/millaz_logo_final.png" alt="Millaz Towing Logo">
-            </div>
+            <a href="/" class="logo" id="logo-link">
+                <img src="/assets/millaz_logo_final.png" alt="Millaz Towing Logo">
+            </a>
             <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="authority-hub/index.html">Authority Hub</a></li>
-                <li><a href="#community">Community</a></li>
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/about-us.html">About Us</a></li>
+                <li><a href="/authority-hub/">Authority Hub</a></li>
+                <li><a href="/#community">Community</a></li>
             </ul>
             <a href="tel:0737453329" class="btn-primary"><i class="fas fa-phone"></i> Emergency Call</a>
         </div>
@@ -199,58 +199,64 @@
         </section>
         <!-- About Us Summary Section -->
         <section id="about-us" class="about-us-summary-section">
-            <div class="about-container" style="max-width: 1400px; margin: 0 auto; padding: 0 20px;">
-                <div class="about-summary-header" style="text-align: center; margin-bottom: 60px;">
-                    <h2 style="font-size: clamp(1.8rem, 4vw, 2.8rem); color: #2C3E50; margin-bottom: 16px;">About Millaz
-                        Towing</h2>
-                    <p style="font-size: 1.1rem; color: #4A5568; max-width: 650px; margin: 0 auto;">A family-run towing
+            <div class="about-container section-header">
+                <div class="about-summary-header">
+                    <h2 class="section-heading">About Millaz Towing</h2>
+                    <p class="section-subheading">A family-run towing
                         company serving KZN's roads with heart, professionalism, and the right equipment for every job.
                     </p>
+                    <div class="about-intro">
+                        <p>
+                            We're your KZN neighbours — NATA-approved, insurance-panel certified, and genuinely
+                            committed to helping motorists across Pinetown, Westville, Hillcrest, Kloof, and the
+                            greater
+                            Durban area.
+                        </p>
+                    </div>
                 </div>
 
                 <div class="about-summary-grid">
                     <!-- Left: Summary content + cards -->
                     <div class="about-summary-content">
-                        <p style="font-size: 1rem; color: #4A5568; line-height: 1.8; margin-bottom: 30px;">
-                            We're your KZN neighbours — NATA-approved, insurance-panel certified, and genuinely
-                            committed to helping motorists across Pinetown, Westville, Hillcrest, Kloof, and the greater
-                            Durban area.
-                        </p>
-                        <div class="about-feature-cards">
-                            <div class="about-feature-card glass-panel">
-                                <div class="feature-card-icon"><i class="fas fa-truck-fast" style="color: #0066CC;"></i>
+                        <div class="about-features-grid">
+                            <div class="about-feature-card">
+                                <div class="feature-icon"><i class="fas fa-truck-fast"></i>
                                 </div>
-                                <h4>9-Unit Fleet</h4>
-                                <p>Flatbeds, slingbacks &amp; a motorcycle trailer — the right truck for every vehicle
+                                <h4 class="feature-title">9-Unit Fleet</h4>
+                                <p class="feature-description">Flatbeds, slingbacks &amp; a motorcycle trailer — the
+                                    right truck for every vehicle
                                     and situation.</p>
                             </div>
-                            <div class="about-feature-card glass-panel">
-                                <div class="feature-card-icon"><i class="fas fa-clock" style="color: #FF6B00;"></i>
+                            <div class="about-feature-card">
+                                <div class="feature-icon"><i class="fas fa-clock"></i>
                                 </div>
-                                <h4>24/7 Availability</h4>
-                                <p>Breakdowns don't keep office hours. Neither do we — 365 days a year, rain or shine.
+                                <h4 class="feature-title">24/7 Availability</h4>
+                                <p class="feature-description">Breakdowns don't keep office hours. Neither do we — 365
+                                    days a year, rain or shine.
                                 </p>
                             </div>
-                            <div class="about-feature-card glass-panel">
-                                <div class="feature-card-icon"><i class="fas fa-shield-halved"
-                                        style="color: #0066CC;"></i></div>
-                                <h4>Insurance Approved</h4>
-                                <p>Approved by major insurance panels across South Africa. We handle the paperwork, you
+                            <div class="about-feature-card">
+                                <div class="feature-icon"><i class="fas fa-circle-check"></i></div>
+                                <h4 class="feature-title">Insurance Approved</h4>
+                                <p class="feature-description">Approved by major insurance panels across South Africa.
+                                    We handle the paperwork, you
                                     focus on safety.</p>
                             </div>
                         </div>
-                        <a href="about-us.html" class="read-more-button">
-                            Read Our Full Story
-                            <i class="fas fa-arrow-right arrow-icon" style="margin-left: 8px;"></i>
-                        </a>
+                        <div style="text-align: center; margin-top: 40px;">
+                            <a href="about-us.html" class="read-more-button"
+                                style="background: #00D9FF; color: #000; box-shadow: 0 4px 15px rgba(0, 217, 255, 0.3);">
+                                Read Our Full Story
+                                <i class="fas fa-arrow-right arrow-icon" style="margin-left: 8px;"></i>
+                            </a>
+                        </div>
                     </div>
 
                     <!-- Right: Team image -->
-                    <div class="about-summary-image-frame">
+                    <div class="team-image-container">
                         <img src="assets/hero-team.jpg"
                             onerror="this.src='https://placehold.co/700x500/0066CC/FFFFFF.png?text=Millaz+Towing+Team';"
-                            alt="Millaz Towing Team"
-                            style="width:100%; height:100%; object-fit:cover; border-radius: 16px;">
+                            alt="Millaz Towing Team">
                     </div>
                 </div>
             </div>
@@ -630,6 +636,13 @@
             });
         }
     </script>
+
+    <button id="back-to-top-btn" class="back-to-top-button" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg>
+    </button>
 </body>
 
 </html>

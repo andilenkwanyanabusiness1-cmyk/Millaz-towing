@@ -218,4 +218,28 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+    // 9. Back to Top & Logo Navigation
+    const backToTopBtn = document.getElementById('back-to-top-btn');
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    const logoLink = document.getElementById('logo-link');
+    if (logoLink) {
+        logoLink.addEventListener('click', function (e) {
+            const currentPath = window.location.pathname;
+            const isHomePage = currentPath === '/' ||
+                currentPath === '/index.html' ||
+                (currentPath.endsWith('/') && !currentPath.includes('/authority-hub')) ||
+                (currentPath.endsWith('/index.html') && !currentPath.includes('/authority-hub'));
+
+            if (isHomePage) {
+                // Only scroll to top if we are truly on the root homepage
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+    }
 });

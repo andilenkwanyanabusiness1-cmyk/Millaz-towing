@@ -44,15 +44,13 @@
     <!-- ─── Navigation ─── -->
     <nav class="hub-nav" id="hub-nav" aria-label="Main navigation">
         <div class="nav-container">
-            <div class="logo">
-                <a href="../index.html" aria-label="Millaz Towing Home">
-                    <img src="../assets/millaz_logo_final.png" alt="Millaz Towing Logo">
-                </a>
-            </div>
+            <a href="/" class="logo" id="logo-link" aria-label="Millaz Towing Home">
+                <img src="/assets/millaz_logo_final.png" alt="Millaz Towing Logo">
+            </a>
             <ul class="nav-links" id="hub-nav-links" role="list">
-                <li><a href="../index.html#services">Services</a></li>
-                <li><a href="index.html" class="active">Authority Hub</a></li>
-                <li><a href="../index.html#community">Community</a></li>
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/authority-hub/" class="active">Authority Hub</a></li>
+                <li><a href="/#community">Community</a></li>
             </ul>
             <a href="tel:0737453329" class="btn-primary" id="nav-emergency-btn">
                 <i class="fas fa-phone" aria-hidden="true"></i> Emergency Call
@@ -342,7 +340,7 @@
     <footer class="hub-footer" role="contentinfo">
         <div class="hub-footer-content">
             <div class="hub-footer-brand">
-                <img src="../assets/millaz_logo_final.png" alt="Millaz Towing Logo">
+                <img src="/assets/millaz_logo_final.png" alt="Millaz Towing Logo">
                 <p>Setting the standard for professional recovery in KZN.</p>
             </div>
 
@@ -498,6 +496,12 @@
         }
     </script>
 
+
+    <button id="back-to-top-btn" class="back-to-top-button" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
 </body>
 
 </html>

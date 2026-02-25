@@ -15,16 +15,16 @@
 
 <body>
 
-    <nav class="glass-panel" style="position: fixed; top: 0; width: 100%; z-index: 1000;">
+    <nav class="glass-panel">
         <div class="nav-container">
-            <div class="logo">
-                <a href="index.html"><img src="assets/millaz_logo_final.png" alt="Millaz Towing Logo"></a>
-            </div>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="index.html#services" class="nav-link">Services</a></li>
-                <li><a href="about-us.html" class="nav-link active">About Us</a></li>
-                <li><a href="authority-hub/index.html" class="nav-link">Authority Hub</a></li>
-                <li><a href="index.html#community" class="nav-link">Community</a></li>
+            <a href="/" class="logo" id="logo-link">
+                <img src="/assets/millaz_logo_final.png" alt="Millaz Towing Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/about-us.html">About Us</a></li>
+                <li><a href="/authority-hub/">Authority Hub</a></li>
+                <li><a href="/#community">Community</a></li>
             </ul>
             <a href="tel:0737453329" class="btn-primary"><i class="fas fa-phone"></i> Emergency Call</a>
         </div>
@@ -36,131 +36,316 @@
 
     <!-- ABOUT US PAGE CONTENT -->
     <main class="about-us-page">
+        <style>
+            /* Custom glassmorphism styles for About Us */
+            .about-glass-box {
+                background: rgba(255, 255, 255, 0.08);
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
+                border: 1px solid rgba(255, 255, 255, 0.18);
+                border-radius: 24px;
+                padding: 3rem;
+                margin-bottom: 2rem;
+                box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+                color: #fff;
+                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s;
+            }
+
+            .about-glass-box:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+                border-color: rgba(0, 212, 212, 0.4);
+            }
+
+            .about-glass-box h2 {
+                color: var(--hub-primary, #00d4d4);
+                font-family: 'Outfit', sans-serif;
+                font-size: 2.2rem;
+                font-weight: 800;
+                margin-bottom: 1.5rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                padding-bottom: 0.8rem;
+                letter-spacing: -0.01em;
+            }
+
+            .about-glass-box h3 {
+                color: #fff;
+                font-family: 'Outfit', sans-serif;
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-top: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .about-glass-box p,
+            .about-glass-box ul {
+                color: rgba(255, 255, 255, 0.85);
+                font-size: 1.05rem;
+                line-height: 1.8;
+                margin-bottom: 1.25rem;
+            }
+
+            .about-glass-box ul {
+                padding-left: 1.5rem;
+            }
+
+            .about-glass-box li {
+                margin-bottom: 0.75rem;
+            }
+
+            .about-glass-box li strong {
+                color: #fff;
+                font-weight: 600;
+            }
+
+            .page-container {
+                max-width: 900px;
+                margin: -80px auto 60px;
+                position: relative;
+                z-index: 10;
+                padding: 0 20px;
+            }
+
+            .article-hero-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .article-breadcrumb {
+                justify-content: center;
+            }
+
+            body {
+                background: linear-gradient(135deg, #1a2a5e 0%, #2563a8 35%, #00a8cc 70%, #00d4d4 100%);
+                background-attachment: fixed;
+            }
+
+            /* Intersection Observer Animation */
+            .hub-animate {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .hub-animate.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        </style>
 
         <!-- Hero Section -->
-        <section class="about-hero-section">
-            <div class="container" style="max-width: 1400px; margin: 0 auto;">
-                <h1 class="page-title">About Millaz Towing</h1>
-                <p class="page-subtitle">Your KZN Neighbours, Ready to Help</p>
+        <section class="article-hero" aria-label="About Us Hero">
+            <img src="/assets/team/millaz-fleet-2.jpg" alt="Millaz Towing Modern Fleet" class="article-hero-img">
+            <div class="article-hero-overlay">
+                <div class="article-hero-content">
+
+                    <!-- Breadcrumb -->
+                    <nav class="article-breadcrumb" aria-label="Breadcrumb" style="padding: 0 0 1rem;">
+                        <a href="index.html">Home</a>
+                        <span class="bc-sep" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+                        <span class="bc-current" aria-current="page">About Us</span>
+                    </nav>
+
+                    <span class="hub-tag">Our Story</span>
+                    <h1
+                        style="font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: 0.5rem; font-family: 'Outfit', sans-serif; font-weight: 800; color: #fff;">
+                        About Millaz Towing</h1>
+                    <p style="font-size: clamp(1.1rem, 2vw, 1.3rem); color: rgba(255,255,255,0.9); font-weight: 500;">
+                        Your KZN Neighbours, Ready to Help</p>
+                </div>
             </div>
         </section>
 
-        <div class="container" style="padding: 20px 20px 0; max-width: 1400px; margin: 0 auto;">
-            <nav class="breadcrumb" aria-label="Breadcrumb">
-                <ol style="list-style:none; padding:0; display:flex; gap:8px;">
-                    <li><a href="index.html" style="color: #0066CC; text-decoration: none;">Home</a></li>
-                    <li style="color: #5A6C7D;">/</li>
-                    <li aria-current="page" style="color: #4A5568;">About Us</li>
-                </ol>
-            </nav>
+        <!-- Main Content Grid -->
+        <div class="page-container">
+
+            <div class="about-glass-box hub-animate">
+                <h2>Who We Are</h2>
+                <p>We're a family-run towing and roadside assistance company serving Pinetown, Westville,
+                    Hillcrest, Kloof, and the greater Durban area. Our team of five dedicated drivers operates a
+                    fleet of nine specialized vehicles, covering everything from compact cars to motorcycles.
+                </p>
+                <p>As a proud member of the National African Towing Association (NATA) and approved by major
+                    insurance panels across South Africa, we combine small-business heart with professional
+                    standards. When you call Millaz Towing, you're calling neighbours who genuinely care about
+                    getting you safely back on the road.</p>
+            </div>
+
+            <div class="about-glass-box hub-animate">
+                <h2>What Sets Us Apart</h2>
+                <h3>The Right Equipment for Your Vehicle</h3>
+                <p>Our nine-unit fleet means we're always ready with the perfect solution:</p>
+                <ul>
+                    <li><strong>3 Flatbed Rollback Trucks</strong> — For vehicles needing extra care: luxury
+                        cars, sports cars, accident-damaged vehicles, or long-distance transport. Your car rolls
+                        onto a flat platform and travels like it's parked—no stress on wheels, transmission, or
+                        suspension.</li>
+                    <li><strong>5 Slingback Trucks</strong> — For quick, efficient response when you need help
+                        fast. Multiple units mean even during busy periods, we have a truck available for you.
+                    </li>
+                    <li><strong>1 Motorcycle Trailer</strong> — Proper equipment designed specifically for
+                        safely transporting bikes, because two-wheeled vehicles deserve specialized care.</li>
+                </ul>
+
+                <h3>Real People, Real Care</h3>
+                <p>Our drivers aren't just professionals—they're honest, respectful people who treat your
+                    vehicle with the same care we'd give our own. Whether it's your daily commuter, your weekend
+                    bike, or your family's SUV, it matters to us.</p>
+
+                <h3>Always Available</h3>
+                <p>Breakdowns don't wait for business hours, and neither do we. We're available 24/7, 365 days a
+                    year—whether it's 2am on a Sunday or rush hour on a Friday, whether you're in a car or on a
+                    bike.</p>
+
+                <h3>Local Knowledge</h3>
+                <p>We know that the climb to Hillcrest can overheat engines, how the N3 gets during holiday
+                    traffic, and every popular motorcycle route in the area. This local expertise means we reach
+                    you faster and serve you better.</p>
+            </div>
+
+            <div class="about-glass-box hub-animate">
+                <h2>Our Promise</h2>
+                <p>When you're stranded, you need more than a service—you need reassurance. We promise to:</p>
+                <ul>
+                    <li>Answer your call with a friendly, helpful voice</li>
+                    <li>Send the right truck for your specific vehicle</li>
+                    <li>Arrive as quickly as safely possible</li>
+                    <li>Treat you and your vehicle with respect</li>
+                    <li>Explain everything clearly—no confusing jargon or hidden fees</li>
+                </ul>
+            </div>
+
+            <div class="about-glass-box hub-animate">
+                <h2>More Than Just Towing</h2>
+                <p>We believe in giving back to the KZN community. Our Authority Hub provides free road safety
+                    tips and breakdown prevention advice. We're also developing the Spotter App to help
+                    motorists report accidents faster and get help sooner.</p>
+                <p>We've grown from five to nine units because we're committed to being there when our community
+                    needs us—whether you drive four wheels or two. At the end of the day, we're not just in the
+                    towing business—we're in the business of helping our neighbours.</p>
+            </div>
+
+            <!-- Restored Team & Fleet Section -->
+            <div class="about-glass-box hub-animate">
+                <h2 style="border-bottom: none; margin-bottom: 2rem;">Meet Our Team & Fleet</h2>
+                <style>
+                    .images-grid-3col {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 1.5rem;
+                        margin-top: 1rem;
+                    }
+
+                    .gallery-image-item {
+                        position: relative;
+                        border-radius: 16px;
+                        overflow: hidden;
+                        aspect-ratio: 4/3;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        transition: transform 0.3s ease;
+                    }
+
+                    .gallery-image-item:hover {
+                        transform: scale(1.03);
+                    }
+
+                    .gallery-image-item img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+
+                    .image-label {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+                        color: #fff;
+                        padding: 1rem;
+                        font-size: 0.9rem;
+                        font-weight: 500;
+                        margin: 0 !important;
+                    }
+
+                    @media (max-width: 768px) {
+                        .images-grid-3col {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+                </style>
+                <div class="images-grid-3col">
+                    <div class="gallery-image-item">
+                        <img src="assets/team/millaz-team-1.jpg"
+                            onerror="this.src='https://placehold.co/800x600/0066CC/FFFFFF.png?text=Our+Team';"
+                            alt="Millaz Towing Team">
+                        <p class="image-label">Our Professional Team</p>
+                    </div>
+                    <div class="gallery-image-item">
+                        <img src="assets/team/millaz-fleet-2.jpg"
+                            onerror="this.src='https://placehold.co/800x600/0066CC/FFFFFF.png?text=Modern+Fleet';"
+                            alt="Millaz Towing Fleet">
+                        <p class="image-label">Modern Fleet Equipment</p>
+                    </div>
+                    <div class="gallery-image-item">
+                        <img src="assets/team/millaz-service-2.jpg"
+                            onerror="this.src='https://placehold.co/800x600/0066CC/FFFFFF.png?text=Service+In+Action';"
+                            alt="Millaz Towing in Action">
+                        <p class="image-label">Professional Service in Action</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Get in Touch Section styled as an alert card -->
+            <div class="about-glass-box hub-animate"
+                style="background: rgba(0, 212, 212, 0.12); border-color: rgba(0, 212, 212, 0.4); text-align: center;">
+                <h3
+                    style="margin-top: 0; color: #fff; font-size: 1.8rem; border-bottom: none; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                    <i class="fas fa-headset" style="color: var(--hub-primary);"></i> Get in Touch
+                </h3>
+                <div
+                    style="width: 60px; height: 3px; background: var(--hub-primary); margin: 0 auto 1.5rem; border-radius: 2px;">
+                </div>
+                <p style="font-size: 1.15rem; color: #fff; margin-bottom: 1rem;"><strong>Need immediate
+                        help?</strong><br>
+                    <span style="display: inline-block; margin-top: 5px;">
+                        📱 <a href="tel:0737453329"
+                            style="color: #fff; text-decoration: none; font-weight: 500; margin-right: 15px;">073 745
+                            3329</a>
+                        ☎️ <a href="tel:0312735137" style="color: #fff; text-decoration: none; font-weight: 500;">031
+                            273 5137</a>
+                    </span>
+                </p>
+                <p style="color: rgba(255,255,255,0.85); margin-bottom: 0;"><strong>Email:</strong>
+                    admin@millaztowing.com<br>
+                    <strong>Follow us:</strong> Facebook & TikTok @millaztowing
+                </p>
+                <p class="availability-note"
+                    style="margin-top: 20px; font-weight: 800; color: var(--hub-primary); font-size: 1.1rem; letter-spacing: 0.5px;">
+                    We're here for you—always.
+                </p>
+            </div>
+
         </div>
 
-        <!-- Full About Us Content -->
-        <section class="about-content-section">
-            <div class="container" style="max-width: 1400px; margin: 0 auto;">
-
-                <!-- Main Content Grid -->
-                <div class="about-main-grid">
-
-                    <div class="about-full-content">
-                        <h2>Who We Are</h2>
-                        <p>We're a family-run towing and roadside assistance company serving Pinetown, Westville,
-                            Hillcrest, Kloof, and the greater Durban area. Our team of five dedicated drivers operates a
-                            fleet of nine specialized vehicles, covering everything from compact cars to motorcycles.
-                        </p>
-                        <p>As a proud member of the National African Towing Association (NATA) and approved by major
-                            insurance panels across South Africa, we combine small-business heart with professional
-                            standards. When you call Millaz Towing, you're calling neighbours who genuinely care about
-                            getting you safely back on the road.</p>
-
-                        <h2>What Sets Us Apart</h2>
-                        <h3>The Right Equipment for Your Vehicle</h3>
-                        <p>Our nine-unit fleet means we're always ready with the perfect solution:</p>
-                        <ul>
-                            <li><strong>3 Flatbed Rollback Trucks</strong> — For vehicles needing extra care: luxury
-                                cars, sports cars, accident-damaged vehicles, or long-distance transport. Your car rolls
-                                onto a flat platform and travels like it's parked—no stress on wheels, transmission, or
-                                suspension.</li>
-                            <li><strong>5 Slingback Trucks</strong> — For quick, efficient response when you need help
-                                fast. Multiple units mean even during busy periods, we have a truck available for you.
-                            </li>
-                            <li><strong>1 Motorcycle Trailer</strong> — Proper equipment designed specifically for
-                                safely transporting bikes, because two-wheeled vehicles deserve specialized care.</li>
-                        </ul>
-
-                        <h3>Real People, Real Care</h3>
-                        <p>Our drivers aren't just professionals—they're honest, respectful people who treat your
-                            vehicle with the same care we'd give our own. Whether it's your daily commuter, your weekend
-                            bike, or your family's SUV, it matters to us.</p>
-
-                        <h3>Always Available</h3>
-                        <p>Breakdowns don't wait for business hours, and neither do we. We're available 24/7, 365 days a
-                            year—whether it's 2am on a Sunday or rush hour on a Friday, whether you're in a car or on a
-                            bike.</p>
-
-                        <h3>Local Knowledge</h3>
-                        <p>We know that the climb to Hillcrest can overheat engines, how the N3 gets during holiday
-                            traffic, and every popular motorcycle route in the area. This local expertise means we reach
-                            you faster and serve you better.</p>
-
-                        <h2>Our Promise</h2>
-                        <p>When you're stranded, you need more than a service—you need reassurance. We promise to:</p>
-                        <ul>
-                            <li>Answer your call with a friendly, helpful voice</li>
-                            <li>Send the right truck for your specific vehicle</li>
-                            <li>Arrive as quickly as safely possible</li>
-                            <li>Treat you and your vehicle with respect</li>
-                            <li>Explain everything clearly—no confusing jargon or hidden fees</li>
-                        </ul>
-
-                        <h2>More Than Just Towing</h2>
-                        <p>We believe in giving back to the KZN community. Our Authority Hub provides free road safety
-                            tips and breakdown prevention advice. We're also developing the Spotter App to help
-                            motorists report accidents faster and get help sooner.</p>
-                        <p>We've grown from five to nine units because we're committed to being there when our community
-                            needs us—whether you drive four wheels or two. At the end of the day, we're not just in the
-                            towing business—we're in the business of helping our neighbours.</p>
-                    </div>
-
+        <!-- FOOTER CTA BANNER -->
+        <section class="article-cta-banner hub-animate">
+            <div class="article-cta-banner-inner">
+                <h2>Need <span>Immediate</span> Roadside Assistance?</h2>
+                <p>Our professional recovery team is standing by 24/7 across the KZN corridor.</p>
+                <div class="article-cta-buttons">
+                    <a href="tel:0737453329" class="cta-btn-call">
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                        Call 073 745 3329
+                    </a>
+                    <a href="https://wa.me/27737453329" class="cta-btn-whatsapp" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        WhatsApp Us
+                    </a>
                 </div>
-
-                <!-- Team & Vehicle Images Section -->
-                <div class="about-images-gallery">
-                    <h2 class="gallery-heading">Meet Our Team & Fleet</h2>
-
-                    <div class="images-grid-3col">
-                        <div class="gallery-image-item">
-                            <img src="assets/team/millaz-team-1.jpg"
-                                onerror="this.src='https://placehold.co/800x600/0066CC/FFFFFF.png?text=Our+Team';"
-                                alt="Millaz Towing Team">
-                            <p class="image-label">Our Professional Team</p>
-                        </div>
-                        <div class="gallery-image-item">
-                            <img src="assets/team/millaz-fleet-2.jpg"
-                                onerror="this.src='https://placehold.co/800x600/0066CC/FFFFFF.png?text=Modern+Fleet';"
-                                alt="Millaz Towing Fleet">
-                            <p class="image-label">Modern Fleet Equipment</p>
-                        </div>
-                        <div class="gallery-image-item">
-                            <img src="assets/team/millaz-service-2.jpg"
-                                onerror="this.src='https://placehold.co/800x600/0066CC/FFFFFF.png?text=Service+In+Action';"
-                                alt="Millaz Towing in Action">
-                            <p class="image-label">Professional Service in Action</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Get in Touch Section -->
-                <div class="get-in-touch-section" style="max-width: 900px; margin: 0 auto;">
-                    <h3>Get in Touch</h3>
-                    <p><strong>Need immediate help?</strong> 📱 073 745 3329 | ☎️ 031 273 5137<br>
-                        <strong>Email:</strong> admin@millaztowing.com<br>
-                        <strong>Follow us:</strong> Facebook & TikTok @millaztowing
-                    </p>
-                    <p class="availability-note" style="margin-top: 15px; font-weight: bold;">We're here for you—always.
-                    </p>
-                </div>
-
             </div>
         </section>
 
@@ -213,19 +398,30 @@
         </div>
     </footer>
 
-    <script src="main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const currentPath = window.location.pathname;
-            const navLinks = document.querySelectorAll('.nav-link');
-
+            // Active Link Styling
+            const navLinks = document.querySelectorAll('.nav-links a');
             navLinks.forEach(link => {
-                if (link.getAttribute('href') === 'about-us.html') {
+                if (link.getAttribute('href') === '/about-us.html' || link.getAttribute('href').includes('about-us.html')) {
                     link.classList.add('active');
                 }
             });
+
+            // Intersection Observer for animations
+            const animateEls = document.querySelectorAll('.hub-animate');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            animateEls.forEach(el => observer.observe(el));
         });
     </script>
+    <script src="main.js"></script>
 
     <button id="back-to-top-btn" class="back-to-top-button" aria-label="Back to top">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -233,17 +429,6 @@
                 stroke-linejoin="round" />
         </svg>
     </button>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const backToTopBtn = document.getElementById('back-to-top-btn');
-            if (backToTopBtn) {
-                backToTopBtn.addEventListener('click', function () {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
-            }
-        });
-    </script>
 </body>
 
 </html>
