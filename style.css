@@ -384,7 +384,8 @@ nav.glass-panel {
 .hero-brand-script {
     font-family: 'Dancing Script', cursive;
     color: #ffffff;
-    font-size: 3.2rem;
+    font-size: 3.8rem;
+    /* Increased by 20% */
     margin-bottom: 0.5rem;
     font-weight: 700;
 }
@@ -437,12 +438,15 @@ nav.glass-panel {
 
 .form-title {
     font-size: 2rem;
-    color: #fff;
+    color: #00D9FF;
+    /* Updated to Cyan */
     margin-bottom: 0.5rem;
 }
 
 .form-subtitle {
-    color: rgba(255, 255, 255, 0.7);
+    color: #00D9FF;
+    /* Updated to Cyan */
+    opacity: 0.8;
     font-size: 0.95rem;
     margin-bottom: 2rem;
 }
@@ -473,16 +477,18 @@ nav.glass-panel {
     width: 100%;
     padding: 1rem 1.25rem;
     background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(0, 217, 255, 0.2);
     border-radius: 12px;
-    color: #fff;
+    color: #00D9FF;
+    /* Updated to Cyan */
     font-family: 'Outfit', sans-serif;
     font-size: 0.95rem;
     transition: all 0.3s ease;
 }
 
 .form-group input::placeholder {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(0, 217, 255, 0.5);
+    /* Updated to Cyan */
 }
 
 .form-group input:focus,
