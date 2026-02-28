@@ -366,9 +366,9 @@ nav.glass-panel {
     align-items: center;
     gap: 4rem;
     position: relative;
-    z-index: 2;
+    z-index: 50;
+    /* Ensure on top of canvas */
     transition: opacity 0.3s ease-out;
-    /* Smooth transitions for JS-controlled opacity */
 }
 
 .hero-text-box h1 {
@@ -387,6 +387,11 @@ nav.glass-panel {
     text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3);
     display: block;
     margin-bottom: 1.5rem;
+}
+
+.text-recovery {
+    color: #00D9FF;
+    font-weight: 900;
 }
 
 .hero-subtitle {
@@ -725,21 +730,21 @@ nav.glass-panel {
         padding-bottom: 60px;
     }
 
-    .hero-content {
+    .container-hero {
         flex-direction: column;
         text-align: center;
         gap: 2.5rem;
     }
 
-    .hero-text h1 {
+    .hero-text-box h1 {
         font-size: 3rem;
     }
 
-    .hero-text p {
+    .hero-text-box p {
         margin: 0 auto;
     }
 
-    .lead-card {
+    .dispatch-form-container {
         padding: 1.5rem;
     }
 

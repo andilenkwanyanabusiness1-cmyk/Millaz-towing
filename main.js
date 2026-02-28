@@ -74,16 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    gsap.to('.hero-content', {
-        opacity: 0,
-        y: -100,
-        scrollTrigger: {
-            trigger: '.hero',
-            start: '60% top',
-            end: 'bottom top',
-            scrub: true
-        }
-    });
 
     // 4. Section Reveals (Staggered) - Subtle animation without opacity flicker
     const animateSections = () => {
