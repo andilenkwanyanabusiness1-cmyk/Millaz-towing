@@ -15,7 +15,7 @@
     let currentFrame = 0;
     let loadedCount = 0;
     let canvas, ctx;
-    let heroSection, heroScrollContainer, loadingOverlay, loadingProgress, scrollIndicator;
+    let heroSection, heroScrollContainer, loadingOverlay, loadingProgress, scrollIndicator, heroContent;
     let isMobile = window.innerWidth < 768;
 
     function init() {
@@ -25,6 +25,7 @@
         loadingOverlay = document.getElementById('heroLoadingOverlay');
         loadingProgress = document.getElementById('loadingProgress');
         scrollIndicator = document.querySelector('.hero-scroll-indicator');
+        heroContent = document.querySelector('.container-hero');
 
         if (!canvas) return;
 
@@ -129,6 +130,21 @@
         // Fade indicator
         if (scrollIndicator) {
             scrollIndicator.style.opacity = currentScroll > 100 ? '0' : '1';
+        }
+
+        // Fade hero content with 15% delay
+        if (heroContent) {
+            // requested: delayed by 15% before it exits or disappears
+            // scrollFraction is 0 to 1
+            const delay = 0.15;
+            let heroOpacity = 1;
+
+            if (scrollFraction > delay) {
+                // Map [delay, 1] to [1, 0]
+                heroOpacity = 1 - (scrollFraction - delay) / (1 - delay);
+            }
+
+            heroContent.style.opacity = Math.max(0, heroOpacity).toString();
         }
     }
 
