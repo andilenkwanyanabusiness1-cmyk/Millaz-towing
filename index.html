@@ -45,54 +45,84 @@
     </a>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero" id="hero">
-            <div class="hero-bg">
-                <img src="assets/hero-final-4.jpg?v=20260225" alt="Millaz Towing Team">
-            </div>
-            <div class="hero-content">
-                <div class="hero-text animate-in">
-                    <h1><span class="brand-script">Millaz Towing</span> <span
-                            class="hero-subtitle">RECOVERY<br>REDEFINED.</span></h1>
-                    <p>More than just a tow. We're KZN's authority in road safety, recovery, and community support.</p>
+        <!-- Hero Scroll Container (provides scroll height) -->
+        <div class="hero-scroll-container">
+            <!-- New Hero Section (pinned via CSS sticky) -->
+            <section class="hero">
+                <div class="hero-canvas-container">
+                    <canvas id="hero-frames-canvas"></canvas>
                 </div>
 
-                <div class="glass-panel lead-card animate-in">
-                    <h3>Request Immediate Tow</h3>
-                    <p>Enter your details and our team will be dispatched instantly.</p>
-                    <form id="emergency-form">
-                        <div class="form-group">
-                            <input type="text" name="first_name" placeholder="First Name" required>
+                <!-- Loading Overlay -->
+                <div id="heroLoadingOverlay" class="hero-loading-overlay">
+                    <div class="hero-spinner-container">
+                        <div class="hero-spinner"></div>
+                        <span class="loading-text">Loading experience...</span>
+                        <!-- Progress Bar -->
+                        <div class="loading-progress-container">
+                            <div id="loadingProgress" class="loading-progress-bar"></div>
                         </div>
-                        <div class="form-group">
-                            <input type="text" name="last_name" placeholder="Last Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" name="contact_number" placeholder="073 745 3329" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="Email (optional)">
-                        </div>
-                        <div class="form-group">
-                            <select name="service_type" required>
-                                <option value="" disabled selected>Select Service</option>
-                                <option value="immediate_tow">Immediate Tow</option>
-                                <option value="roadside_assistance">Roadside Assistance</option>
-                                <option value="accident_recovery">Accident Recovery</option>
-                                <option value="vehicle_transport">Vehicle Transport</option>
-                            </select>
-                        </div>
-                        <button type="submit" id="dispatch-btn" class="btn-primary w-full">Dispatch Now</button>
-                        <div id="dispatch-message"></div>
-                    </form>
+                    </div>
                 </div>
-            </div>
-        </section>
+
+                <div class="container container-hero">
+                    <div class="hero-text-box">
+                        <h1 class="heading-primary">Millaz Towing - <span class="text-recovery">RECOVERY
+                                REDEFINED</span></h1>
+                        <p class="hero-description">
+                            Premium KZN breakdown services. Professional, reliable, and swift towing solutions for every
+                            vehicle.
+                        </p>
+                        <div class="hero-cta-group">
+                            <a href="#cta" class="btn btn--full margin-right-sm">Request Assistance</a>
+                            <a href="#how" class="btn btn--outline">Learn More &darr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Dispatch Form -->
+                    <div class="dispatch-form-container">
+                        <div class="hero-form-box">
+                            <h2 class="form-title">Request Immediate Tow</h2>
+                            <form class="hero-form" name="dispatch-request" method="POST" data-netlify="true">
+                                <div class="form-group">
+                                    <label for="pickup">Pickup Location</label>
+                                    <input type="text" id="pickup" name="location" placeholder="Street, Suburb, City"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="destination">Drop-off Destination</label>
+                                    <input type="text" id="destination" name="destination"
+                                        placeholder="Street, Suburb, City" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="vehicle_model">Vehicle Model</label>
+                                    <input type="text" id="vehicle_model" name="vehicle" placeholder="e.g. BMW 3 Series"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone_num">Phone Number</label>
+                                    <input type="tel" id="phone_num" name="phone" placeholder="012 345 6789" required>
+                                </div>
+                                <button type="submit" class="btn btn--form">Dispatch Tow Truck</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scroll Indicator -->
+                <div class="hero-scroll-indicator">
+                    <span class="scroll-text">Scroll to animate</span>
+                    <svg class="scroll-arrow" viewBox="0 0 24 24">
+                        <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+                    </svg>
+                </div>
+            </section>
+        </div>
 
         <!-- Trusted Providers Section -->
         <section class="trusted-providers-section animate-in">
             <div class="container">
-                <h2 class="section-heading">Trusted Service Provider For</h2>
+                <h2 class="trust-bar-heading">Trusted Service Provider For</h2>
 
                 <div class="logos-grid">
                     <!-- Row 1: 9 logos -->
@@ -571,6 +601,7 @@
     </footer>
 
     <script src="main.js"></script>
+    <script src="assets/js/hero-scroll-animation.js"></script>
     <script>
         const SUPABASE_URL = 'https://ygrsuwvumbdbacbpagfb.supabase.co';
         const SUPABASE_ANON_KEY = 'sb_publishable_AllqobGS8ujKcLJMw1iecw_nAwkEifW';
