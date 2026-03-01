@@ -7,6 +7,7 @@
         framePath: 'assets/animated hero/ezgif-frame-{number}.jpg',
         scrollMultiplier: 1,
         mobileStep: 2, // Load every 2nd frame on mobile
+        preloadTimeoutMs: 15000,
     };
 
     // State
@@ -14,6 +15,9 @@
     const frameCount = config.frameCount;
     let currentFrame = 0;
     let loadedCount = 0;
+    let successfulLoads = 0;
+    let didComplete = false;
+    let preloadSafetyTimer = null;
     let canvas, ctx;
     let heroSection, heroScrollContainer, loadingOverlay, loadingProgress, scrollIndicator, heroContent;
     let isMobile = window.innerWidth < 768;
@@ -52,17 +56,23 @@
     function getFramePath(index) {
         // ezgif-frame-001.jpg
         const paddedIndex = String(index).padStart(3, '0');
-        return config.framePath.replace('{number}', paddedIndex);
+        return encodeURI(config.framePath.replace('{number}', paddedIndex));
     }
 
     function preloadFrames() {
         const step = isMobile ? config.mobileStep : 1;
+
+        preloadSafetyTimer = window.setTimeout(() => {
+            console.warn('Hero frame preload timeout reached. Falling back gracefully.');
+            finishLoading(true);
+        }, config.preloadTimeoutMs);
 
         for (let i = 1; i <= frameCount; i++) {
             // On mobile, we only actually "load" every Nth frame, but keep indices for mapping
             if (isMobile && i % step !== 0 && i !== 1 && i !== frameCount) {
                 frames[i - 1] = null; // Skip this one
                 loadedCount++;
+                updateProgress();
                 continue;
             }
 
@@ -70,9 +80,10 @@
             img.src = getFramePath(i);
             img.onload = () => {
                 loadedCount++;
+                successfulLoads++;
                 updateProgress();
                 if (loadedCount === frameCount) {
-                    onComplete();
+                    finishLoading();
                 }
             };
             img.onerror = () => {
@@ -80,7 +91,7 @@
                 loadedCount++;
                 updateProgress();
                 if (loadedCount === frameCount) {
-                    onComplete();
+                    finishLoading();
                 }
             };
             frames[i - 1] = img;
@@ -94,13 +105,23 @@
         }
     }
 
-    function onComplete() {
+    function finishLoading(force = false) {
+        if (didComplete) return;
+        didComplete = true;
+
+        if (preloadSafetyTimer) {
+            window.clearTimeout(preloadSafetyTimer);
+            preloadSafetyTimer = null;
+        }
+
         if (loadingOverlay) {
             loadingOverlay.classList.add('loaded');
         }
 
         // Initial draw
-        drawFrame(0);
+        if (successfulLoads > 0 && !force) {
+            drawFrame(0);
+        }
 
         // Setup scroll listener
         window.addEventListener('scroll', handleScroll, { passive: true });
@@ -117,7 +138,7 @@
         // Progress within the scroll container
         // scrollY relative to container start is -rect.top
         const currentScroll = -rect.top;
-        const maxScroll = containerHeight - viewportHeight;
+        const maxScroll = Math.max(containerHeight - viewportHeight, 1);
 
         const scrollFraction = Math.max(0, Math.min(currentScroll / maxScroll, 1));
         const frameIndex = Math.floor(scrollFraction * (frameCount - 1));
