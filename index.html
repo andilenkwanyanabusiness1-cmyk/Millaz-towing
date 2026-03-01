@@ -132,40 +132,8 @@
             </section>
         </div>
 
-        <!-- Trusted Providers Section -->
-        <section class="trusted-providers-section animate-in">
-            <div class="container">
-                <h2 class="trust-bar-heading">Trusted Service Provider For</h2>
-
-                <div class="logos-grid">
-                    <!-- Row 1: 9 logos -->
-                    <div class="logos-row row-9">
-                        <div class="logo-item"><img src="assets/insurance-logos/old mutual.png" alt="Old Mutual"></div>
-                        <div class="logo-item"><img src="assets/insurance-logos/king price.png" alt="King Price"></div>
-                        <div class="logo-item"><img src="assets/insurance-logos/hollard.png" alt="Hollard"></div>
-                        <div class="logo-item"><img src="assets/insurance-logos/santam.png" alt="Santam"></div>
-                        <div class="logo-item"><img src="assets/insurance-logos/momentum.png" alt="Momentum"></div>
-                        <div class="logo-item"><img src="assets/insurance-logos/miway.png" alt="MiWay"></div>
-                        <div class="logo-item"><img src="assets/insurance-logos/iwyze.png" alt="iWyze"></div>
-                        <div class="logo-item"><img src="assets/insurance-logos/dialdirect.png" alt="Dialdirect"></div>
-                        <div class="logo-item"><img src="assets/insurance-logos/discovery.png" alt="Discovery"></div>
-                    </div>
-
-                    <!-- Row 2: 7 logos (centered) -->
-                    <div class="logos-row row-7">
-                        <div class="logo-item"><img src="assets/insurance-logos/outsurance.png" alt="OUTsurance"></div>
-                        <div class="logo-item"><img src="assets/insurance-logos/AA.png" alt="AA"></div>
-                        <div class="logo-item"><img src="assets/insurance-logos/budget insurance.png" alt="Budget">
-                        </div>
-                        <div class="logo-item"><img src="assets/insurance-logos/pmd.png" alt="PMD"></div>
-                        <div class="logo-item"><img src="assets/insurance-logos/1st for women.png" alt="1st for Women">
-                        </div>
-                        <div class="logo-item"><img src="assets/insurance-logos/absa.png" alt="ABSA"></div>
-                        <div class="logo-item"><img src="assets/insurance-logos/fnb.png" alt="FNB"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Trusted Providers Section (Now Handled by React) -->
+        <div id="trust-bar-root"></div>
 
         <!-- Statistics Section -->
         <section class="stats-section">
@@ -717,6 +685,7 @@
                 stroke-linejoin="round" />
         </svg>
     </button>
+    <script type="module" src="/src/main.tsx"></script>
 </body>
 
 </html>

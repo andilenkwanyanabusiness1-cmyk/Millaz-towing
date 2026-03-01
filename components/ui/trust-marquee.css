@@ -1,0 +1,146 @@
+.trust-marquee {
+    --tm-height: 165px;
+    --tm-speed: 38s;
+    --tm-gap: clamp(1.5rem, 2.8vw, 2.5rem);
+    --tm-logo-height: clamp(1.5rem, 3vw, 2.2rem);
+
+    width: 100%;
+    height: var(--tm-height);
+    max-height: 165px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    background: #fff;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.trust-marquee__title {
+    margin: 0;
+    text-align: center;
+    font-size: clamp(0.72rem, 1vw, 0.82rem);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    line-height: 1.2;
+    color: rgba(71, 85, 105, 0.95);
+    text-transform: uppercase;
+}
+
+.trust-marquee__viewport {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    -webkit-mask-image: linear-gradient(to right,
+            transparent 0,
+            black 10%,
+            black 90%,
+            transparent 100%);
+    mask-image: linear-gradient(to right,
+            transparent 0,
+            black 10%,
+            black 90%,
+            transparent 100%);
+}
+
+.trust-marquee__track {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    animation: trust-marquee-scroll var(--tm-speed) linear infinite;
+}
+
+.trust-marquee__group {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: var(--tm-gap);
+    margin: 0;
+    padding: 0 var(--tm-gap) 0 0;
+}
+
+.trust-marquee__item {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trust-marquee__logo {
+    display: block;
+    width: auto;
+    height: var(--tm-logo-height);
+    max-width: min(150px, 24vw);
+    object-fit: contain;
+    opacity: 0.68;
+    filter: grayscale(100%);
+    transition: opacity 220ms ease, filter 220ms ease;
+}
+
+.trust-marquee__item:hover .trust-marquee__logo {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+@media (hover: hover) {
+    .trust-marquee__viewport:hover .trust-marquee__track {
+        animation-play-state: paused;
+    }
+}
+
+@media (max-width: 640px) {
+    .trust-marquee {
+        --tm-gap: 1.25rem;
+        --tm-logo-height: 1.32rem;
+    }
+
+    .trust-marquee__viewport {
+        -webkit-mask-image: linear-gradient(to right,
+                transparent 0,
+                black 7%,
+                black 93%,
+                transparent 100%);
+        mask-image: linear-gradient(to right,
+                transparent 0,
+                black 7%,
+                black 93%,
+                transparent 100%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .trust-marquee__viewport {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-mask-image: none;
+        mask-image: none;
+        scrollbar-width: thin;
+    }
+
+    .trust-marquee__track {
+        animation: none;
+        transform: none;
+    }
+
+    .trust-marquee__group--duplicate {
+        display: none;
+    }
+}
+
+@keyframes trust-marquee-scroll {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
