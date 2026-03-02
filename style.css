@@ -868,73 +868,123 @@ nav.glass-panel {
 /* Community Section */
 .community {
     padding: 100px 0;
-    overflow: hidden;
+    overflow: visible;
 }
 
-.gallery-preview {
-    margin-top: 4rem;
-    position: relative;
-    width: 100vw;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-}
-
-.gallery-wrapper {
-    width: 100%;
-    overflow: hidden;
-    padding: 2rem 0;
-}
-
-.gallery-track {
-    display: flex;
-    gap: 2rem;
-    padding: 0 10vw;
-    will-change: transform;
-}
-
-.gallery-track img {
-    width: 400px;
-    height: 500px;
-    object-fit: cover;
-    border-radius: 24px;
-    filter: brightness(0.6) saturate(0.8);
-    transition: var(--transition-med);
-    flex-shrink: 0;
-    border: 1px solid var(--glass-border);
-}
-
-.gallery-track img:hover {
-    filter: brightness(1) saturate(1.2);
-    transform: scale(1.02);
-    border-color: var(--color-primary);
-}
-
-.gallery-controls {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
+.scroll-grid-gallery {
+    --sg-gutter: 2rem;
     margin-top: 3rem;
     position: relative;
-    z-index: 10;
+    overflow: clip;
 }
 
-.gallery-controls button {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+.scroll-grid-gallery .sg-scroll-space {
+    min-height: 240vh;
+}
+
+.scroll-grid-gallery .sg-content {
+    min-height: 100vh;
+    width: 100%;
+    position: sticky;
+    top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
-    transition: var(--transition-med);
+    overflow: hidden;
 }
 
-.gallery-controls button:hover {
-    background: var(--color-primary);
-    color: var(--color-secondary);
-    transform: scale(1.1);
+.scroll-grid-gallery .sg-grid {
+    --sg-offset: 0;
+    --sg-gap: clamp(10px, 6vw, 60px);
+
+    width: min(1600px, calc(100% - (2 * var(--sg-gutter))));
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: var(--sg-gap);
+    align-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
+.scroll-grid-gallery .sg-grid>.sg-layer {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+    transform-origin: center;
+}
+
+.scroll-grid-gallery .sg-grid>.sg-layer:nth-of-type(1) div:nth-of-type(odd) {
+    grid-column: 1;
+}
+
+.scroll-grid-gallery .sg-grid>.sg-layer:nth-of-type(1) div:nth-of-type(even) {
+    grid-column: -2;
+}
+
+.scroll-grid-gallery .sg-grid>.sg-layer:nth-of-type(2) div:nth-of-type(odd) {
+    grid-column: calc(2 + var(--sg-offset));
+}
+
+.scroll-grid-gallery .sg-grid>.sg-layer:nth-of-type(2) div:nth-of-type(even) {
+    grid-column: calc(-3 - var(--sg-offset));
+}
+
+.scroll-grid-gallery .sg-grid>.sg-layer:nth-of-type(3) div:first-of-type {
+    grid-column: calc(3 + var(--sg-offset));
+    grid-row: 1;
+}
+
+.scroll-grid-gallery .sg-grid>.sg-layer:nth-of-type(3) div:last-of-type {
+    grid-column: calc(3 + var(--sg-offset));
+    grid-row: -1;
+}
+
+.scroll-grid-gallery .sg-grid img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.scroll-grid-gallery .sg-grid .sg-scaler {
+    position: relative;
+    grid-area: 2 / calc(3 + var(--sg-offset));
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.scroll-grid-gallery .sg-grid .sg-scaler img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 900px) {
+    .scroll-grid-gallery {
+        --sg-gutter: 1rem;
+    }
+
+    .scroll-grid-gallery .sg-grid {
+        grid-template-columns: repeat(3, 1fr);
+        --sg-offset: -1;
+        --sg-gap: clamp(10px, 4vw, 20px);
+    }
+
+    .scroll-grid-gallery .sg-grid>.sg-layer:nth-of-type(1) {
+        display: none;
+    }
 }
 
 /* Footer Styles */

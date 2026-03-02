@@ -166,9 +166,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 8. Interactive Gallery Carousel
+    // 8. Interactive Gallery Carousel (legacy, safe-guarded)
     const track = document.querySelector('.gallery-track');
-    if (track) {
+    const nextBtn = document.getElementById('next-btn');
+    const prevBtn = document.getElementById('prev-btn');
+
+    if (track && track.parentElement && nextBtn && prevBtn) {
         const trackWidth = track.scrollWidth;
         const wrapperWidth = track.parentElement.offsetWidth;
 
@@ -183,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         const moveAmount = 450;
-        document.getElementById('next-btn').addEventListener('click', () => {
+        nextBtn.addEventListener('click', () => {
             gsap.to(track, {
                 x: `-=${moveAmount}`,
                 duration: 0.8,
@@ -197,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        document.getElementById('prev-btn').addEventListener('click', () => {
+        prevBtn.addEventListener('click', () => {
             gsap.to(track, {
                 x: `+=${moveAmount}`,
                 duration: 0.8,
