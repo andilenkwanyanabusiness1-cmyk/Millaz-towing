@@ -475,6 +475,25 @@ nav.glass-panel {
     color: var(--text-muted);
 }
 
+/* Mobile-only hero form visibility override */
+@media (max-width: 767px) {
+
+    .dispatch-form-container,
+    .hero-form-box {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+
+    .dispatch-form-container.hidden,
+    .dispatch-form-container.fade-out,
+    .hero-form-box.hidden,
+    .hero-form-box.fade-out {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+}
+
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;

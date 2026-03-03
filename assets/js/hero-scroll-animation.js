@@ -19,7 +19,7 @@
     let didComplete = false;
     let preloadSafetyTimer = null;
     let canvas, ctx;
-    let heroSection, heroScrollContainer, loadingOverlay, loadingProgress, scrollIndicator, heroContent;
+    let heroSection, heroScrollContainer, loadingOverlay, loadingProgress, scrollIndicator, heroContent, heroTextBox, dispatchFormContainer;
     let isMobile = window.innerWidth < 768;
 
     function init() {
@@ -30,6 +30,8 @@
         loadingProgress = document.getElementById('loadingProgress');
         scrollIndicator = document.querySelector('.hero-scroll-indicator');
         heroContent = document.querySelector('.container-hero');
+        heroTextBox = document.querySelector('.hero-text-box');
+        dispatchFormContainer = document.querySelector('.dispatch-form-container');
 
         if (!canvas) return;
 
@@ -51,6 +53,9 @@
         if (frames[currentFrame]) {
             drawFrame(currentFrame);
         }
+
+        // Re-apply visibility rules when crossing desktop/mobile breakpoints
+        handleScroll();
     }
 
     function getFramePath(index) {
@@ -165,7 +170,35 @@
                 heroOpacity = 1 - (scrollFraction - delay) / (1 - delay);
             }
 
-            heroContent.style.opacity = Math.max(0, heroOpacity).toString();
+            if (isMobile) {
+                // Mobile: keep dispatch form visible at all times
+                heroContent.style.opacity = '1';
+
+                if (dispatchFormContainer) {
+                    dispatchFormContainer.style.opacity = '1';
+                    dispatchFormContainer.style.visibility = 'visible';
+                    dispatchFormContainer.style.pointerEvents = 'auto';
+                }
+
+                // Allow text column to continue fading on mobile if desired
+                if (heroTextBox) {
+                    heroTextBox.style.opacity = Math.max(0, heroOpacity).toString();
+                }
+            } else {
+                // Desktop: preserve existing behavior
+                heroContent.style.opacity = Math.max(0, heroOpacity).toString();
+
+                // Clear mobile-only inline overrides
+                if (dispatchFormContainer) {
+                    dispatchFormContainer.style.opacity = '';
+                    dispatchFormContainer.style.visibility = '';
+                    dispatchFormContainer.style.pointerEvents = '';
+                }
+
+                if (heroTextBox) {
+                    heroTextBox.style.opacity = '';
+                }
+            }
         }
     }
 
