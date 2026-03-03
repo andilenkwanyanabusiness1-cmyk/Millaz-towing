@@ -1,0 +1,304 @@
+/* Universal navigation + mobile hamburger menu (all pages) */
+
+.site-nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1200px, 90%);
+    z-index: 1200;
+    padding: 0.8rem 1.5rem;
+    border-radius: 24px;
+    background: rgba(26, 42, 94, 0.58);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.24);
+}
+
+.site-nav .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.site-nav .nav-links {
+    display: flex !important;
+    align-items: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.site-nav .nav-links a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.95);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.98rem;
+    transition: color 0.3s ease;
+}
+
+.site-nav .nav-links a:hover,
+.site-nav .nav-links a.active {
+    color: #00d9ff;
+}
+
+.site-nav .logo img {
+    height: 54px;
+    width: auto;
+    display: block;
+}
+
+.site-nav .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.emergency-call-btn {
+    min-height: 44px;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    background: #00d9ff;
+    color: #0b2248;
+    border-radius: 12px;
+    padding: 0.68rem 1rem;
+    font-weight: 800;
+    font-family: 'Work Sans', sans-serif;
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.emergency-call-btn:hover {
+    transform: translateY(-1px);
+    background: #4be8ff;
+}
+
+.emergency-call-btn i {
+    font-size: 0.95rem;
+}
+
+.hamburger-btn {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hamburger-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.hamburger-line {
+    width: 20px;
+    height: 2px;
+    border-radius: 3px;
+    background: #ffffff;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1199;
+    background: linear-gradient(135deg, rgba(26, 42, 94, 0.98) 0%, rgba(0, 102, 204, 0.98) 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease;
+    pointer-events: none;
+}
+
+.mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.mobile-menu-container {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    padding: 88px 24px 32px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.menu-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.menu-close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.mobile-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 56px;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.25s ease;
+}
+
+.mobile-nav-item:hover,
+.mobile-nav-item:focus-visible {
+    border-color: rgba(0, 217, 255, 0.8);
+    background: rgba(255, 255, 255, 0.18);
+    outline: none;
+}
+
+.mobile-nav-item i {
+    font-size: 1.1rem;
+    color: #00d9ff;
+    width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.nav-item-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.nav-item-title {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.1;
+}
+
+.nav-item-desc {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.8rem;
+    line-height: 1.2;
+}
+
+.mobile-menu-footer {
+    margin-top: auto;
+    padding-top: 24px;
+}
+
+.menu-footer-label {
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+}
+
+.menu-emergency-btn {
+    width: 100%;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 12px;
+    text-decoration: none;
+    background: #00d9ff;
+    color: #102040;
+    font-weight: 800;
+}
+
+body.mobile-menu-open {
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .site-nav .nav-links {
+        display: none !important;
+    }
+
+    .hamburger-btn {
+        display: inline-flex;
+    }
+
+    .site-nav .logo img {
+        height: 40px;
+    }
+
+    .emergency-call-btn {
+        padding: 0.6rem 0.85rem;
+        font-size: 0.83rem;
+        gap: 6px;
+    }
+}
+
+@media (max-width: 420px) {
+    .emergency-call-btn span {
+        display: none;
+    }
+
+    .emergency-call-btn {
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        justify-content: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .mobile-menu-overlay,
+    .hamburger-line,
+    .hamburger-btn,
+    .mobile-nav-item {
+        transition: none !important;
+    }
+}

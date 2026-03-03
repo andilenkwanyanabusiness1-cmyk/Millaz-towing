@@ -9,6 +9,7 @@
         content="Millaz Towing is KZN's most trusted recovery service. Offering 24/7 towing, expert safety tips, and a community-driven authority hub.">
     <link rel="stylesheet" href="style.css?v=visual_upgrade_v1">
     <link rel="stylesheet" href="authority-hub/hub.css?v=2">
+    <link rel="stylesheet" href="/assets/css/mobile-menu.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- GSAP for advanced animations -->
@@ -24,20 +25,81 @@
     <div id="scroll-progress-container">
         <div id="scroll-progress-bar"></div>
     </div>
-    <nav class="glass-panel">
+    <nav class="glass-panel site-nav" id="hub-nav" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="/" class="logo" id="logo-link">
+            <a href="/" class="logo" id="logo-link" aria-label="Millaz Towing Home">
                 <img src="/assets/millaz_logo_final.png" alt="Millaz Towing Logo">
             </a>
-            <ul class="nav-links">
-                <li><a href="/#services">Services</a></li>
-                <li><a href="/about-us.html">About Us</a></li>
+            <ul class="nav-links desktop-nav" role="list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about-us">About Us</a></li>
                 <li><a href="/authority-hub/">Authority Hub</a></li>
                 <li><a href="/#community">Community</a></li>
             </ul>
-            <a href="tel:0737453329" class="btn-primary"><i class="fas fa-phone"></i> Emergency Call</a>
+            <div class="nav-actions">
+                <a href="tel:0737453329" class="btn-primary emergency-call-btn">
+                    <i class="fas fa-phone" aria-hidden="true"></i>
+                    <span>Emergency Call</span>
+                </a>
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open navigation menu" aria-expanded="false"
+                    aria-controls="mobileMenu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
         </div>
     </nav>
+
+    <div class="mobile-menu-overlay" id="mobileMenu" aria-hidden="true" role="navigation">
+        <div class="mobile-menu-container">
+            <button class="menu-close-btn" id="menuCloseBtn" aria-label="Close navigation menu">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+
+            <nav class="mobile-nav-links" aria-label="Mobile navigation links">
+                <a href="/" class="mobile-nav-item" data-link="home">
+                    <i class="fas fa-house" aria-hidden="true"></i>
+                    <div class="nav-item-content">
+                        <span class="nav-item-title">Home</span>
+                        <span class="nav-item-desc">Back to homepage</span>
+                    </div>
+                </a>
+
+                <a href="/about-us" class="mobile-nav-item" data-link="about">
+                    <i class="fas fa-users" aria-hidden="true"></i>
+                    <div class="nav-item-content">
+                        <span class="nav-item-title">About Us</span>
+                        <span class="nav-item-desc">Learn our story</span>
+                    </div>
+                </a>
+
+                <a href="/authority-hub/" class="mobile-nav-item" data-link="hub">
+                    <i class="fas fa-newspaper" aria-hidden="true"></i>
+                    <div class="nav-item-content">
+                        <span class="nav-item-title">Authority Hub</span>
+                        <span class="nav-item-desc">Road safety insights</span>
+                    </div>
+                </a>
+
+                <a href="/#community" class="mobile-nav-item" data-link="community">
+                    <i class="fas fa-handshake-angle" aria-hidden="true"></i>
+                    <div class="nav-item-content">
+                        <span class="nav-item-title">Community</span>
+                        <span class="nav-item-desc">Join our network</span>
+                    </div>
+                </a>
+            </nav>
+
+            <div class="mobile-menu-footer">
+                <p class="menu-footer-label">Need immediate help?</p>
+                <a href="tel:0737453329" class="menu-emergency-btn">
+                    <i class="fas fa-phone" aria-hidden="true"></i>
+                    <span>073 745 3329</span>
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- WhatsApp Chat Button -->
     <a href="https://wa.me/27737453329" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
@@ -603,6 +665,7 @@
         </div>
     </footer>
 
+    <script src="/assets/js/mobile-menu.js"></script>
     <script src="main.js"></script>
     <script src="assets/js/hero-scroll-animation.js"></script>
     <script type="module" src="assets/js/scroll-grid-gallery.js"></script>

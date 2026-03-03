@@ -51,6 +51,7 @@
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
 
+    <link rel="stylesheet" href="/assets/css/mobile-menu.css">
 </head>
 
 <body>
@@ -61,26 +62,81 @@
     </div>
 
     <!-- ─── Navigation ─── -->
-    <nav class="hub-nav" id="hub-nav" aria-label="Main navigation">
-        <div class="nav-container">
-            <a href="/" class="logo" id="logo-link" aria-label="Millaz Towing Home">
-                <img src="/assets/millaz_logo_final.png" alt="Millaz Towing Logo">
+    <nav class="glass-panel site-nav" id="hub-nav" aria-label="Main navigation">
+    <div class="nav-container">
+        <a href="/" class="logo" id="logo-link" aria-label="Millaz Towing Home">
+            <img src="/assets/millaz_logo_final.png" alt="Millaz Towing Logo">
+        </a>
+        <ul class="nav-links desktop-nav" role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about-us">About Us</a></li>
+            <li><a href="/authority-hub/">Authority Hub</a></li>
+            <li><a href="/#community">Community</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="tel:0737453329" class="btn-primary emergency-call-btn">
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <span>Emergency Call</span>
             </a>
-            <ul class="nav-links" id="hub-nav-links" role="list">
-                <li><a href="/#services">Services</a></li>
-                <li><a href="/authority-hub/" class="active">Authority Hub</a></li>
-                <li><a href="/#community">Community</a></li>
-            </ul>
-            <a href="tel:0737453329" class="btn-primary" id="nav-emergency-btn">
-                <i class="fas fa-phone" aria-hidden="true"></i> Emergency Call
-            </a>
-            <button class="mobile-menu-toggle" id="hub-mobile-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open navigation menu" aria-expanded="false"
+                aria-controls="mobileMenu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
             </button>
         </div>
-    </nav>
+    </div>
+</nav>
+
+<div class="mobile-menu-overlay" id="mobileMenu" aria-hidden="true" role="navigation">
+    <div class="mobile-menu-container">
+        <button class="menu-close-btn" id="menuCloseBtn" aria-label="Close navigation menu">
+            <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+
+        <nav class="mobile-nav-links" aria-label="Mobile navigation links">
+            <a href="/" class="mobile-nav-item" data-link="home">
+                <i class="fas fa-house" aria-hidden="true"></i>
+                <div class="nav-item-content">
+                    <span class="nav-item-title">Home</span>
+                    <span class="nav-item-desc">Back to homepage</span>
+                </div>
+            </a>
+
+            <a href="/about-us" class="mobile-nav-item" data-link="about">
+                <i class="fas fa-users" aria-hidden="true"></i>
+                <div class="nav-item-content">
+                    <span class="nav-item-title">About Us</span>
+                    <span class="nav-item-desc">Learn our story</span>
+                </div>
+            </a>
+
+            <a href="/authority-hub/" class="mobile-nav-item" data-link="hub">
+                <i class="fas fa-newspaper" aria-hidden="true"></i>
+                <div class="nav-item-content">
+                    <span class="nav-item-title">Authority Hub</span>
+                    <span class="nav-item-desc">Road safety insights</span>
+                </div>
+            </a>
+
+            <a href="/#community" class="mobile-nav-item" data-link="community">
+                <i class="fas fa-handshake-angle" aria-hidden="true"></i>
+                <div class="nav-item-content">
+                    <span class="nav-item-title">Community</span>
+                    <span class="nav-item-desc">Join our network</span>
+                </div>
+            </a>
+        </nav>
+
+        <div class="mobile-menu-footer">
+            <p class="menu-footer-label">Need immediate help?</p>
+            <a href="tel:0737453329" class="menu-emergency-btn">
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <span>073 745 3329</span>
+            </a>
+        </div>
+    </div>
+</div>
 
     <!-- ─── Floating WhatsApp Button ─── -->
     <a href="https://wa.me/27737453329" class="hub-whatsapp-btn" target="_blank" rel="noopener noreferrer"
@@ -573,23 +629,6 @@
                 }
             });
         }
-
-        // ── Mobile Menu Toggle ───────────────────────────────────────────
-        const mobileToggle = document.getElementById('hub-mobile-toggle');
-        const navLinks = document.getElementById('hub-nav-links');
-
-        if (mobileToggle && navLinks) {
-            mobileToggle.addEventListener('click', () => {
-                mobileToggle.classList.toggle('active');
-                navLinks.classList.toggle('active');
-            });
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileToggle.classList.remove('active');
-                    navLinks.classList.remove('active');
-                });
-            });
-        }
     </script>
 
 
@@ -598,6 +637,7 @@
             <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
     </button>
+    <script src="/assets/js/mobile-menu.js"></script>
 </body>
 
 </html>
