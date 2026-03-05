@@ -21,3 +21,61 @@ collections:
       - { label: "Excerpt", name: "excerpt", widget: "text" }
       - { label: "Featured Image", name: "featured_image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "community"
+    label: "Community Page"
+    extension: "json"
+    format: "json"
+    files:
+      - file: "assets/data/reviews.json"
+        label: "Community Reviews"
+        name: "community_reviews"
+        fields:
+          - label: "Reviews"
+            name: "reviews"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.location}}"
+            fields:
+              - { label: "ID", name: "id", widget: "number", value_type: "int" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Initial", name: "initial", widget: "string" }
+              - { label: "Location / Role", name: "location", widget: "string" }
+              - { label: "Rating", name: "rating", widget: "number", min: 1, max: 5, value_type: "int", default: 5 }
+              - { label: "Review Text", name: "text", widget: "text" }
+              - { label: "Date Label", name: "date", widget: "string", hint: "Example: February 2026" }
+              - { label: "Service", name: "service", widget: "string", required: false }
+              - { label: "Verified", name: "verified", widget: "boolean", default: true }
+
+      - file: "assets/data/bulletin-posts.json"
+        label: "Community Bulletin Posts"
+        name: "community_bulletin"
+        fields:
+          - label: "Posts"
+            name: "posts"
+            widget: "list"
+            summary: "{{fields.title}} ({{fields.category}})"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Category", name: "category", widget: "select", options: ["alert", "news", "update", "event", "tip"] }
+              - { label: "Category Label", name: "categoryLabel", widget: "string" }
+              - { label: "Icon", name: "icon", widget: "string", required: false }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Excerpt", name: "excerpt", widget: "text" }
+              - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+              - { label: "Display Date (optional)", name: "daysAgo", widget: "string", required: false, hint: "Example: 2 days ago" }
+              - { label: "Priority", name: "priority", widget: "select", options: ["high", "medium", "low"], default: "low" }
+              - { label: "Show Post", name: "active", widget: "boolean", default: true, required: false }
+              - { label: "Read More Link Available", name: "readMore", widget: "boolean", default: false, required: false }
+
+      - file: "assets/data/community-social.json"
+        label: "Community Social Links"
+        name: "community_social"
+        fields:
+          - { label: "Facebook URL", name: "facebook_url", widget: "string" }
+          - { label: "Facebook Embed URL", name: "facebook_embed_url", widget: "string", hint: "Use Facebook Page Plugin URL" }
+          - { label: "TikTok URL", name: "tiktok_url", widget: "string" }
+          - { label: "TikTok Handle", name: "tiktok_handle", widget: "string", default: "@millaztowing" }
+          - { label: "TikTok Intro Text", name: "tiktok_intro", widget: "text", required: false }
+          - { label: "Instagram URL", name: "instagram_url", widget: "string", required: false }
+          - { label: "WhatsApp URL", name: "whatsapp_url", widget: "string", required: false }
+          - { label: "Google Reviews URL", name: "google_reviews_url", widget: "string", required: false }
