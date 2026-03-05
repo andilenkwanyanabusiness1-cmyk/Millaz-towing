@@ -1,0 +1,111 @@
+{
+    "reviews": [
+        {
+            "id": 1,
+            "name": "Jason P.",
+            "initial": "JP",
+            "location": "Umhlanga",
+            "rating": 5,
+            "text": "Fastest service in Durban! Had a flat tyre at 2am and Millaz was there in 20 minutes. Professional and kind.",
+            "date": "February 2026",
+            "verified": true
+        },
+        {
+            "id": 2,
+            "name": "Sarah M.",
+            "initial": "SM",
+            "location": "Ballito",
+            "rating": 5,
+            "text": "The only towing service I trust with my luxury vehicle. Handled my BMW with absolute care. Highly recommended!",
+            "date": "January 2026",
+            "verified": true
+        },
+        {
+            "id": 3,
+            "name": "Thabo K.",
+            "initial": "TK",
+            "location": "Logistics Manager",
+            "rating": 5,
+            "text": "Incredible team. They managed a complex accident recovery for our fleet efficiently and safely. A true partner.",
+            "date": "December 2025",
+            "verified": true
+        },
+        {
+            "id": 4,
+            "name": "Linda N.",
+            "initial": "LN",
+            "location": "Pinetown",
+            "rating": 5,
+            "text": "Called Millaz at 11pm with a flat battery on Old Main Road. They arrived in 20 minutes and got me going. Professional and friendly service even late at night. Saved my evening!",
+            "date": "February 2026",
+            "verified": true,
+            "service": "Battery Assist"
+        },
+        {
+            "id": 5,
+            "name": "David M.",
+            "initial": "DM",
+            "location": "Hillcrest",
+            "rating": 5,
+            "text": "Accident on the N3 and Millaz handled everything perfectly. From securing the scene to delivering my car to the panel beaters. Insurance paperwork was seamless. Highly recommend!",
+            "date": "January 2026",
+            "verified": true,
+            "service": "Accident Recovery"
+        },
+        {
+            "id": 6,
+            "name": "Zanele K.",
+            "initial": "ZK",
+            "location": "Westville",
+            "rating": 5,
+            "text": "Best motorcycle transport in KZN! They have proper equipment and a dedicated bike trailer. Treated my Yamaha R1 with absolute care. No scratches, perfect service. Will use again!",
+            "date": "December 2025",
+            "verified": true,
+            "service": "Motorcycle Transport"
+        },
+        {
+            "id": 7,
+            "name": "Peter S.",
+            "initial": "PS",
+            "location": "Kloof",
+            "rating": 5,
+            "text": "Family stranded on Old Main Road in the rain. Millaz sent two trucks because of the tricky location. Went above and beyond to help us safely. True professionals who care.",
+            "date": "January 2026",
+            "verified": true,
+            "service": "Emergency Towing"
+        },
+        {
+            "id": 8,
+            "name": "Ayesha R.",
+            "initial": "AR",
+            "location": "Durban North",
+            "rating": 5,
+            "text": "Insurance approved Millaz and I'm so glad they did. Kept me updated throughout, handled all the paperwork, and delivered my car safely to the workshop. Stress-free experience during a difficult time.",
+            "date": "February 2026",
+            "verified": true,
+            "service": "Insurance Recovery"
+        },
+        {
+            "id": 9,
+            "name": "Michael B.",
+            "initial": "MB",
+            "location": "Phoenix",
+            "rating": 5,
+            "text": "Ran out of fuel on the M13 during morning rush hour. Millaz arrived quickly with fuel and got me back on the road in 10 minutes. Saved me from being late to an important meeting. Excellent service!",
+            "date": "December 2025",
+            "verified": true,
+            "service": "Fuel Delivery"
+        },
+        {
+            "id": 10,
+            "name": "Nadia P.",
+            "initial": "NP",
+            "location": "Waterfall",
+            "rating": 5,
+            "text": "My car broke down in Waterfall with my elderly mother in the car. Millaz driver was so kind and patient, made sure we were comfortable and safe. Dropped us home before taking the car. Amazing customer care!",
+            "date": "January 2026",
+            "verified": true,
+            "service": "Roadside Assistance"
+        }
+    ]
+}
